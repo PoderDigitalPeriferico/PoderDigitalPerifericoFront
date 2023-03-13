@@ -2,6 +2,7 @@ import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
 import { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import Usuario from "../../models/Usuario";
 import { cadastro } from "../../services/Services";
 
@@ -55,8 +56,33 @@ function CadastroUsuario() {
         navigate('/login')
       }
     }, [userResult])
-  
-
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+      e.preventDefault()
+      if(confirmarSenha == user.senha){
+      cadastro(`/usuarios/cadastrar`, user, setUserResult)
+      toast.success('Usuario cadastrado com sucesso', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+          });
+      }else{
+          toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              theme: "colored",
+              progress: undefined,
+              });
+      }
+    }
 
     return(
     <Grid container alignItems='center'>
