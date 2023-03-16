@@ -1,4 +1,4 @@
-import { Grid, TextField, Typography, Button } from "@material-ui/core";
+import { Grid, TextField, Typography, Button, Paper } from "@material-ui/core";
 import Box from "@mui/material/Box";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,11 +7,12 @@ import "./Login.css";
 import { login } from "../../services/Services";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/actions";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
+import { lightBlue } from "@mui/material/colors";
 
 function Login() {
   let navigate = useNavigate();
-  const [token, setToken] = useState('');
+  const [token, setToken] = useState("");
   const dispatch = useDispatch();
   const [userLogin, setUserLogin] = useState<UsuarioLogin>({
     id: 0,
@@ -30,9 +31,9 @@ function Login() {
   }
 
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault()
-    try{
-      await login('/usuarios/logar', userLogin, setToken)
+    e.preventDefault();
+    try {
+      await login("/usuarios/logar", userLogin, setToken);
       toast.success("Usuário logado com sucesso", {
         position: "top-right",
         autoClose: 2000,
@@ -40,102 +41,77 @@ function Login() {
         closeOnClick: true,
         pauseOnHover: false,
         draggable: false,
-        theme: 'colored',
-        progress: undefined
-    });        } catch(error) {
-        toast.error("Usuário e/ou senha inválidos", {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            theme: 'colored',
-            progress: undefined
-        });        }
+        theme: "colored",
+        progress: undefined,
+      });
+    } catch (error) {
+      toast.error("Usuário e/ou senha inválidos", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
+    }
   }
 
-  useEffect(()=>{
-    if(token != ''){
-        dispatch(addToken(token))
-        navigate('/home')
+  useEffect(() => {
+    if (token != "") {
+      dispatch(addToken(token));
+      navigate("/home");
     }
-}, [token])
+  }, [token]);
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid alignItems="center" xs={6}>
-        <Box paddingX={20}>
-          <form onSubmit={onSubmit}>
-            <Typography
-              variant="h3"
-              gutterBottom
-              color="textPrimary"
-              component="h3"
-              align="center"
-              style={{ fontWeight: "bold" }}>
-              Entrar
-            </Typography>
-            <TextField
-              value={userLogin.usuario}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)}
-              id="usuario"
-              label="usuario"
-              variant="outlined"
-              name="usuario"
-              margin="normal"
-              fullWidth
-            />
-            <TextField
-            value={userLogin.senha}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)}
-              id="senha"
-              label="senha"
-              variant="outlined"
-              name="senha"
-              margin="normal"
-              type="password"
-              fullWidth
-            />
-            <Box marginTop={2} textAlign="center">
-              
-                <Button type="submit" variant="contained" color="primary">
-                  Logar
-                </Button>
-             
-            </Box>
-          </form>
-          <Box display="flex" justifyContent="center" marginTop={2}>
-            <Box marginRight={1}>
-              <Typography variant="subtitle1" gutterBottom align="center">
-                Não tem uma conta?
-              </Typography>
-            </Box>
-            <Typography
-              variant="subtitle1"
-              gutterBottom
-              align="center"
-              style={{ fontWeight: "bold" }}
-            >
-              <Link to='/cadastrar'>Cadastre-se</Link>  
-              
-            </Typography>
-          </Box>
-        </Box>
-      </Grid>
-      <Grid
-        xs={6}
+    <Grid container>
+      <Grid container item
+        xs={12}
         style={{
-          backgroundImage: `url(https://img.freepik.com/vetores-premium/ilustracao-design-de-fundo-de-casas-coloridas_755165-7.jpg)`,
+          backgroundImage: `url(https://images.303magazine.com/uploads/2019/08/GettyImages-510083766.jpg)`,
+
+          // https://img.freepik.com/fotos-gratis/bela-vista-de-uma-pequena-cidade-nas-montanhas-durante-o-por-do-sol-no-brasil_181624-39388.jpg?w=1380&t=st=1678927973~exp=1678928573~hmac=9d10b84295ac61de991523135d7fdb7e7004d250801a39d01d73fe8065dc2a09
+
           backgroundRepeat: "no-repeat",
           width: "100vh",
           minHeight: "100vh",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-      ></Grid>
+      >
+<Grid container justifyContent="center" alignItems="center" style={{ height: '100vh' }}>
+      
+      <Grid justifyContent="flex-end" alignItems='center' xs={6}>
+                <Box paddingX={20}className="componentLogin">
+
+                    <form onSubmit={onSubmit}>
+                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='entrar'>Entrar</Typography>
+
+                        <TextField value={userLogin.usuario} onChange={(e:ChangeEvent<HTMLInputElement>) => updateModel(e)} id='usuario' label='usuário' variant='filled' name='usuario' margin='normal' fullWidth />
+
+                        <TextField value={userLogin.senha} onChange={(e:ChangeEvent<HTMLInputElement>) => updateModel(e)} id='senha' label='senha' variant='filled' name='senha' margin='normal' type='password'fullWidth />
+
+                        <Box marginTop={2} textAlign='center'>
+                                <Button className='buttonLogin' type='submit' variant='contained' color='primary'>
+                                    Logar
+                                </Button>
+                        </Box>
+                    </form>
+                    <Box display='flex' justifyContent='center' marginTop={2}>
+                        <Box marginRight={1}>
+                            <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
+                        </Box>
+                        <Link to='/cadastrar'>
+                            <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
+                        </Link>
+                            
+                    </Box>
+                </Box>
+            </Grid>
     </Grid>
+      </Grid> </Grid>
   );
 }
-
 export default Login;

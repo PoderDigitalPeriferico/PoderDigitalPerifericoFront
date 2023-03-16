@@ -1,3 +1,26 @@
 .text-decorator-none{
     text-decoration: none;
 }
+.background{
+    background-image: 'https://img.freepik.com/fotos-gratis/bela-vista-de-uma-pequena-cidade-nas-montanhas-durante-o-por-do-sol-no-brasil_181624-39388.jpg?w=1380&t=st=1678927973~exp=1678928573~hmac=9d10b84295ac61de991523135d7fdb7e7004d250801a39d01d73fe8065dc2a09';
+}
+.entrar{
+font-weight: bolder !important;
+
+}
+
+.componentLogin{
+    color: white;
+    background-color:#7a777285;
+    margin: auto;
+    padding: 30px;
+    height: 400px;
+    width: 350px;
+
+    border-radius: 5%;
+    box-shadow: 0px 0px 30px black
+}
+.buttonLogin{
+    background-color: rgb(223, 126, 16) !important;
+    font-weight: bolder !important;
+}
