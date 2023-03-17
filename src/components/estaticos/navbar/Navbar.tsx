@@ -31,8 +31,7 @@ function Navbar() {
       link: '/home'
     },
     {
-      nome: 'temas',
-
+      nome: 'Comunidades',
       link: '/temas'
     },
     {
