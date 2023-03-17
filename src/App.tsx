@@ -53,6 +53,8 @@ function App() {
           <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
 
           <Route path="/deletarTema/:id" element={<DeletarTema />} />
+
+          <Route path="/sobreoprojeto" element={<SobreOProjeto />} />
         </Routes>
       </div>
       <Footer />

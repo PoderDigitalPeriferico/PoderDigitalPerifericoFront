@@ -27,8 +27,8 @@ function Navbar() {
   // const pages = ['Posts', 'Favoritos', 'Sobre o projeto'];
   const pages = [
     {
-      nome: 'posts',
-      link: '/postagens'
+      nome: 'home',
+      link: '/home'
     },
     {
       nome: 'temas',
@@ -36,29 +36,27 @@ function Navbar() {
       link: '/temas'
     },
     {
-      nome: 'cadastrar Temas',
+      nome: 'cadastre sua comunidade',
       link: '/formularioTema'
     },
     {
-      nome: 'home',
-      link: '/home'
+      nome: 'sobre o projeto',
+      link: '/sobreoprojeto'
     }
+    
   ]
 
   // const settings = ['Perfil', 'Conta', 'Dashboard', 'Sair'];
   const settings = [
     {
-      nome: 'sair',
-      link: '/login'
-    },
-    {
       nome: 'perfil',
       link: '/perfil'
     },
     {
-      nome: 'teste',
-      link: 'https://youtube.com'
-    }
+      nome: 'sair',
+      link: '/login'
+    },
+    
   ]
 
 

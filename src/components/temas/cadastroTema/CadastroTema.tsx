@@ -107,8 +107,8 @@ function CadastroTema() {
 
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
-                <Typography className='titulo' variant="h3" component="h1" align="center" >Cadastrar uma Qbrada</Typography>
-                <TextField value={tema.tema} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="temas" label="Qbrada" variant="outlined" name="tema" margin="normal" fullWidth />
+                <Typography className='titulo' variant="h3" component="h1" align="center" >Cadastrar sua Comunidade</Typography>
+                <TextField value={tema.tema} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="temas" label="Insira sua região ou comunidade" variant="outlined" name="tema" margin="normal" fullWidth />
                 <Button type="submit" variant="contained" color="primary">
                     Cadastrar
                 </Button>

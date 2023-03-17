@@ -85,7 +85,6 @@ function Login() {
       
       <Grid justifyContent="flex-end" alignItems='center' xs={6}>
                 <Box paddingX={20}className="componentLogin">
-
                     <form onSubmit={onSubmit}>
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='entrar'>Entrar</Typography>
 
