@@ -58,7 +58,7 @@ function ListaTema() {
         <Card className='cards' variant="outlined">
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              Qbrada
+              Comunidade/Região
             </Typography>
             <Typography variant="h5" component="h2">
             {tema.tema}
@@ -74,7 +74,7 @@ function ListaTema() {
                   </Button>
                 </Box>
               </Link>
-              <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
+              <Link className='texr-link'  to={`/deletarTema/${tema.id}`}>
                 <Box mx={1}>
                   <Button variant="contained" size='small' color="secondary">
                     deletar

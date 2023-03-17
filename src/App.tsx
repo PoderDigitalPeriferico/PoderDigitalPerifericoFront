@@ -37,6 +37,8 @@ function App() {
           <Route path="/home" element={<Home />} />
 
           <Route path="/cadastrar" element={<CadastroUsuario />} />
+          <Route path="/sobreoprojeto" element={<SobreOProjeto />} />
+
 
           <Route path="/temas" element={<ListaTema />} />
 
