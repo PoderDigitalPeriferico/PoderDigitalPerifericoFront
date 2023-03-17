@@ -7,7 +7,14 @@
 }
 
 body{
-    background-image: url(https://cdn.discordapp.com/attachments/1064895363846242365/1080870633929457714/6.jpg);
+    background-color:rgb(24, 61, 97) ;
     background-repeat: no-repeat;
     background-size: 100%;
 }
+ .botao{
+    border-color: white !important;
+    background-color: white !important;
+}
+ .links{
+    text-decoration: none;
+ }

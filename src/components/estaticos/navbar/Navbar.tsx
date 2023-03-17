@@ -14,11 +14,57 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-
-const pages = ['Posts', 'Favoritos', 'Sobre o projeto'];
-const settings = ['Perfil', 'Conta', 'Dashboard', 'Sair'];
-
+import { Link, useNavigate } from 'react-router-dom';
+import './Navbar.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 function Navbar() {
+  let navigate = useNavigate();
+  const token = useSelector<TokenState, TokenState['token']>(
+    (state) => state.token);
+
+  const dispacth = useDispatch();
+  // const pages = ['Posts', 'Favoritos', 'Sobre o projeto'];
+  const pages = [
+    {
+      nome: 'posts',
+      link: '/postagens'
+    },
+    {
+      nome: 'temas',
+      link: '/temas'
+    },
+    {
+      nome: 'cadastrar Temas',
+      link: '/formularioTema'
+    },
+    {
+      nome: 'home',
+      link: '/home'
+    }
+  ]
+
+  // const settings = ['Perfil', 'Conta', 'Dashboard', 'Sair'];
+  const settings = [
+    {
+      nome: 'sair',
+      link: '/login'
+    },
+    {
+      nome: 'Perfil',
+      link: '/perfil'
+    },
+    {
+      nome: 'perfil',
+      link: '/perfil'
+    },
+    {
+      nome: 'teste',
+      link: 'https://youtube.com'
+    }
+  ]
+
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -36,17 +82,16 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  var navbarComponent;
 
-  return (
-    <AppBar position="static">
+  if (token !== '') {
+    navbarComponent = <AppBar className='navbar' position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -57,7 +102,9 @@ function Navbar() {
               textDecoration: 'none',
             }}
           >
+          <Link to='/home'>
             Poder Digital Periferico
+            </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -90,13 +137,14 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.nome} onClick={handleCloseNavMenu}>
+                  <Link style={{ textDecoration: "none", color: '#fff' }} to={page.link}>
+                    <Typography className='textLink' textAlign="center">{page.nome}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -113,17 +161,18 @@ function Navbar() {
               textDecoration: 'none',
             }}
           >
-           PDP
+            PDP
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
+              <Link style={{ textDecoration: "none" }} to={page.link}>
+                <Button
+                  key={page.nome}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block' }}>
+                  {page.nome}
+                </Button>
+              </Link>
             ))}
           </Box>
 
@@ -150,8 +199,10 @@ function Navbar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                <MenuItem key={setting.nome} onClick={handleCloseUserMenu}>
+                  <Link style={{ textDecoration: "none" }} to={setting.link}>
+                    <Typography textAlign="center">{setting.nome}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -159,6 +210,11 @@ function Navbar() {
         </Toolbar>
       </Container>
     </AppBar>
-  );
+  }
+    return (
+      <>
+        {navbarComponent}
+      </>
+    );
 }
-export default Navbar;
+  export default Navbar;
