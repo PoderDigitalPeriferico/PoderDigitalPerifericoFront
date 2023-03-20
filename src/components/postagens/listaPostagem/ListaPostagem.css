@@ -12,3 +12,16 @@ margin-left: 25px;
 .video{
 margin-left: 8%;
 }
+.text-link{
+    text-decoration: none !important; 
+}
+
+.css-1pqm26d-MuiAvatar-img{
+    margin: 100px;
+}
+.postado-por{
+ margin-left: 50%;
+display: flex;
+flex-direction: column;
+}
+

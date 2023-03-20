@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Postagem from '../../../models/Postagem';
 import { busca, post } from '../../../services/Services';
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
-import { Box } from '@mui/material';
+import { Avatar, Box } from '@mui/material';
 import './ListaPostagem.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
@@ -72,12 +72,14 @@ function ListaPostagem() {
                   {post.texto}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {post.tema?.tema}
+                 Comunidade: {post.tema?.tema}
                 </Typography>
-                <Typography variant="body2" component="p">
-                  Postado por: {post.usuario?.nome}
+                 
+                <Typography variant="body2" component="p" >
+                Postado por:  {post.usuario?.nome} <Avatar  alt='foto usuario' src={post.usuario?.foto} />
+  
                 </Typography>
-
+                
 
               </CardContent>
               <CardActions>
@@ -90,7 +92,7 @@ function ListaPostagem() {
                       </Button>
                     </Box>
                   </Link>
-                  <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
+                  <Link to={`/deletarPostagem/${post.id}`} className="text-link">
                     <Box mx={1}>
                       <Button variant="contained" size='small' color="secondary">
                         deletar

@@ -17,6 +17,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { post } from '../../../services/Services';
+import Usuario from '../../../models/Usuario';
 function Navbar() {
   let navigate = useNavigate();
   const token = useSelector<TokenState, TokenState['tokens']>(
@@ -79,6 +81,7 @@ function Navbar() {
 
   if (token !== '') {
     navbarComponent = <AppBar className='navbar' position="static">
+      
       <Container maxWidth="xl">
         <Toolbar disableGutters>
        <div>
@@ -174,7 +177,7 @@ function Navbar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              <Avatar  alt='foto usuario' src=""/>
               </IconButton>
             </Tooltip>
             <Menu
