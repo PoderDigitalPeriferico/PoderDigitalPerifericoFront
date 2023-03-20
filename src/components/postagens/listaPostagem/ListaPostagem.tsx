@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Postagem from '../../../models/Postagem';
-import { busca } from '../../../services/Services';
-import {  Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
-import {Box} from '@mui/material';
+import { busca, post } from '../../../services/Services';
+import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Box } from '@mui/material';
 import './ListaPostagem.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
@@ -27,7 +27,7 @@ function ListaPostagem() {
         draggable: false,
         theme: "colored",
         progress: undefined,
-    });
+      });
       navigate("/login")
 
     }
@@ -58,15 +58,15 @@ function ListaPostagem() {
                   Postagens
                 </Typography>
 
-                  {post.titulo.includes('.mp4')? (
-                    <video className='video' controls>
-                          <source src={post.titulo} />
-                    </video>
-                  ) : 
+                {post.titulo.includes('.mp4') ? (
+                  <video className='video' controls>
+                    <source src={post.titulo} />
+                  </video>
+                ) :
                   (
                     <img src={post.titulo} alt="Imagem da postagem" />
 
-                  ) }
+                  )}
 
                 <Typography variant="body2" component="p">
                   {post.texto}
@@ -74,6 +74,11 @@ function ListaPostagem() {
                 <Typography variant="body2" component="p">
                   {post.tema?.tema}
                 </Typography>
+                <Typography variant="body2" component="p">
+                  Postado por: {post.usuario?.nome}
+                </Typography>
+
+
               </CardContent>
               <CardActions>
                 <Box display="flex" justifyContent="center" mb={1.5}>

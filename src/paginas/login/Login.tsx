@@ -6,7 +6,7 @@ import UsuarioLogin from "../../models/UsuarioLogin";
 import "./Login.css";
 import { login } from "../../services/Services";
 import { useDispatch } from "react-redux";
-import { addToken } from "../../store/tokens/actions";
+import { addId, addToken } from "../../store/tokens/actions";
 import { toast } from "react-toastify";
 import { lightBlue } from "@mui/material/colors";
 
@@ -14,13 +14,25 @@ function Login() {
   let navigate = useNavigate();
   const [token, setToken] = useState("");
   const dispatch = useDispatch();
+  
+  
   const [userLogin, setUserLogin] = useState<UsuarioLogin>({
     id: 0,
-    nome: "",
-    usuario: "",
-    senha: "",
-    foto: "",
-    token: "",
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: '',
+    token: ''
+  })
+  
+  
+  const [respUserLogin, setRespUserLogin] = useState<UsuarioLogin>({
+    id: 0,
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: '',
+    token: ''
   });
 
   function updateModel(e: ChangeEvent<HTMLInputElement>) {
@@ -33,7 +45,7 @@ function Login() {
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
     try {
-      await login("/usuarios/logar", userLogin, setToken);
+      await login("/usuarios/logar", userLogin, setRespUserLogin);
       toast.success("Usuário logado com sucesso", {
         position: "top-right",
         autoClose: 2000,
@@ -59,11 +71,19 @@ function Login() {
   }
 
   useEffect(() => {
-    if (token != "") {
-      dispatch(addToken(token));
-      navigate("/home");
+    if(token !== ''){
+      dispatch(addToken(token))
+      navigate('/home')
     }
-  }, [token]);
+  }, [token])
+
+  useEffect(() => {
+    if(respUserLogin.token !== '') {
+      dispatch(addToken(respUserLogin.token))
+      dispatch(addId(respUserLogin.id.toString()))
+      navigate('/home')
+    }
+  }, [respUserLogin.token])
 
   return (
     <Grid container>
