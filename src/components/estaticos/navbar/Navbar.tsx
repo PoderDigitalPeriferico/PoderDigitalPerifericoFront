@@ -17,12 +17,38 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
-import { post } from '../../../services/Services';
+import { buscaId, post } from '../../../services/Services';
 import Usuario from '../../../models/Usuario';
+import { useState } from 'react';
 function Navbar() {
   let navigate = useNavigate();
   const token = useSelector<TokenState, TokenState['tokens']>(
     (state) => state.tokens);
+const userId = useSelector<TokenState, TokenState['id']>(
+  (state)=> state.id
+);
+
+
+const [usuario, setUsuario] = useState<Usuario>({
+  id: +userId,
+  nome: '',
+  usuario: '',
+  foto: '',
+  senha: '',
+  });
+
+
+  async function getUserById(id: number) {
+    await buscaId(`/usuarios/${id}`, setUsuario, {
+    headers: {Authorization: token}
+    })
+    }
+
+    React.useEffect(() => {
+      getUserById(+userId)
+      }, [])
+
+
 
   const dispacth = useDispatch();
   // const pages = ['Posts', 'Favoritos', 'Sobre o projeto'];
@@ -177,7 +203,7 @@ function Navbar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar  alt='foto usuario' src=""/>
+              <Avatar  alt='foto usuario' src={usuario.foto}/>
               </IconButton>
             </Tooltip>
             <Menu

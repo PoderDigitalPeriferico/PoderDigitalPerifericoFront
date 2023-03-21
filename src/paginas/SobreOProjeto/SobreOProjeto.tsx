@@ -1,9 +1,39 @@
 import { Box, Grid } from '@mui/material';
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./SobreOProjeto.css";
 import { Helmet } from "react-helmet"
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../store/tokens/tokensReducer';
 
 function SobreOProjeto() {
+    
+    const userId = useSelector<TokenState, TokenState['id']>(
+        (state) => state.id
+    );
+    const token = useSelector<TokenState, TokenState['tokens']>(
+        (state) => state.tokens
+    );
+    let navigate = useNavigate();
+
+    useEffect(() => {
+        if (token == "") {
+            toast.info("Você precisa estar logado", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined
+            });
+            navigate("/login")
+
+        }
+    }, [token])
+    
     return (
         <>
             <Box className="parallax">

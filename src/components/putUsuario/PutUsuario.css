@@ -1,0 +1,50 @@
+.breck{
+    word-break: break-all;
+}
+
+.caixa{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-right: 10%;
+    padding: 50px 20% 100px !important;
+    background-color: #fffefeb6;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.829);
+    margin-top: 20px;
+}
+
+.posts{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px 10px 10px ;
+    background-color: #fff;
+    padding: 0 20% 0 ;
+    
+    background-color: #ffffff00;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 100vh;
+    border-radius: 10px;
+}
+
+.titulo{
+    font-weight: bold !important;
+    color: #000000;
+}
+.cointainer{
+  background-repeat: repeat;
+  
+  background-size: 50%;
+    background-image: url('https://www.shutterstock.com/image-vector/vector-pattern-illustration-stripped-strokes-600w-1933310021.jpg');
+}
+h1{
+    margin: 0 20% 0;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+.img-perfil{
+    border-radius: 50%;
+    width: 10vw;
+}

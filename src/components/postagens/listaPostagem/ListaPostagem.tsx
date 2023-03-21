@@ -23,7 +23,10 @@ function ListaPostagens() {
     (state) => state.tokens
   );
 
+<<<<<<< HEAD
   const userId = useSelector<TokenState, TokenState["id"]>((state) => state.id);
+=======
+>>>>>>> 9a1df19bb7367cfafc39734ff6088606e452c4e7
 
   useEffect(() => {
     if (token === "") {
@@ -66,6 +69,7 @@ function ListaPostagens() {
                   <video className="video" controls>
                     <source src={post.titulo} />
                   </video>
+<<<<<<< HEAD
                 ) : (
                   <img src={post.titulo} alt="Imagem da postagem" />
                 )}
@@ -95,6 +99,38 @@ function ListaPostagens() {
                     to={`/editarPostagem/${post.id}`}
                     className="text-decorator-none"
                   >
+=======
+                ) :
+                  (
+                    <img src={post.titulo} alt="Imagem da postagem" />
+
+                  )}
+
+                <Typography variant="body2" component="p">
+                  {post.texto}
+                </Typography>
+                <Typography variant="body2" component="p">
+                 Comunidade: {post.tema?.tema}
+                </Typography>
+                <Typography variant="body2" component="p">
+                Postado em:{' '}
+                {new Intl.DateTimeFormat(undefined, {
+                  dateStyle: 'short',
+                  timeStyle: 'short',
+                }).format(new Date(post.data))}
+              </Typography>
+                <Typography variant="body2" component="p" >
+                Postado por:  {post.usuario?.nome} <Avatar  alt='foto usuario' src={post.usuario?.foto} />
+  
+                </Typography>
+                
+
+              </CardContent>
+              <CardActions>
+                <Box display="flex" justifyContent="center" mb={1.5}>
+
+                  <Link to={`/AtualizarPostagem/${post.id}`} className="text-decorator-none" >
+>>>>>>> 9a1df19bb7367cfafc39734ff6088606e452c4e7
                     <Box mx={1}>
                       <Button
                         variant="contained"

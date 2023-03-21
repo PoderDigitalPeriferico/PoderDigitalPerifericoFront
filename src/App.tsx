@@ -19,6 +19,7 @@ import store from "./store/store";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 import Perfil from './components/perfil/Perfil';
+import PutUsuario from "./components/putUsuario/PutUsuario";
 
 
 function App() {
@@ -30,7 +31,11 @@ function App() {
       <div style={{ minHeight: "100vh" }}>
         <Routes>
           <Route path="/" element={<Login />} />
+          
           <Route path="/perfil" element={<Perfil />} />
+
+          <Route path="/atualizarcadastro" element={<PutUsuario />} />
+
 
           <Route path="/login" element={<Login />} />
 
@@ -46,7 +51,7 @@ function App() {
 
           <Route path="/formularioPostagem" element={<CadastroPost />} />
 
-          <Route path="/formularioPostagem/:id" element={<CadastroPost />} />
+          <Route path="/AtualizarPostagem/:id" element={<CadastroPost />} />
 
           <Route path="/formularioTema" element={<CadastroTema />} />
 
