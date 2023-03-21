@@ -14,25 +14,24 @@ function Login() {
   let navigate = useNavigate();
   const [token, setToken] = useState("");
   const dispatch = useDispatch();
-  
-  
+  const [isLoading, setIsLoading] = useState(false);
+
   const [userLogin, setUserLogin] = useState<UsuarioLogin>({
     id: 0,
-    nome: '',
-    usuario: '',
-    senha: '',
-    foto: '',
-    token: ''
-  })
-  
-  
+    nome: "",
+    usuario: "",
+    senha: "",
+    foto: "",
+    token: "",
+  });
+
   const [respUserLogin, setRespUserLogin] = useState<UsuarioLogin>({
     id: 0,
-    nome: '',
-    usuario: '',
-    senha: '',
-    foto: '',
-    token: ''
+    nome: "",
+    usuario: "",
+    senha: "",
+    foto: "",
+    token: "",
   });
 
   function updateModel(e: ChangeEvent<HTMLInputElement>) {
@@ -45,6 +44,7 @@ function Login() {
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
     try {
+      setIsLoading(true);
       await login("/usuarios/logar", userLogin, setRespUserLogin);
       toast.success("Usuário logado com sucesso", {
         position: "top-right",
@@ -57,6 +57,7 @@ function Login() {
         progress: undefined,
       });
     } catch (error) {
+      setIsLoading(false);
       toast.error("Usuário e/ou senha inválidos", {
         position: "top-right",
         autoClose: 2000,
@@ -71,23 +72,25 @@ function Login() {
   }
 
   useEffect(() => {
-    if(token !== ''){
-      dispatch(addToken(token))
-      navigate('/home')
+    if (token !== "") {
+      dispatch(addToken(token));
+      navigate("/home");
     }
-  }, [token])
+  }, [token]);
 
   useEffect(() => {
-    if(respUserLogin.token !== '') {
-      dispatch(addToken(respUserLogin.token))
-      dispatch(addId(respUserLogin.id.toString()))
-      navigate('/home')
+    if (respUserLogin.token !== "") {
+      dispatch(addToken(respUserLogin.token));
+      dispatch(addId(respUserLogin.id.toString()));
+      navigate("/home");
     }
-  }, [respUserLogin.token])
+  }, [respUserLogin.token]);
 
   return (
     <Grid container>
-      <Grid container item
+      <Grid
+        container
+        item
         xs={12}
         style={{
           backgroundImage: `url(https://images.303magazine.com/uploads/2019/08/GettyImages-510083766.jpg)`,
@@ -101,35 +104,75 @@ function Login() {
           backgroundPosition: "center",
         }}
       >
-<Grid container justifyContent="center" alignItems="center" style={{ height: '100vh' }}>
-      
-      <Grid justifyContent="flex-end" alignItems='center' xs={6}>
-                <Box paddingX={20}className="componentLogin">
-                    <form onSubmit={onSubmit}>
-                        <img  className='logo-login' src="https://ik.imagekit.io/wwd7wv4ro/PDP_full_branco.png?updatedAt=1679053313611" alt="" />
-                        <TextField value={userLogin.usuario} onChange={(e:ChangeEvent<HTMLInputElement>) => updateModel(e)} id='usuario' label='usuário' variant='filled' name='usuario' margin='normal' fullWidth />
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"
+          style={{ height: "100vh" }}
+        >
+          <Grid justifyContent="flex-end" alignItems="center" xs={6}>
+            <Box paddingX={20} className="componentLogin">
+              <form onSubmit={onSubmit}>
+                <img
+                  className="logo-login"
+                  src="https://ik.imagekit.io/wwd7wv4ro/PDP_full_branco.png?updatedAt=1679053313611"
+                  alt=""
+                />
+                <TextField
+                  value={userLogin.usuario}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    updateModel(e)
+                  }
+                  id="usuario"
+                  label="usuário"
+                  variant="filled"
+                  name="usuario"
+                  margin="normal"
+                  fullWidth
+                />
 
-                        <TextField value={userLogin.senha} onChange={(e:ChangeEvent<HTMLInputElement>) => updateModel(e)} id='senha' label='senha' variant='filled' name='senha' margin='normal' type='password'fullWidth />
-
-                        <Box marginTop={2} textAlign='center'>
-                                <Button className='buttonLogin' type='submit' variant='contained' color='primary'>
-                                    Logar
-                                </Button>
-                        </Box>
-                    </form>
-                    <Box display='flex' justifyContent='center' marginTop={2}>
-                        <Box marginRight={1}>
-                            <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
-                        </Box>
-                        <Link className='text-decorator-none' to='/cadastrar'>
-                            <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
-                        </Link>
-                            
-                    </Box>
+                <TextField
+                  value={userLogin.senha}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    updateModel(e)
+                  }
+                  id="senha"
+                  label="senha"
+                  variant="filled"
+                  name="senha"
+                  margin="normal"
+                  type="password"
+                  fullWidth
+                />
+                <Box marginTop={2} textAlign="center">
+                  <Button type="submit" variant="contained" color="primary">
+                    {isLoading ? "Aguarde" : "Entrar"}
+                  </Button>
                 </Box>
-            </Grid>
+              </form>
+
+              <Box display="flex" justifyContent="center" marginTop={2}>
+                <Box marginRight={1}>
+                  <Typography variant="subtitle1" gutterBottom align="center">
+                    Não tem uma conta?
+                  </Typography>
+                </Box>
+                <Link className="text-decorator-none" to="/cadastrar">
+                  <Typography
+                    variant="subtitle1"
+                    gutterBottom
+                    align="center"
+                    className="textos1"
+                  >
+                    Cadastre-se
+                  </Typography>
+                </Link>
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+      </Grid>{" "}
     </Grid>
-      </Grid> </Grid>
   );
 }
 export default Login;

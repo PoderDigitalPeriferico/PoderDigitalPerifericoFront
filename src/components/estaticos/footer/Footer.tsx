@@ -27,6 +27,7 @@ function Footer() {
                         <LinkIcon style={{ fontSize: 30, color: "white" }} />
                         
                     </a>
+                    
     
                 </Box>
             </Box>
