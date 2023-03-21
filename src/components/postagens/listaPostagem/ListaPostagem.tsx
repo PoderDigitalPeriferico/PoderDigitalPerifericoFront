@@ -16,6 +16,7 @@ function ListaPostagem() {
     (state) => state.tokens
   );
 
+
   useEffect(() => {
     if (token == "") {
       toast.error('Você precisa estar logado', {
@@ -74,7 +75,13 @@ function ListaPostagem() {
                 <Typography variant="body2" component="p">
                  Comunidade: {post.tema?.tema}
                 </Typography>
-                 
+                <Typography variant="body2" component="p">
+                Postado em:{' '}
+                {new Intl.DateTimeFormat(undefined, {
+                  dateStyle: 'short',
+                  timeStyle: 'short',
+                }).format(new Date(post.data))}
+              </Typography>
                 <Typography variant="body2" component="p" >
                 Postado por:  {post.usuario?.nome} <Avatar  alt='foto usuario' src={post.usuario?.foto} />
   
@@ -85,7 +92,7 @@ function ListaPostagem() {
               <CardActions>
                 <Box display="flex" justifyContent="center" mb={1.5}>
 
-                  <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
+                  <Link to={`/AtualizarPostagem/${post.id}`} className="text-decorator-none" >
                     <Box mx={1}>
                       <Button variant="contained" className="marginLeft" size='small' color="primary" >
                         atualizar
