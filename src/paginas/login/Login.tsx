@@ -6,7 +6,7 @@ import UsuarioLogin from "../../models/UsuarioLogin";
 import "./Login.css";
 import { login } from "../../services/Services";
 import { useDispatch } from "react-redux";
-import { addId, addToken } from "../../store/tokens/actions";
+import { addFoto, addId, addToken } from "../../store/tokens/actions";
 import { toast } from "react-toastify";
 import { lightBlue } from "@mui/material/colors";
 
@@ -81,6 +81,7 @@ function Login() {
   useEffect(() => {
     if (respUserLogin.token !== "") {
       dispatch(addToken(respUserLogin.token));
+      dispatch(addFoto(respUserLogin.foto));
       dispatch(addId(respUserLogin.id.toString()));
       navigate("/home");
     }
@@ -145,8 +146,8 @@ function Login() {
                   fullWidth
                 />
                 <Box marginTop={2} textAlign="center">
-                  <Button type="submit" variant="contained" color="primary">
-                    {isLoading ? "Aguarde" : "Entrar"}
+                  <Button type="submit" variant="contained" color="primary" disabled={isLoading}>
+                    {isLoading ? 'aguarde' : 'entrar'}
                   </Button>
                 </Box>
               </form>

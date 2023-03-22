@@ -23,10 +23,9 @@ function ListaPostagens() {
     (state) => state.tokens
   );
 
-<<<<<<< HEAD
+
   const userId = useSelector<TokenState, TokenState["id"]>((state) => state.id);
-=======
->>>>>>> 9a1df19bb7367cfafc39734ff6088606e452c4e7
+
 
   useEffect(() => {
     if (token === "") {
@@ -59,9 +58,9 @@ function ListaPostagens() {
   }, [postagens.length]);
 
   return (
-    <Box display="flex" flexWrap={"wrap"}>
+    <Box display="flex" flexDirection={'column'}>
       {postagens.map((post) => (
-        <Box m={2} width={"45vw"} height={"350px"}>
+        <Box m={2} width={"45vw"}>
           <Card variant="outlined">
             <CardContent>
               <Typography variant="h5" component="h2">
@@ -69,7 +68,6 @@ function ListaPostagens() {
                   <video className="video" controls>
                     <source src={post.titulo} />
                   </video>
-<<<<<<< HEAD
                 ) : (
                   <img src={post.titulo} alt="Imagem da postagem" />
                 )}
@@ -92,78 +90,6 @@ function ListaPostagens() {
                 <Avatar alt="foto usuario" src={post.usuario?.foto} />
               </Typography>
             </CardContent>
-            {post.usuario?.id === +userId ? (
-              <CardActions>
-                <Box display="flex" justifyContent="center" mb={1.5}>
-                  <Link
-                    to={`/editarPostagem/${post.id}`}
-                    className="text-decorator-none"
-                  >
-=======
-                ) :
-                  (
-                    <img src={post.titulo} alt="Imagem da postagem" />
-
-                  )}
-
-                <Typography variant="body2" component="p">
-                  {post.texto}
-                </Typography>
-                <Typography variant="body2" component="p">
-                 Comunidade: {post.tema?.tema}
-                </Typography>
-                <Typography variant="body2" component="p">
-                Postado em:{' '}
-                {new Intl.DateTimeFormat(undefined, {
-                  dateStyle: 'short',
-                  timeStyle: 'short',
-                }).format(new Date(post.data))}
-              </Typography>
-                <Typography variant="body2" component="p" >
-                Postado por:  {post.usuario?.nome} <Avatar  alt='foto usuario' src={post.usuario?.foto} />
-  
-                </Typography>
-                
-
-              </CardContent>
-              <CardActions>
-                <Box display="flex" justifyContent="center" mb={1.5}>
-
-                  <Link to={`/AtualizarPostagem/${post.id}`} className="text-decorator-none" >
->>>>>>> 9a1df19bb7367cfafc39734ff6088606e452c4e7
-                    <Box mx={1}>
-                      <Button
-                        variant="contained"
-                        className="marginLeft"
-                        size="small"
-                        color="primary"
-                      >
-                        atualizar
-                      </Button>
-                    </Box>
-                  </Link>
-                  <Link
-                    to={`/deletarPostagem/${post.id}`}
-                    className="text-decorator-none"
-                  >
-                    <Box mx={1}>
-                      <Button
-                        variant="contained"
-                        size="small"
-                        color="secondary"
-                      >
-                        deletar
-                      </Button>
-                    </Box>
-                  </Link>
-                </Box>
-              </CardActions>
-            ) : (
-              <>
-                {" "}
-                <h5>Você Não Pode Editar</h5>{" "}
-              </>
-            )}
           </Card>
         </Box>
       ))}

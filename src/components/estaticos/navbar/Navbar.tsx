@@ -19,23 +19,28 @@ import { useDispatch, useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { buscaId, post } from '../../../services/Services';
 import Usuario from '../../../models/Usuario';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { addToken } from '../../../store/tokens/actions';
 function Navbar() {
   let navigate = useNavigate();
   const token = useSelector<TokenState, TokenState['tokens']>(
     (state) => state.tokens);
-const userId = useSelector<TokenState, TokenState['id']>(
-  (state)=> state.id
-);
+
+  const userId = useSelector<TokenState, TokenState['id']>(
+    (state)=> state.id
+  );
+  const userFoto = useSelector<TokenState, TokenState['foto']>(
+    (state)=> state.foto
+  );
 
 
-const [usuario, setUsuario] = useState<Usuario>({
-  id: +userId,
-  nome: '',
-  usuario: '',
-  foto: '',
-  senha: '',
-  });
+  const [usuario, setUsuario] = useState<Usuario>({
+    id: +userId,
+    nome: '',
+    usuario: '',
+    foto: '',
+    senha: '',
+    });
 
 
   async function getUserById(id: number) {
@@ -44,9 +49,9 @@ const [usuario, setUsuario] = useState<Usuario>({
     })
     }
 
-    React.useEffect(() => {
+    useEffect(() => {
       getUserById(+userId)
-      }, [])
+      }, [usuario])
 
 
 
@@ -77,13 +82,13 @@ const [usuario, setUsuario] = useState<Usuario>({
     {
       nome: 'perfil',
       link: '/perfil'
-    },
-    {
-      nome: 'sair',
-      link: '/login'
-    },
-    
+    },  
   ]
+
+  function goLogout() {
+    dispacth(addToken(''));
+    navigate('/login')
+  }
 
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -203,7 +208,7 @@ const [usuario, setUsuario] = useState<Usuario>({
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar  alt='foto usuario' src={usuario.foto}/>
+              <Avatar alt='foto usuario' src={userFoto}/>
               </IconButton>
             </Tooltip>
             <Menu
@@ -229,6 +234,9 @@ const [usuario, setUsuario] = useState<Usuario>({
                   </Link>
                 </MenuItem>
               ))}
+              <MenuItem onClick={goLogout}>
+                <Typography textAlign="center">sair</Typography>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>

@@ -1,16 +1,16 @@
 .card{
-    width: 800px !important;
+    width: 75vw !important;
     margin-left: 50%px;
 }
 
 img{
-width: 720px;
-height: 500;
-margin-left: 25px;
+    width: 75%;
+    /* height: 500; */
+    margin-left: 25px;
 }
 
 .video{
-margin-left: 8%;
+    margin-left: 8%;
 }
 .text-link{
     text-decoration: none !important; 
