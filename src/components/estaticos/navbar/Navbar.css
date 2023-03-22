@@ -1,3 +1,4 @@
+
 .textLink{
     text-decoration: none !important;
     color: #fff !important;
@@ -14,4 +15,9 @@
 }
 .MuiButton-textPrimary{
     color: #fff;
+}
+
+.navbar{
+    position: fixed !important;
+    background-size: cover;
 }

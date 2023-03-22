@@ -83,6 +83,22 @@ function DeletarTema() {
               <Typography color="textSecondary">
                 {tema?.tema}
               </Typography>
+              {tema?.postagens?.map((post) => (
+                <>
+                  <Typography variant="h5" component="h2">
+                    {post.titulo.includes(".mp4") ? (
+                      <video className="video" controls>
+                        <source src={post.titulo} />
+                      </video>
+                    ) : (
+                      <img src={post.titulo} alt="Imagem da postagem" />
+                    )}
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    {post.texto}
+                  </Typography>
+                </>
+              ))}
             </Box>
           </CardContent>
           <CardActions>

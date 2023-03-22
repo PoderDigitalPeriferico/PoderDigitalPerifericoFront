@@ -7,6 +7,6 @@ interface Usuario {
   usuario: string;
   senha: string;
   foto: string
-  postagem?: Postagem[] //linha adicionada para que o usuário possa ter um
+  postagens?: Postagem[] //linha adicionada para que o usuário possa ter um
   }
   export default Usuario

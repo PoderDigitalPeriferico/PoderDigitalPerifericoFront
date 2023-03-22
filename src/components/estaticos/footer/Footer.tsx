@@ -4,7 +4,7 @@ import {Box} from '@mui/material';
 import LinkIcon from '@mui/icons-material/Link';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { useSelector } from 'react-redux';
-
+import './Footer.css'
 
 function Footer() {
 
@@ -14,7 +14,7 @@ function Footer() {
         var footerComponent;
 
         if(token !==''){
-            footerComponent = <Grid container direction="row" justifyContent="center" alignItems="center">
+            footerComponent = <div className="footer"> <Grid container direction="row" justifyContent="center" alignItems="center">
         <Grid alignItems="center" item xs={12}>
             <Box style={{ backgroundColor: "rgb(230, 174, 122)", height: "" }}>
                 <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
@@ -27,6 +27,7 @@ function Footer() {
                         <LinkIcon style={{ fontSize: 30, color: "white" }} />
                         
                     </a>
+                    
     
                 </Box>
             </Box>
@@ -38,6 +39,7 @@ function Footer() {
             </Box>
         </Grid>
     </Grid>
+    </div>
     }
 
 

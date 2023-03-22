@@ -68,7 +68,7 @@ function PutUsuario() {
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
-        if (id !== undefined) {
+        if (userId !== undefined) {
             put(`/usuarios/atualizar`, usuario, setUsuario, {
                 headers: {
                     'Authorization': token
@@ -110,7 +110,7 @@ function PutUsuario() {
                 <Grid item xs={12}>
                     <Box className="caixa">
                         <form onSubmit={onSubmit}>
-                        <TextField margin='normal' variant='outlined' value={usuario.id} fullWidth/>
+                        {/* <TextField margin='normal' variant='outlined' value={usuario.id} fullWidth/> */}
                         <Typography className='titulo' variant='h4' align='center'>Atualizar perfil</Typography>
                         <TextField value={usuario.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedUsuario(e)} id="nome" label="Nome de usuario" variant="outlined" name="nome" margin="normal" fullWidth />
                         <TextField onChange={(e: ChangeEvent<HTMLInputElement>) => updatedUsuario(e)} id="senha" label="senha" variant="outlined" name="senha" margin="normal" fullWidth />
