@@ -1,8 +1,12 @@
 .fundoCadastro {
   background-image: url('https://i.imgur.com/d5bMdDJ.jpg');
   background-repeat: no-repeat;
-
   background-position: center;
+  margin-bottom: 0;
+}
+.body{
+  padding: 0;
+  margin: 0;
 }
 
 .fundo-transparent{
@@ -21,11 +25,9 @@ color: #fff !important;
 }
 
 .logo-cadastro{
-  width: 450px;
-  margin-top: -20%;
-  margin-bottom: -35px;
-  margin-left: -45px;
-  border: #00000000;
-  border-radius: 5px;
+  width: 30vw;
+  margin-top: -8vh;
+  margin-bottom: -5vh;
+  margin-left: vh;
 }
 

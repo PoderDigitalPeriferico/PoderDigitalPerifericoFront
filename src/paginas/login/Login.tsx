@@ -88,7 +88,7 @@ function Login() {
   }, [respUserLogin.token]);
 
   return (
-    <Grid container>
+    <Grid container className='responsive'>
       <Grid
         container
         item
@@ -113,12 +113,13 @@ function Login() {
         >
           <Grid justifyContent="flex-end" alignItems="center" xs={6}>
             <Box paddingX={20} className="componentLogin">
-              <form onSubmit={onSubmit}>
-                <img
+            <img
                   className="logo-login"
                   src="https://ik.imagekit.io/wwd7wv4ro/PDP_full_branco.png?updatedAt=1679053313611"
                   alt=""
                 />
+              <form className='form-login' onSubmit={onSubmit}>
+              
                 <TextField
                   value={userLogin.usuario}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -174,6 +175,7 @@ function Login() {
         </Grid>
       </Grid>{" "}
     </Grid>
+   
   );
 }
 export default Login;

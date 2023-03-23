@@ -3,7 +3,7 @@
     margin-left: 50%px;
 }
 
-img{
+.img-post{
     width: 75%;
     /* height: 500; */
     margin-left: 25px;
@@ -35,21 +35,16 @@ flex-direction: column;
     margin-top: 8vw !important;
     width: 65vw;
     border-radius: 8px;
-
-    padding-top: 5vw;
     margin-left: -8vw !important;
     padding-bottom: 5vw;
 }
 
-.avatar{
-   margin-left: 2vw;
+.avatar-post{
+  margin-bottom: 20px;
   
 
-
 }
-
-.post-owner{
-    
-
+.post-text{
+    word-break: break-all !important;
 
 }

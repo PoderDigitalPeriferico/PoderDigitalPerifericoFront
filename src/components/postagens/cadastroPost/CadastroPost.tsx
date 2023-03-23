@@ -166,7 +166,7 @@ function CadastroPost() {
                         })}>
                         {
                             temas.map(tema => (
-                                <MenuItem value={tema.id}>{tema.tema}</MenuItem>
+                                <MenuItem className='list-location' value={tema.id}>{tema.tema}</MenuItem>
                             ))
                         }
                     </Select>

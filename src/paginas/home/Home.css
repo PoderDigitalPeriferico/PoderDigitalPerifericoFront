@@ -21,10 +21,10 @@
     background-color: rgb(255, 212, 171) !important;
  }
 .new-post{
-    margin-left: 85vw !important;
-   margin-top: 85vh !important;
-   float: right !important;
-   position: fixed;
-   
+    margin-left: 60vw !important;
+    margin-top: 85vh !important;
+    position: fixed;  
+ 
+    
 
 }

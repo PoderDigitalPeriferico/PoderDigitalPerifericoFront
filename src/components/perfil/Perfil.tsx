@@ -1,4 +1,3 @@
-import './Perfil.css';
 import React, { useEffect, useState } from 'react';
 import {
   Button,
@@ -11,9 +10,13 @@ import { toast } from 'react-toastify';
 import Usuario from '../../models/Usuario';
 import { buscaId } from '../../services/Services';
 import { TokenState } from '../../store/tokens/tokensReducer';
-import { Box } from '@mui/material';
+import { Box, Card, CardContent, Fab, Grid } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import './Perfil.css'
+import Postagem from '../../models/Postagem';
 
 function Perfil() {
+  const [posts, setPosts] = useState<Postagem[]>([])
   const userId = useSelector<TokenState, TokenState['id']>((state) => state.id);
   const token = useSelector<TokenState, TokenState['tokens']>(
     (state) => state.tokens
@@ -55,62 +58,82 @@ function Perfil() {
   }, []);
   return (
     <>
-      <img src={usuario.foto} alt="" />
-      <h3>{usuario.nome}</h3>
+      
+        <Box className="header" >
+          <div >
+            <img className='img-perfil' src={usuario.foto} alt="" />
+            <h2 className='user-name'>{usuario.nome}</h2>
+            <Link className='text-link' to="/atualizarcadastro">
+              <Fab className='button-edit' color="primary" aria-label="edit">
+                <EditIcon />
+              </Fab>
+            </Link>
 
-      <h4>Todas as suas postagens</h4>
-      {usuario.postagens?.map((post) => (
-        <>
-          <Typography variant="h5" component="h2">
-            {post.titulo.includes('.mp4') ? (
-              <video className="video" controls>
-                <source src={post.titulo} />
-              </video>
-            ) : (
-              <img src={post.titulo} alt="Imagem da postagem" />
-            )}
-          </Typography>
-          <Typography variant="body2" component="p">
-            {post.texto}
-          </Typography>
+          </div>
+        </Box>
 
-          <CardActions>
-            <Box display="flex" justifyContent="center" mb={1.5}>
-              <Link
-                to={`/editarPostagem/${post.id}`}
-                className="text-decorator-none"
-              >
-                <Box mx={1}>
-                  <Button
-                    variant="contained"
-                    className="marginLeft"
-                    size="small"
-                    color="primary"
-                  >
-                    atualizar
-                  </Button>
+      <hr></hr>
+
+      <h4 className='all-posts'>Todas as suas postagens</h4>
+      <Box display="flex" flexDirection={'column'} alignItems='center'>
+
+        {usuario.postagens?.map((post) => (
+          <Box >
+            <Card className='card-perfil' variant="outlined">
+
+              <CardContent>
+                <Typography >
+                  {post.titulo.includes(".mp4") ? (
+                    <video className="video" controls>
+                      <source src={post.titulo} />
+                    </video>
+                  ) : (
+                    <img className='foto-post' src={post.titulo} alt="Imagem da postagem" />
+                  )}
+                </Typography>
+                <Typography className='post-text' variant="h5" component="h4">
+                  {post.texto}
+                </Typography>
+                <Typography className='post-date' variant="body2" component="p">
+                  <strong>Postado em:</strong>{" "}
+                  {new Intl.DateTimeFormat(undefined, {
+                    dateStyle: "short",
+                    timeStyle: "short",
+                  }).format(new Date(post.data))}
+                </Typography>
+
+                  <Typography className='post-location' variant="body2" component="p">
+                    <strong> Comunidade:</strong> {post.tema?.tema}
+                  </Typography>
+
+                
+              </CardContent>
+              <CardActions>
+                <Box display="flex" justifyContent="center" mb={1.5}>
+
+                  <Link to={`/AtualizrPostagem/${post.id}`} className="text-decorator-none" >
+                    <Box mx={1}>
+                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                        atualizar
+                      </Button>
+                    </Box>
+                  </Link>
+                  <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
+                    <Box mx={1}>
+                      <Button variant="contained" size='small' color="secondary">
+                        deletar
+                      </Button>
+                    </Box>
+                  </Link>
                 </Box>
-              </Link>
-              <Link
-                to={`/deletarPostagem/${post.id}`}
-                className="text-decorator-none"
-              >
-                <Box mx={1}>
-                  <Button variant="contained" size="small" color="secondary">
-                    deletar
-                  </Button>
-                </Box>
-              </Link>
-            </Box>
-          </CardActions>
-        </>
-      ))}
-      <Link to="/atualizarcadastro">
-        <Button variant="contained" color="primary">
-          atualizar perfil
-        </Button>
-      </Link>
+              </CardActions>
+
+            </Card>
+          </Box>
+        ))}
+      </Box>
     </>
+
   );
 }
 

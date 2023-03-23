@@ -59,13 +59,13 @@ function ListaPostagens() {
   }, [postagens.length]);
 
   return (
-    <Box display="flex" flexDirection={'column'} alignItems='start'>
+    <Box display="flex" flexDirection={'column'} alignItems='center'>
       {postagens.map((post) => (  
         <Box >
           <Card className='card-post' variant="outlined">
             
             <CardContent>
-            <Avatar className='avatar' alt="foto usuario" src={post.usuario?.foto} />
+            <Avatar className='avatar-post' alt="foto usuario" src={post.usuario?.foto} />
 
               <Typography >
                 {post.titulo.includes(".mp4") ? (
@@ -76,7 +76,7 @@ function ListaPostagens() {
                   <img className='foto-post' src={post.titulo} alt="Imagem da postagem" />
                 )}
               </Typography>
-              <Typography variant="h5" component="h4">
+              <Typography className='post-text' variant="h5" component="h4">
                 {post.texto}
               </Typography>
               <Typography variant="body2" component="p">

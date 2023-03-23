@@ -175,6 +175,7 @@ function Navbar() {
             </Menu>
           </Box>
           <Typography
+          className='titulo-sx'
             variant="h5"
             noWrap
             component="a"
@@ -186,7 +187,7 @@ function Navbar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+            
               textDecoration: 'none',
             }}
           >
@@ -195,10 +196,11 @@ function Navbar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Link style={{ textDecoration: "none" }} to={page.link}>
-                <Button
+                <Button 
+                className='pages=xs'
                   key={page.nome}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}>
+                  sx={{ my: 2, color: 'black', display: 'block' }}>
                   {page.nome}
                 </Button>
               </Link>
@@ -206,7 +208,7 @@ function Navbar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip className='botao-nav' title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
               <Avatar alt='foto usuario' src={userFoto}/>
               </IconButton>
@@ -235,7 +237,7 @@ function Navbar() {
                 </MenuItem>
               ))}
               <MenuItem onClick={goLogout}>
-                <Typography textAlign="center">sair</Typography>
+                <Typography className='botao-sair' textAlign="center">sair</Typography>
               </MenuItem>
             </Menu>
           </Box>

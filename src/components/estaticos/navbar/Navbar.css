@@ -16,8 +16,32 @@
 .MuiButton-textPrimary{
     color: #fff;
 }
-
+.butao-nav{
+    z-index: 2;
+}
 .navbar{
-    position: fixed !important;
+    position: sticky !important;
+    top:0;
     background-size: cover;
+    z-index: 2;
+
+}
+.MuiButtonBase-root {
+    color: white !important;
+}
+.pages-xs{
+    color: black !important;
+}
+
+.botao-sair{
+    color: #551a8b !important;
+}
+.css-6hp17o-MuiList-root-MuiMenu-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 0 10px;
+}
+
+.titulo-sx{
+    color: #fff !important;
 }

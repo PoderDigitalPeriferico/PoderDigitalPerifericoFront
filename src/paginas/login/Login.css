@@ -12,24 +12,31 @@ font-weight: bolder !important;
 }
 
 .logo-login{
-    width: 450px;
-    margin-top: -20%;
-    margin-bottom: -35px;
-    margin-left: -45px;
+    width: 45vw;
+    margin-top: -20vh;
+    margin-bottom: -35vh;
+    margin-left: -8vh;
 }
 
 .componentLogin{
     color: white;
     background-color:#635f59a6;
     margin: auto;
-    padding: 30px;
-    height: 400px;
-    width: 350px;
-
+    padding: 5vh;
+    height: 65vh;
+    width: 35vw;
+    margin-left: -1vw;
     border-radius: 5%;
     box-shadow: 0px 0px 30px black
 }
 .buttonLogin{
     background-color: rgb(223, 126, 16) !important;
     font-weight: bolder !important;
+
 }
+.form-login{
+    margin-top: 25vh;
+}
+
+
+
