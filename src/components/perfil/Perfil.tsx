@@ -58,19 +58,24 @@ function Perfil() {
   }, []);
   return (
     <>
-      
-        <Box className="header" >
-          <div >
-            <img className='img-perfil' src={usuario.foto} alt="" />
-            <h2 className='user-name'>{usuario.nome}</h2>
-            <Link className='text-link' to="/atualizarcadastro">
-              <Fab className='button-edit' color="primary" aria-label="edit">
-                <EditIcon />
-              </Fab>
-            </Link>
 
+      <Box className="header" >
+        <div >
+
+          <div>
+            <img className='img-perfil' src={usuario.foto} alt="" />
           </div>
-        </Box>
+          <div>
+            <h2 className='user-name'>{usuario.nome}</h2>
+          </div>
+          <div> <Link className='text-link' to="/atualizarcadastro">
+            <Fab className='button-edit' color="primary" aria-label="edit">
+              <EditIcon />
+            </Fab>
+          </Link></div>
+
+        </div>
+      </Box>
 
       <hr></hr>
 
@@ -102,18 +107,18 @@ function Perfil() {
                   }).format(new Date(post.data))}
                 </Typography>
 
-                  <Typography className='post-location' variant="body2" component="p">
-                    <strong> Comunidade:</strong> {post.tema?.tema}
-                  </Typography>
+                <Typography className='post-location' variant="body2" component="p">
+                  <strong> Comunidade:</strong> {post.tema?.tema}
+                </Typography>
 
-                
+
               </CardContent>
               <CardActions>
                 <Box display="flex" justifyContent="center" mb={1.5}>
 
                   <Link to={`/AtualizarPostagem/${post.id}`} className="text-link" >
                     <Box mx={1}>
-                      <Button variant="contained"  size='small' color="primary" >
+                      <Button variant="contained" size='small' color="primary" >
                         atualizar
                       </Button>
                     </Box>

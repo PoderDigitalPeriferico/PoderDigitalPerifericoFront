@@ -4,7 +4,7 @@
     width: 60vw;
     border-radius: 50% !important;
     display: flex;
-    margin-left: 7vw;
+    margin-left: 2em; 
     margin-top: 10vh;
     margin-bottom: 0;
 
@@ -19,23 +19,30 @@
 
 .css-1fo2sjy-MuiButtonBase-root-MuiFab-root{
     border-radius: 50% !important;
-    width: 4vw !important;
-    height: auto !important;
+    width: 4vw ;
+    height: auto ;
     z-index: 0 !important;
-    margin-left: 30vw !important;
-    margin-top: -18vh !important;
-    background-color: #1565c0 !important;
+    position: fixed;
+    top: -8em;
+    left: 8em;
+    background-color: #1565c0  !important;
   }
   
 
 .header{
     row-gap: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+
+
 }
 
 .user-name{
-    margin-left: 4vw;
-    width: 40vw !important;
-
+  position: relative;
+  
+  
 }
 hr{
 

@@ -22,8 +22,8 @@
  }
 .new-post{
     position: fixed;  
-    bottom: 3em;
-    right: 3em;
+    bottom: 0.5em !important;
+    right: 10em !important; 
     
 
 }
