@@ -14,6 +14,7 @@ import Postagem from "../../../models/Postagem";
 import { busca } from "../../../services/Services";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { Avatar } from "@mui/material";
+import './ListaPostagem.css'
 import ModalPostagem from "../modalPostagem/ModalPostagem";
 
 function ListaPostagens() {
@@ -58,36 +59,42 @@ function ListaPostagens() {
   }, [postagens.length]);
 
   return (
-    <Box display="flex" flexDirection={'column'}>
-      {postagens.map((post) => (
-        <Box m={2} width={"45vw"}>
-          <Card variant="outlined">
+    <Box display="flex" flexDirection={'column'} alignItems='start'>
+      {postagens.map((post) => (  
+        <Box >
+          <Card className='card-post' variant="outlined">
+            
             <CardContent>
-              <Typography variant="h5" component="h2">
+            <Avatar className='avatar' alt="foto usuario" src={post.usuario?.foto} />
+
+              <Typography >
                 {post.titulo.includes(".mp4") ? (
                   <video className="video" controls>
                     <source src={post.titulo} />
                   </video>
                 ) : (
-                  <img src={post.titulo} alt="Imagem da postagem" />
+                  <img className='foto-post' src={post.titulo} alt="Imagem da postagem" />
                 )}
               </Typography>
-              <Typography variant="body2" component="p">
+              <Typography variant="h5" component="h4">
                 {post.texto}
               </Typography>
               <Typography variant="body2" component="p">
-                Postado em:{" "}
+                <strong>Postado em:</strong>{" "}
                 {new Intl.DateTimeFormat(undefined, {
-                  dateStyle: "full",
-                  timeStyle: "medium",
+                  dateStyle: "short",
+                  timeStyle: "short",
                 }).format(new Date(post.data))}
               </Typography>
+             
+              <Box className='post-owner'>
               <Typography variant="body2" component="p">
-                Tema: {post.tema?.tema}
+                <strong> Comunidade:</strong> {post.tema?.tema}
               </Typography>
-              <Typography variant="body2" component="p">
-                Postado por: {post.usuario?.nome}{" "}
-                <Avatar className='avatar' alt="foto usuario" src={post.usuario?.foto} />
+              </Box>
+             
+              <Typography className='post-owner' variant="body2" component="p">
+                <strong>Postado por:</strong> {post.usuario?.nome}
               </Typography>
             </CardContent>
           </Card>
