@@ -53,3 +53,11 @@ flex-direction: column;
 
 
 }
+.pagination{
+    justify-content: center;
+    margin-left: 17vw;
+}
+.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    color: #fff;
+    background-color: rgb(228, 154, 58)!important;
+}

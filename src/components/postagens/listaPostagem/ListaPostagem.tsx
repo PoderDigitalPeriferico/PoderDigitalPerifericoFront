@@ -4,6 +4,7 @@ import {
   Card,
   CardActions,
   CardContent,
+  Pagination,
   Typography,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
@@ -16,6 +17,7 @@ import { TokenState } from "../../../store/tokens/tokensReducer";
 import { Avatar } from "@mui/material";
 import './ListaPostagem.css'
 import ModalPostagem from "../modalPostagem/ModalPostagem";
+import { Grid } from '@material-ui/core';
 
 function ListaPostagens() {
   let navigate = useNavigate();
@@ -96,10 +98,13 @@ function ListaPostagens() {
               <Typography className='post-owner' variant="body2" component="p">
                 <strong>Postado por:</strong> {post.usuario?.nome}
               </Typography>
+              
             </CardContent>
           </Card>
         </Box>
+        
       ))}
+      <Pagination className="pagination" count={10} color="primary" />
     </Box>
   );
 }
