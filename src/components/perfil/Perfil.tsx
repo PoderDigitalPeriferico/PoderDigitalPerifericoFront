@@ -111,14 +111,14 @@ function Perfil() {
               <CardActions>
                 <Box display="flex" justifyContent="center" mb={1.5}>
 
-                  <Link to={`/AtualizrPostagem/${post.id}`} className="text-decorator-none" >
+                  <Link to={`/AtualizarPostagem/${post.id}`} className="text-link" >
                     <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                      <Button variant="contained"  size='small' color="primary" >
                         atualizar
                       </Button>
                     </Box>
                   </Link>
-                  <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
+                  <Link className='text-link' to={`/deletarPostagem/${post.id}`} >
                     <Box mx={1}>
                       <Button variant="contained" size='small' color="secondary">
                         deletar

@@ -5,4 +5,7 @@
 .btnModal{
     color: #fff !important;
     background-color: #3f51b5 !important;
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50% !important;
 }
