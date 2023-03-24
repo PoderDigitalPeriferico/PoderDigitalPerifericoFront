@@ -22,3 +22,6 @@
     background-size: cover;
     z-index: 1;
 }
+.MuiButton-textPrimary {
+    color: #fff !important;
+}

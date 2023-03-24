@@ -1,10 +1,10 @@
 
 
 .img-perfil{
-    width: 60vw;
+    width: 15vw !important;
     border-radius: 50% !important;
     display: flex;
-    margin-left: 2em; 
+ 
     margin-top: 10vh;
     margin-bottom: 0;
 
@@ -24,7 +24,7 @@
     z-index: 0 !important;
     position: fixed;
     top: -8em;
-    left: 8em;
+    left: 10em;
     background-color: #1565c0  !important;
   }
   
