@@ -47,6 +47,8 @@ function ListaPostagens() {
   });
 
   const [postagens, setPostagens] = useState<Postagem[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const itemsPerPage = 3;
 
   async function getPosts() {
     await busca("/postagens", setPostagens, {
@@ -60,14 +62,22 @@ function ListaPostagens() {
     getPosts();
   }, [postagens.length]);
 
+  const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    setCurrentPage(value);
+  }
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = postagens.slice(startIndex, endIndex);
+
   return (
-    <Box display="flex" flexDirection={'column'} alignItems='center'>
-      {postagens.map((post) => (  
+    <Box display="flex" flexDirection={'column'} alignItems='start'>
+      {currentItems.map((post) => (  
         <Box >
           <Card className='card-post' variant="outlined">
             
             <CardContent>
-            <Avatar className='avatar-post' alt="foto usuario" src={post.usuario?.foto} />
+            <Avatar className='avatar' alt="foto usuario" src={post.usuario?.foto} />
 
               <Typography >
                 {post.titulo.includes(".mp4") ? (
@@ -78,7 +88,7 @@ function ListaPostagens() {
                   <img className='foto-post' src={post.titulo} alt="Imagem da postagem" />
                 )}
               </Typography>
-              <Typography className='post-text' variant="h5" component="h4">
+              <Typography variant="h5" component="h4">
                 {post.texto}
               </Typography>
               <Typography variant="body2" component="p">
@@ -104,7 +114,12 @@ function ListaPostagens() {
         </Box>
         
       ))}
-      <Pagination className="pagination" count={10} color="primary" />
+      <Pagination
+  className="pagination"
+  count={Math.ceil(postagens.length / itemsPerPage)}
+  page={currentPage}
+  onChange={handlePageChange}
+/>
     </Box>
   );
 }
