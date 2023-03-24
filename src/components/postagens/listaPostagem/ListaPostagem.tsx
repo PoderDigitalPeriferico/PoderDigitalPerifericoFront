@@ -15,9 +15,13 @@ import Postagem from "../../../models/Postagem";
 import { busca } from "../../../services/Services";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { Avatar } from "@mui/material";
-import './ListaPostagem.css'
+import "./ListaPostagem.css";
 import ModalPostagem from "../modalPostagem/ModalPostagem";
-import { Grid } from '@material-ui/core';
+import { Grid } from "@material-ui/core";
+import YouTube from "react-youtube";
+import Facebook from "react-facebook";
+//import FacebookPlayer from "react-player/facebook";
+//import ReactPlayer from 'react-player';
 
 function ListaPostagens() {
   let navigate = useNavigate();
@@ -26,9 +30,7 @@ function ListaPostagens() {
     (state) => state.tokens
   );
 
-
   const userId = useSelector<TokenState, TokenState["id"]>((state) => state.id);
-
 
   useEffect(() => {
     if (token === "") {
@@ -62,33 +64,102 @@ function ListaPostagens() {
     getPosts();
   }, [postagens.length]);
 
-  const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
+  const handlePageChange = (
+    event: React.ChangeEvent<unknown>,
+    value: number
+  ) => {
     setCurrentPage(value);
     window.scrollTo(0, 0);
-  }
+  };
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentItems = postagens.slice(startIndex, endIndex);
 
   return (
-    <Box display="flex" flexDirection={'column'} alignItems='start'>
-      {currentItems.map((post) => (  
-        <Box >
-          <Card className='card-post' variant="outlined">
-            
+    <Box display="flex" flexDirection={"column"} alignItems="start">
+      {currentItems.map((post) => (
+        <Box>
+          <Card className="card-post" variant="outlined">
             <CardContent>
-            <Avatar className='avatar' alt="foto usuario" src={post.usuario?.foto} />
-
-              <Typography >
-                {post.titulo.includes(".mp4") ? (
-                  <video className="video" controls>
-                    <source src={post.titulo} />
-                  </video>
-                ) : (
-                  <img className='foto-post' src={post.titulo} alt="Imagem da postagem" />
-                )}
+              <Avatar
+                className="avatar"
+                alt="foto usuario"
+                src={post.usuario?.foto}
+              />
+              <Typography>
+                {(() => {
+                  const url = post.titulo;
+                  switch (true) {
+                    case url.includes("youtube.com"):
+                      return (
+                        <YouTube
+                          className="video"
+                          videoId={url.split("=")[1]}
+                          opts={{
+                            height: "390",
+                            width: "640",
+                            playerVars: { autoplay: 0 },
+                          }}
+                        />
+                      );
+                    case url.includes(".mp4"):
+                      return (
+                        <video className="video" controls>
+                          <source src={url} />
+                        </video>
+                      );
+                    case url.includes("https://m.facebook.com/"):
+                      return (
+                        <div
+                          className="fb-video"
+                          data-href={url}
+                          data-width="640"
+                          data-show-text="true"
+                        >
+                          <div className="fb-xfbml-parse-ignore"></div>
+                        </div>
+                      );
+                    case url.includes("instagram.com"):
+                      return (
+                        <iframe
+                          src={`https://www.instagram.com/p/${
+                            url.split("/")[4]
+                          }/embed`}
+                          className="video"
+                          width="flex"
+                          height="flex"
+                          frameBorder={"0"}
+                          scrolling="no"
+                          title="Instagram video"
+                        ></iframe>
+                      );
+                    case url.includes("tiktok.com"):
+                      return (
+                        <iframe
+                          src={`https://www.tiktok.com/embed/v2/${
+                            url.split("/")[5]
+                          }?lang=en-US`}
+                          className="video"
+                          width="640"
+                          height="750"
+                          frameBorder={"0"}
+                          scrolling="no"
+                          title="TikTok video"
+                        ></iframe>
+                      );
+                    default:
+                      return (
+                        <img
+                          className="foto-post"
+                          src={url}
+                          alt="Imagem da postagem"
+                        />
+                      );
+                  }
+                })()}
               </Typography>
+
               <Typography variant="h5" component="h4">
                 {post.texto}
               </Typography>
@@ -99,28 +170,26 @@ function ListaPostagens() {
                   timeStyle: "short",
                 }).format(new Date(post.data))}
               </Typography>
-             
-              <Box className='post-owner'>
-              <Typography variant="body2" component="p">
-                <strong> Comunidade:</strong> {post.tema?.tema}
-              </Typography>
+
+              <Box className="post-owner">
+                <Typography variant="body2" component="p">
+                  <strong> Comunidade:</strong> {post.tema?.tema}
+                </Typography>
               </Box>
-             
-              <Typography className='post-owner' variant="body2" component="p">
+
+              <Typography className="post-owner" variant="body2" component="p">
                 <strong>Postado por:</strong> {post.usuario?.nome}
               </Typography>
-              
             </CardContent>
           </Card>
         </Box>
-        
       ))}
       <Pagination
-  className="pagination"
-  count={Math.ceil(postagens.length / itemsPerPage)}
-  page={currentPage}
-  onChange={handlePageChange}
-/>
+        className="pagination"
+        count={Math.ceil(postagens.length / itemsPerPage)}
+        page={currentPage}
+        onChange={handlePageChange}
+      />
     </Box>
   );
 }
