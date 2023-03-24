@@ -64,6 +64,7 @@ function ListaPostagens() {
 
   const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setCurrentPage(value);
+    window.scrollTo(0, 0);
   }
 
   const startIndex = (currentPage - 1) * itemsPerPage;
