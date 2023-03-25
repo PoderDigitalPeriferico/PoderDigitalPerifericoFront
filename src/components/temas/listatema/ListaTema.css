@@ -1,8 +1,8 @@
 .fundo-listaTemas{
-    background-image: url('https://ik.imagekit.io/wwd7wv4ro/PDP_Recortado.png?updatedAt=1679054395187');
+    background-image: url('https://ik.imagekit.io/wwd7wv4ro/PDP_full_branco.png?updatedAt=1679053313611');
 
     background-repeat: no-repeat;
-    background-size: 50vw;
+    background-size: 100vw;
     background-position-x: center;
     width: 100%;
     padding: 20px 20px;
@@ -15,6 +15,17 @@
 
  .cards{
     background-color: rgba(255, 255, 255, 0.685) !important;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.685) !important;
+    flex-direction: column;
+    align-items: center;
+    left: 50%;
+    display: flex;
+    top: 50%;
+    width: 50vw;
+    margin-top: 50px;
+    transform: translate(-50%, 10px);
+    margin-bottom: 0;
    
  }
 
