@@ -18,9 +18,9 @@ import { Avatar } from "@mui/material";
 import "./ListaPostagem.css";
 import ModalPostagem from "../modalPostagem/ModalPostagem";
 import { Grid } from "@material-ui/core";
-//import YouTube from "react-yoyutube";
-//import FacebookPlayer from "react-player/facebook";
-//import ReactPlayer from 'react-player';
+import YouTube from "react-youtube";
+import FacebookPlayer from "react-player/facebook";
+import ReactPlayer from 'react-player';
 
 function ListaPostagens() {
   let navigate = useNavigate();
