@@ -25,9 +25,7 @@ function Home() {
             <Grid className='fundo' container direction="row" justifyContent="center" alignItems="center" >
                 <Grid item xs={1}>
                 <Box className='new-post' >
-                        
-                      
-                    
+
                 </Box>
 
                 </Grid>
