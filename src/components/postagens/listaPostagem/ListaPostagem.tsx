@@ -50,7 +50,7 @@ function ListaPostagens() {
 
   const [postagens, setPostagens] = useState<Postagem[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 3;
+  const itemsPerPage = 8;
 
   async function getPosts() {
     await busca("/postagens", setPostagens, {
