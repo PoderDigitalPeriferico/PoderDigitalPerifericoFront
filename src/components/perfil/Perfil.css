@@ -19,7 +19,7 @@
   background-color: #5a92d3 !important;
 }
 
-.css-1fo2sjy-MuiButtonBase-root-MuiFab-root{
+.css-1l3umsk{
     border-radius: 50% !important;
     width: 4vw ;
     height: auto ;
@@ -30,6 +30,25 @@
     z-index: 13 !important;
     background-color: #1565c0  !important;
   }
+  .css-1l3umsk:hover{
+  
+    background-color: #5a92d3 !important;
+
+}
+
+
+
+.css-1fo2sjy-MuiButtonBase-root-MuiFab-root{
+    border-radius: 50% !important;
+    width: 4vw ;
+    height: auto ;
+    position: relative !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(80%, -220%);
+    z-index: 13 !important;
+    background-color: #1565c0  !important;
+}
   
 
 .header{

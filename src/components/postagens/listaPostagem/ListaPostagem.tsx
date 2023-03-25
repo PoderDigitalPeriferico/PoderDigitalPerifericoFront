@@ -18,7 +18,7 @@ import { Avatar } from "@mui/material";
 import "./ListaPostagem.css";
 import ModalPostagem from "../modalPostagem/ModalPostagem";
 import { Grid } from "@material-ui/core";
-//import YouTube from "react-yoyutube";
+import YouTube from "react-youtube";
 //import FacebookPlayer from "react-player/facebook";
 //import ReactPlayer from 'react-player';
 
@@ -122,9 +122,8 @@ function ListaPostagens() {
                     case url.includes("instagram.com"):
                       return (
                         <iframe
-                          src={`https://www.instagram.com/p/${
-                            url.split("/")[4]
-                          }/embed`}
+                          src={`https://www.instagram.com/p/${url.split("/")[4]
+                            }/embed`}
                           className="video"
                           width="flex"
                           height="flex"
@@ -136,9 +135,8 @@ function ListaPostagens() {
                     case url.includes("tiktok.com"):
                       return (
                         <iframe
-                          src={`https://www.tiktok.com/embed/v2/${
-                            url.split("/")[5]
-                          }?lang=en-US`}
+                          src={`https://www.tiktok.com/embed/v2/${url.split("/")[5]
+                            }?lang=en-US`}
                           className="video"
                           width="640"
                           height="750"
