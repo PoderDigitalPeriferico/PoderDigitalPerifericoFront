@@ -20,6 +20,7 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 import Perfil from './components/perfil/Perfil';
 import PutUsuario from "./components/putUsuario/PutUsuario";
+import ListaPorTema from "./components/temas/listaPorTema/ListaPorTema";
 
 
 function App() {
@@ -60,6 +61,8 @@ function App() {
           <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
 
           <Route path="/deletarTema/:id" element={<DeletarTema />} />
+
+          <Route path="/listaPorTema/:id" element={<ListaPorTema />} />
         </Routes>
       </div>
       <Footer />

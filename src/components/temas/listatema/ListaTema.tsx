@@ -81,6 +81,13 @@ function ListaTema() {
                   </Button>
                 </Box>
               </Link>
+              <Link className='texr-link'  to={`/listaPorTema/${tema.id}`}>
+                <Box mx={1}>
+                  <Button variant="contained" size='small' color="default">
+                    Ver Postagens
+                  </Button>
+                </Box>
+              </Link>
             </Box>
           </CardActions>
         </Card>
