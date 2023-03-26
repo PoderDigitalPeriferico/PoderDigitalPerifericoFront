@@ -72,7 +72,7 @@ function ListaPostagens() {
   // const endIndex = startIndex + itemsPerPage;
   // const currentItems = postagens.slice(startIndex, endIndex);
   return (
-    <Box display="flex" flexDirection={"column"} alignItems="start">
+    <Box p={2} display="flex" flexDirection={"column"} alignItems="start">
       {/* {currentItems.map((post) => ( */}
       {postagens.map((post) => (
         <Box>
@@ -93,8 +93,8 @@ function ListaPostagens() {
                           className="video"
                           videoId={url.split("=")[1]}
                           opts={{
-                            height: "390",
-                            width: "640",
+                            height: "auto",
+                            width: "auto",
                             playerVars: { autoplay: 0 },
                           }}
                         />

@@ -1,57 +1,82 @@
-.card{
-    width: 75vw !important;
-    margin-left: 50%px;
-}
-
-.img-post{
-    width: 75%;
-    /* height: 500; */
-}
-
-.video{
-    width: 50vw;
-    height: 60vh;
-}
-.text-link{
-    text-decoration: none !important; 
-}
-
-.css-1pqm26d-MuiAvatar-img{
-    margin: 100px;
-}
-.postado-por{
- margin-left: 50%;
-display: flex;
-flex-direction: column;
-}
-
-.foto-post{ 
-    width: 50vw;
-    height: 65vh;
-}
-
-.card-post{
-    margin-top: 8vw !important;
-    width: 65vw;
-    border-radius: 8px;
-    margin-left: -8vw !important;
-    padding-bottom: 5vw;
-}
-
-.avatar-post{
-  margin-bottom: 20px;
+/* Styles for both mobile and web */
+.card {
+    width: 90vw !important; /* Card takes up 90% of viewport width */
+    margin: 0 auto 20% !important; /* Add 20% margin at the bottom */
+  }
   
-
-}
-.post-text{
-    word-break: break-all !important;
-
-}
-.pagination{
-    justify-content: center;
-    margin-left: 17vw;
-}
-.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
-    color: #fff;
-    background-color: rgb(228, 154, 58)!important;
-}
+  .img-post {
+    width: 100% !important; /* Images fill the entire width of their container */
+    height: auto !important; /* Maintain aspect ratio */
+  }
+  
+  .video {
+    width: 100% !important; /* Videos fill the entire width of their container */
+    height: auto !important; /* Maintain aspect ratio */
+  }
+  
+  .text-link {
+    text-decoration: none !important; /* Remove underline from links */
+  }
+  
+  .css-1pqm26d-MuiAvatar-img {
+    margin: 1rem; /* Add margin around avatars */
+  }
+  
+  .postado-por {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Center post information vertically */
+  }
+  
+  .foto-post {
+    width: 100% !important; /* Images fill the entire width of their container */
+    height: auto !important; /* Maintain aspect ratio */
+  }
+  
+  .card-post {
+    margin-top: 2rem !important;
+    width: 90vw !important; /* Card post takes up 90% of viewport width */
+    border-radius: 8px !important;
+    margin: 0 auto; /* Center card post horizontally */
+    padding-bottom: 5vw !important; /* Add padding at the bottom of the card post */
+  }
+  
+  .avatar-post {
+    margin-bottom: 20px !important; /* Add margin below avatar */
+  }
+  
+  .post-text {
+    word-break: break-all !important; /* Break long words */
+  }
+  
+  .pagination {
+    justify-content: center !important;
+    margin: 0 auto !important;
+    margin-top: 2rem !important; /* Add margin at the top of the pagination */
+  }
+  
+  .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    color: #fff !important;
+    background-color: rgb(228, 154, 58) !important; /* Change selected pagination item color */
+  }
+  
+  /* Styles for mobile only */
+  @media (max-width: 768px) {
+    .card {
+        width: 90vw !important; /* Card takes up 90% of viewport width */
+        margin: 0 auto 20% !important; /* Add 20% margin at the bottom */
+      
+    }
+    
+    .card-post {
+      padding-bottom: 10vw !important; /* Increase padding at the bottom of the card post */
+    }
+  }
+  
+  /* Styles for web only */
+  @media (min-width: 769px) {
+    .card {
+      max-width: 768px !important; /* Card has a maximum width of 768px */
+    }
+  }
+  
