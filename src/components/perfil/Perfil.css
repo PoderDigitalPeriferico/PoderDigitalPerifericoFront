@@ -1,4 +1,7 @@
+body{
+   background-color: #ffd5ad;
 
+}
 
 .img-perfil {
     width: 15vw !important;
@@ -62,9 +65,10 @@
 }
 
 .user-name{
-	display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }  
 
 hr{

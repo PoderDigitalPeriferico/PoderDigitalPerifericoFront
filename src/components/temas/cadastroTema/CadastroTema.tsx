@@ -102,10 +102,30 @@ function CadastroTema() {
         function back() {
             navigate('/temas')
         }
-  
+
+        const tempo_de_delay = 10000
+
+setTimeout(() => (
+    document.body.style.backgroundSize = '100%',
+    document.body.style.backgroundRepeat = 'no-repeat',
+    document.body.style.transition = "background 500ms ease",
+    document.body.style.backgroundImage = "url('https://classic.exame.com/wp-content/uploads/2022/10/MACRO-3-1.jpg?quality=70&strip=info&w=1024')"
+), tempo_de_delay)
+
+const tempo_de_delay1 = 20000
+
+setTimeout(() => (
+    document.body.style.backgroundSize = '100vw',
+    document.body.style.backgroundRepeat = 'no-repeat',
+    document.body.style.transition = "background 500ms ease",
+    document.body.style.backgroundImage = "url('https://veja.abril.com.br/wp-content/uploads/2022/04/GettyImages-163394488.jpg?quality=70&strip=info&w=1280&h=720&crop=1')"
+), tempo_de_delay1)
+
+
     return (
 
-        <Container  maxWidth="sm" className="topo">
+        <Container  id='container' maxWidth="sm" className="topo">
+            
             <form onSubmit={onSubmit}>
                 <Typography className='titulo' variant="h3" component="h1" align="center" >Cadastre sua Comunidade</Typography>
                 <TextField value={tema.tema} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="temas" label="Qbrada" variant="outlined" name="tema" margin="normal" fullWidth />
