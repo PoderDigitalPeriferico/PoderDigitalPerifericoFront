@@ -21,6 +21,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import Perfil from './components/perfil/Perfil';
 import PutUsuario from "./components/putUsuario/PutUsuario";
 import ListaPorTema from "./components/temas/listaPorTema/ListaPorTema";
+import PerfilUsuarios from "./components/perfil/perfilusuarios/PerfilUsuarios";
 
 
 function App() {
@@ -63,6 +64,10 @@ function App() {
           <Route path="/deletarTema/:id" element={<DeletarTema />} />
 
           <Route path="/listaPorTema/:id" element={<ListaPorTema />} />
+
+          <Route path="/perfilUsuarios/:id" element={<PerfilUsuarios />} />
+
+
         </Routes>
       </div>
       <Footer />
