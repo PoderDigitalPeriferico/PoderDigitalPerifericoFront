@@ -5,12 +5,12 @@
   }
   
   .img-post {
-    width: 100% !important; /* Images fill the entire width of their container */
+    width: auto !important; /* Images fill the entire width of their container */
     height: auto !important; /* Maintain aspect ratio */
   }
   
   .video {
-    width: 100% !important; /* Videos fill the entire width of their container */
+    width: auto !important; /* Videos fill the entire width of their container */
     height: auto !important; /* Maintain aspect ratio */
   }
   
@@ -29,7 +29,7 @@
   }
   
   .foto-post {
-    width: 100% !important; /* Images fill the entire width of their container */
+    width: 50vw !important; /* Images fill the entire width of their container */
     height: auto !important; /* Maintain aspect ratio */
   }
   

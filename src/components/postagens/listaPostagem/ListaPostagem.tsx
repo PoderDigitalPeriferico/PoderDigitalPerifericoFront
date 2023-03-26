@@ -72,7 +72,7 @@ function ListaPostagens() {
   // const endIndex = startIndex + itemsPerPage;
   // const currentItems = postagens.slice(startIndex, endIndex);
   return (
-    <Box p={2} display="flex" flexDirection={"column"} alignItems="start">
+    <Box display="flex" flexDirection={"column"} alignItems="start">
       {/* {currentItems.map((post) => ( */}
       {postagens.map((post) => (
         <Box>
@@ -93,8 +93,8 @@ function ListaPostagens() {
                           className="video"
                           videoId={url.split("=")[1]}
                           opts={{
-                            height: "auto",
-                            width: "auto",
+                            height: "390",
+                            width: "640",
                             playerVars: { autoplay: 0 },
                           }}
                         />
@@ -122,8 +122,8 @@ function ListaPostagens() {
                           src={`https://www.instagram.com/p/${url.split("/")[4]
                             }/embed`}
                           className="video"
-                          width="flex"
-                          height="flex"
+                          width="390"
+                          height="640"
                           frameBorder={"0"}
                           scrolling="no"
                           title="Instagram video"
@@ -147,6 +147,8 @@ function ListaPostagens() {
                         <img
                           className="foto-post"
                           src={url}
+                          width="390"
+                          height="640"
                           alt="Imagem da postagem"
                         />
                       );
