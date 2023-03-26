@@ -18,8 +18,7 @@ import { Avatar } from "@mui/material";
 import "./ListaPostagem.css";
 import ModalPostagem from "../modalPostagem/ModalPostagem";
 import { Grid } from "@material-ui/core";
-import YouTube from "react-youtube";
-import Facebook from "react-facebook";
+//import YouTube from "react-yoyutube";
 //import FacebookPlayer from "react-player/facebook";
 //import ReactPlayer from 'react-player';
 
@@ -46,7 +45,12 @@ function ListaPostagens() {
   });
   const [postagens, setPostagens] = useState<Postagem[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
+<<<<<<< HEAD
   const itemsPerPage = 3;
+=======
+  const itemsPerPage = 8;
+
+>>>>>>> e5286099d53ed77ccf1ea0ce1acb7546b4326384
   async function getPosts() {
     await busca("/postagens", setPostagens, {
       headers: {
@@ -114,9 +118,8 @@ function ListaPostagens() {
                     case url.includes("instagram.com"):
                       return (
                         <iframe
-                          src={`https://www.instagram.com/p/${
-                            url.split("/")[4]
-                          }/embed`}
+                          src={`https://www.instagram.com/p/${url.split("/")[4]
+                            }/embed`}
                           className="video"
                           width="flex"
                           height="flex"
@@ -128,9 +131,8 @@ function ListaPostagens() {
                     case url.includes("tiktok.com"):
                       return (
                         <iframe
-                          src={`https://www.tiktok.com/embed/v2/${
-                            url.split("/")[5]
-                          }?lang=en-US`}
+                          src={`https://www.tiktok.com/embed/v2/${url.split("/")[5]
+                            }?lang=en-US`}
                           className="video"
                           width="640"
                           height="750"

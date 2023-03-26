@@ -20,12 +20,29 @@
 .navbar{
     position: fixed !important;
     background-size: cover;
-    z-index: 1;
+    z-index: 20;
 }
 .MuiButton-textPrimary {
     color: #fff !important;
 }
 
+<<<<<<< HEAD
 .NavbarStyles.navbar{
     position: "static"
 }
+=======
+.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper{
+    z-index: 22;
+    padding: 14px;
+    margin: 10px;
+    display: flex !important;
+    flex-direction: column !important;
+}
+.titulo-sx{
+    color: #fff !important;
+}
+
+.css-1uwgr7b-MuiTypography-root{
+    color: #000 !important;
+}
+>>>>>>> e5286099d53ed77ccf1ea0ce1acb7546b4326384

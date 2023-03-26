@@ -1,13 +1,15 @@
 
 
-.img-perfil{
+.img-perfil {
     width: 15vw !important;
     border-radius: 50% !important;
-    display: flex;
- 
-    margin-top: 10vh;
-    margin-bottom: 0;
+    position: relative;
+    z-index: 12;
+    left: 50%;
+    top: 50% !important;
+    filter: drop-shadow(8px 10px 10px black);
 
+    transform: translate(-50%, 0%);
 }
 .text-link{
     text-decoration: none;
@@ -17,16 +19,36 @@
   background-color: #5a92d3 !important;
 }
 
+.css-1l3umsk{
+    border-radius: 50% !important;
+    width: 4vw ;
+    height: auto ;
+    position: relative !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(80%, -220%);
+    z-index: 13 !important;
+    background-color: #1565c0  !important;
+  }
+  .css-1l3umsk:hover{
+  
+    background-color: #5a92d3 !important;
+
+}
+
+
+
 .css-1fo2sjy-MuiButtonBase-root-MuiFab-root{
     border-radius: 50% !important;
     width: 4vw ;
     height: auto ;
-    z-index: 0 !important;
-    position: fixed;
-    top: -8em;
-    left: 10em;
+    position: relative !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(80%, -220%);
+    z-index: 13 !important;
     background-color: #1565c0  !important;
-  }
+}
   
 
 .header{
@@ -34,16 +56,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 10%;
     gap: 4em;
-
 
 }
 
 .user-name{
-  position: relative;
-  
-  
-}
+    position: relative;
+    left: 50%;
+    TOP: 50% !important;
+    transform: translate(-8%, 160%);
+
+}  
+
 hr{
 
     margin: 0;
@@ -70,3 +95,117 @@ margin-left: 42%;
 .post-location{
     margin-left: -45vw !important;
 }
+
+
+
+
+
+
+.header {
+    background: -moz-linear-gradient(45deg, #02e1ba 0%, #26c9f2 29%, #d911f2 66%, #ffa079 100%);
+    background: -webkit-linear-gradient(45deg, #02e1ba 0%,#26c9f2 29%,#d911f2 66%,#ffa079 100%);
+    background: linear-gradient(45deg, rgb(89 30 24) 0%,rgb(137 28 20) 29%,rgb(238 176 15) 66%,#ec36aa 100%);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+	/*min-height: calc(100vh - 2rem);*/
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: space-evenly;
+	overflow: hidden;
+	position: relative; 
+}
+
+.header::before, 
+.header::after {
+	content: "";
+	width: 70vmax;
+	height: 70vmax;
+	position: absolute;
+	background: rgba(255, 255, 255, 0.07);
+	left: -20vmin;
+	top: -20vmin;
+	animation: morph 15s linear infinite alternate, spin 20s linear infinite;
+	z-index: 1;
+	will-change: border-radius, transform;
+	transform-origin: 55% 55%;
+	pointer-events: none; 
+}
+	
+.header::after {
+    width: 70vmin;
+    height: 70vmin;
+    left: auto;
+    right: -10vmin;
+    top: auto;
+    bottom: 0;
+    animation: morph 10s linear infinite alternate, spin 26s linear infinite reverse;
+    transform-origin: 20% 20%; 
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0 50%
+	}
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%; }
+  100% {
+    border-radius: 40% 60%; } 
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn); 
+  } 
+}
+	.st0{display:none;}
+	.st1{display:inline;}
+	.st2{opacity:0.29;}
+	.st3{fill:#FFFFFF;}
+	.st4{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
+	.st5{clip-path:url(#SVGID_4_);}
+	.st6{clip-path:url(#SVGID_6_);}
+	.st7{clip-path:url(#SVGID_8_);}
+	.st8{clip-path:url(#SVGID_10_);}
+	.st9{fill:none;}
+	.st10{clip-path:url(#SVGID_12_);}
+	.st11{opacity:0.7;}
+	.st12{clip-path:url(#SVGID_14_);}
+	.st13{opacity:0.2;}
+	.st14{clip-path:url(#SVGID_16_);}
+	.st15{opacity:0.3;fill:#FFFFFF;enable-background:new    ;}
