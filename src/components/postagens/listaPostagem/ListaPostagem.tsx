@@ -12,25 +12,27 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Postagem from "../../../models/Postagem";
-import { busca } from "../../../services/Services";
+import { busca, buscaId } from "../../../services/Services";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { Avatar } from "@mui/material";
 import "./ListaPostagem.css";
 import ModalPostagem from "../modalPostagem/ModalPostagem";
 import { Grid } from "@material-ui/core";
 import YouTube from "react-youtube";
+<<<<<<< HEAD
 //import FacebookPlayer from "react-player/facebook";
 //import ReactPlayer from 'react-player';
+=======
+import FacebookPlayer from "react-player/facebook";
+import ReactPlayer from 'react-player';
+>>>>>>> a23f7325a53d11091e7c8aba6bfba4d7b909ef53
 
 function ListaPostagens() {
   let navigate = useNavigate();
-
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
-
   const userId = useSelector<TokenState, TokenState["id"]>((state) => state.id);
-
   useEffect(() => {
     if (token === "") {
       toast.error("Você precisa estar logado pra ficar aqui", {
@@ -46,11 +48,14 @@ function ListaPostagens() {
       navigate("/login");
     }
   });
-
   const [postagens, setPostagens] = useState<Postagem[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 8;
+//   const [currentPage, setCurrentPage] = useState<number>(1);
+// <<<<<<< HEAD
+//   const itemsPerPage = 3;
+// =======
+//   const itemsPerPage = 8;
 
+// >>>>>>> e5286099d53ed77ccf1ea0ce1acb7546b4326384
   async function getPosts() {
     await busca("/postagens", setPostagens, {
       headers: {
@@ -62,30 +67,30 @@ function ListaPostagens() {
   useEffect(() => {
     getPosts();
   }, [postagens.length]);
-
-  const handlePageChange = (
-    event: React.ChangeEvent<unknown>,
-    value: number
-  ) => {
-    setCurrentPage(value);
-    window.scrollTo(0, 0);
-  };
-
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentItems = postagens.slice(startIndex, endIndex);
-
+  // const handlePageChange = (
+  //   event: React.ChangeEvent<unknown>,
+  //   value: number
+  // ) => {
+  //   setCurrentPage(value);
+  //   window.scrollTo(0, 0);
+  // };
+  // const startIndex = (currentPage - 1) * itemsPerPage;
+  // const endIndex = startIndex + itemsPerPage;
+  // const currentItems = postagens.slice(startIndex, endIndex);
   return (
-    <Box display="flex" flexDirection={"column"} alignItems="start">
-      {currentItems.map((post) => (
+    <Box p={2} display="flex" flexDirection={"column"} alignItems="start">
+      {/* {currentItems.map((post) => ( */}
+      {postagens.map((post) => (
         <Box>
           <Card className="card-post" variant="outlined">
             <CardContent>
-              <Avatar
+              <Link className='texr-link'  to={`/perfilUsuarios/${post.usuario?.id}`}>
+                <Avatar
                 className="avatar"
                 alt="foto usuario"
                 src={post.usuario?.foto}
-              />
+                />
+              </Link>
               <Typography>
                 {(() => {
                   const url = post.titulo;
@@ -96,8 +101,8 @@ function ListaPostagens() {
                           className="video"
                           videoId={url.split("=")[1]}
                           opts={{
-                            height: "390",
-                            width: "640",
+                            height: "auto",
+                            width: "auto",
                             playerVars: { autoplay: 0 },
                           }}
                         />
@@ -181,12 +186,12 @@ function ListaPostagens() {
           </Card>
         </Box>
       ))}
-      <Pagination
+      {/* <Pagination
         className="pagination"
         count={Math.ceil(postagens.length / itemsPerPage)}
         page={currentPage}
         onChange={handlePageChange}
-      />
+      /> */}
     </Box>
   );
 }
