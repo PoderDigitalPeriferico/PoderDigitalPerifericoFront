@@ -1,4 +1,7 @@
+body{
+   background-color: #ffd5ad;
 
+}
 
 .img-perfil {
     width: 15vw !important;
@@ -65,7 +68,7 @@
     position: relative;
     left: 50%;
     TOP: 50% !important;
-    transform: translate(-8%, 160%);
+    transform: translate(-9%, 160%);
 
 }  
 

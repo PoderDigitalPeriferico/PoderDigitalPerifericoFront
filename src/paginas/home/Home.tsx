@@ -16,7 +16,13 @@ function Home() {
     let navigate = useNavigate();
     const token = useSelector<TokenState, TokenState['tokens']>(
         (state) => state.tokens);
+        
+        
+        const tempo_de_delay = 10
 
+        setTimeout(() => (
+            document.body.style.backgroundImage = "url('')"
+        ), tempo_de_delay)
 
 
     return (

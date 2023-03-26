@@ -18,7 +18,7 @@
  .fundo{
     background-repeat: no-repeat;
     background-size: 100vw;
-    background-color: rgb(255, 212, 171) !important;
+    background-color: #ffd5ad !important;
  }
 .new-post{
     position: fixed;  
