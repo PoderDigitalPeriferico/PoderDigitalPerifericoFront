@@ -25,3 +25,7 @@
 .MuiButton-textPrimary {
     color: #fff !important;
 }
+
+.NavbarStyles.navbar{
+    position: "static"
+}

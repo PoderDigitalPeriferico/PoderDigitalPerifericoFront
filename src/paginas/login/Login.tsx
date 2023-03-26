@@ -88,7 +88,7 @@ function Login() {
   }, [respUserLogin.token]);
 
   return (
-    <Grid container className='responsive'>
+    <Grid container className="responsive">
       <Grid
         container
         item
@@ -99,8 +99,8 @@ function Login() {
           // https://img.freepik.com/fotos-gratis/bela-vista-de-uma-pequena-cidade-nas-montanhas-durante-o-por-do-sol-no-brasil_181624-39388.jpg?w=1380&t=st=1678927973~exp=1678928573~hmac=9d10b84295ac61de991523135d7fdb7e7004d250801a39d01d73fe8065dc2a09
 
           backgroundRepeat: "no-repeat",
-          width: "100vh",
-          minHeight: "100vh",
+          width: "auto",
+          minHeight: "auto",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -113,13 +113,12 @@ function Login() {
         >
           <Grid justifyContent="flex-end" alignItems="center" xs={6}>
             <Box paddingX={20} className="componentLogin">
-            <img
-                  className="logo-login"
-                  src="https://ik.imagekit.io/wwd7wv4ro/PDP_full_branco.png?updatedAt=1679053313611"
-                  alt=""
-                />
-              <form className='form-login' onSubmit={onSubmit}>
-              
+              <img
+                className="logo-login"
+                src="https://ik.imagekit.io/wwd7wv4ro/PDP_full_branco.png?updatedAt=1679053313611"
+                alt=""
+              />
+              <form className="form-login" onSubmit={onSubmit}>
                 <TextField
                   value={userLogin.usuario}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -147,18 +146,19 @@ function Login() {
                   fullWidth
                 />
                 <Box marginTop={2} textAlign="center">
-                  <Button type="submit" variant="contained" color="primary" disabled={isLoading}>
-                    {isLoading ? 'aguarde' : 'entrar'}
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? "aguarde" : "entrar"}
                   </Button>
                 </Box>
               </form>
 
               <Box display="flex" justifyContent="center" marginTop={2}>
-                <Box marginRight={1}>
-                  <Typography variant="subtitle1" gutterBottom align="center">
-                    Não tem uma conta?
-                  </Typography>
-                </Box>
+                <Box marginRight={1}></Box>
                 <Link className="text-decorator-none" to="/cadastrar">
                   <Typography
                     variant="subtitle1"
@@ -175,7 +175,6 @@ function Login() {
         </Grid>
       </Grid>{" "}
     </Grid>
-   
   );
 }
 export default Login;

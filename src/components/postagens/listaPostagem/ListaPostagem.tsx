@@ -25,13 +25,10 @@ import Facebook from "react-facebook";
 
 function ListaPostagens() {
   let navigate = useNavigate();
-
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
-
   const userId = useSelector<TokenState, TokenState["id"]>((state) => state.id);
-
   useEffect(() => {
     if (token === "") {
       toast.error("Você precisa estar logado pra ficar aqui", {
@@ -47,11 +44,9 @@ function ListaPostagens() {
       navigate("/login");
     }
   });
-
   const [postagens, setPostagens] = useState<Postagem[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage = 3;
-
   async function getPosts() {
     await busca("/postagens", setPostagens, {
       headers: {
@@ -59,11 +54,9 @@ function ListaPostagens() {
       },
     });
   }
-
   useEffect(() => {
     getPosts();
   }, [postagens.length]);
-
   const handlePageChange = (
     event: React.ChangeEvent<unknown>,
     value: number
@@ -71,11 +64,9 @@ function ListaPostagens() {
     setCurrentPage(value);
     window.scrollTo(0, 0);
   };
-
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentItems = postagens.slice(startIndex, endIndex);
-
   return (
     <Box display="flex" flexDirection={"column"} alignItems="start">
       {currentItems.map((post) => (
@@ -184,12 +175,12 @@ function ListaPostagens() {
           </Card>
         </Box>
       ))}
-      <Pagination
+      {/* <Pagination
         className="pagination"
         count={Math.ceil(postagens.length / itemsPerPage)}
         page={currentPage}
         onChange={handlePageChange}
-      />
+      /> */}
     </Box>
   );
 }
