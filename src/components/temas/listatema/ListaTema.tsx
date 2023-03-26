@@ -54,7 +54,7 @@ function ListaTema() {
   <div className='fundo-listaTemas'>
     {
       temas.map(tema =>(
-      <Box m={2} >
+      <Box>
         <Card className='cards' variant="outlined">
           <CardContent>
             <Typography color="textSecondary" gutterBottom>

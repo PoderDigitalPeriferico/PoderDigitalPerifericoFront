@@ -18,7 +18,7 @@
     position: relative;
     background-color: rgba(255, 255, 255, 0.685) !important;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     left: 50%;
     display: flex;
@@ -36,9 +36,20 @@
  .BoxButton{
    display: flex;
    justify-content: center;
-   margin-left: 4vw;
+
  }
  .buttonTema{
    margin-left: 8px !important;
    margin-bottom:15px !important;
  }
+ @media screen and (max-width: 750px) {
+   .BoxButton{
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+   }
+
+.buttonTema{
+  margin-bottom:8px !important;
+}
+}

@@ -167,7 +167,7 @@ function SobreOProjeto() {
                         <h6>São Paulo</h6>
                         <p>Desenvolvedor front-end e back-end</p>
                         <div className="buttons">
-                            <a href="https://www.linkedin.com/in/https:/www.linkedin.com/in/viniferan/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/in/viniferan/" target="_blank" rel="noopener noreferrer">
                                 <LinkedInIcon style={{ fontSize: 55, color: "white" }} />
                             </a>
                             <a href="https://github.com/Vinikills" target="_blank" rel="noopener noreferrer">
