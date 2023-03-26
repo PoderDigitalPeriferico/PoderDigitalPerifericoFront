@@ -1,42 +1,92 @@
-.text-decorator-none{
-    text-decoration: underline;
-    color: blue !important;
-    font-weight: bolder !important;
-}
-.background{
-    background-image: 'https://img.freepik.com/fotos-gratis/bela-vista-de-uma-pequena-cidade-nas-montanhas-durante-o-por-do-sol-no-brasil_181624-39388.jpg?w=1380&t=st=1678927973~exp=1678928573~hmac=9d10b84295ac61de991523135d7fdb7e7004d250801a39d01d73fe8065dc2a09';
-}
-.entrar{
-font-weight: bolder !important;
 
+.text-decorator-none {
+  text-decoration: underline!important;
+  color: #f8f8f8 !important;
+  font-weight: bolder !important;
+  font-size: 1.5rem!important;
 }
 
-.logo-login{
-    width: 45vw;
-    margin-top: -20vh;
-    margin-bottom: -35vh;
-    margin-left: -8vh;
-}
-
-.componentLogin{
-    color: white;
-    background-color:#635f59a6;
-    margin: auto;
-    padding: 5vh;
-    height: 65vh;
-    width: 35vw;
-    margin-left: -4.5vw;
-    border-radius: 5%;
-    box-shadow: 0px 0px 30px black
-}
-.buttonLogin{
-    background-color: rgb(223, 126, 16) !important;
-    font-weight: bolder !important;
-
-}
-.form-login{
-    margin-top: 25vh;
+.background {
+  background-image: url('https://img.freepik.com/fotos-gratis/bela-vista-de-uma-pequena-cidade-nas-montanhas-durante-o-por-do-sol-no-brasil_181624-39388.jpg?w=1380&t=st=1678927973~exp=1678928573~hmac=9d10b84295ac61de991523135d7fdb7e7004d250801a39d01d73fe8065dc2a09');
+  background-size: cover !important;
+  height: 100vh !important;
 }
 
 
+.entrar {
+  font-weight: bolder !important;
+}
 
+.logo-login {
+  width: 40vw!important;
+  margin-top: -12vh!important;
+  margin-bottom: -3vh!important;
+  margin-left: -5vh!important;
+}
+/* Ajustar tamanho e margem do logo */
+@media only screen and (max-width: 768px) {
+  .logo-login {
+    margin-top: -15vh!important;
+    margin-right: -10vw!important;
+    width: 50vw!important;
+    margin-top: -2vh!important;
+    margin-bottom: 1vh!important;
+    margin-left: 1vw!important;
+  }
+}
+
+/* Estilo base para o componente de login */
+.componentLogin {
+  color: white !important;
+  background-color: #635f59a6!important;
+  margin: auto!important;
+  padding: 5vh!important;
+  height: 65vh!important;
+  width: 35vw!important;
+  margin-left: auto!important;
+  margin-right: auto!important;
+  border-radius: 5%!important;
+  box-shadow: 10px 10px 10px rgba(190, 130, 17, 0.568)!important;
+}
+
+/* Media query para ajustar o estilo do componente de login em telas menores */
+@media screen and (max-width: 768px) {
+  .componentLogin {
+    color: white !important;
+  background-color: #635f59a6!important;
+  margin: -1%!important;
+  padding: 1vh 14vw !important;
+  height: 100%!important;
+  width: 100%!important;
+  margin-left: -15vw !important;
+  margin-right: 100vw !important;
+  border-radius: 2!important;
+  box-shadow: 10px 10px 10px rgba(31, 29, 25, 0.568)!important;
+  }
+}
+
+.buttonLogin {
+  background-color: rgb(223, 126, 16) !important;
+  font-weight: bolder !important;
+  color: white !important;
+
+}
+
+.form-login {
+  margin-top: auto!important;
+}
+@media only screen and (max-width: 768px) {
+  /* Estilos para dispositivos móveis com largura máxima de 600px */
+  .form-login {
+    /* Centralizar o formulário */
+    display: flex!important;
+    flex-direction: column!important;
+    align-items: center!important;
+    justify-content: center!important;
+  }
+  /* Reduzir a largura dos campos de entrada */
+  .form-login input {
+  width: 100% !important;
+ 
+  }
+}

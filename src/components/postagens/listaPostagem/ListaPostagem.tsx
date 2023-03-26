@@ -24,13 +24,10 @@ import ReactPlayer from 'react-player';
 
 function ListaPostagens() {
   let navigate = useNavigate();
-
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
-
   const userId = useSelector<TokenState, TokenState["id"]>((state) => state.id);
-
   useEffect(() => {
     if (token === "") {
       toast.error("Você precisa estar logado pra ficar aqui", {
@@ -46,11 +43,14 @@ function ListaPostagens() {
       navigate("/login");
     }
   });
-
   const [postagens, setPostagens] = useState<Postagem[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 8;
+//   const [currentPage, setCurrentPage] = useState<number>(1);
+// <<<<<<< HEAD
+//   const itemsPerPage = 3;
+// =======
+//   const itemsPerPage = 8;
 
+// >>>>>>> e5286099d53ed77ccf1ea0ce1acb7546b4326384
   async function getPosts() {
     await busca("/postagens", setPostagens, {
       headers: {
@@ -58,34 +58,24 @@ function ListaPostagens() {
       },
     });
   }
-  async function findById(id: string) {
-    buscaId(`/postagens/${id}`, setPostagens, {
-        headers: {
-          'Authorization': token
-        }
-      })
-    }
-
 
   useEffect(() => {
     getPosts();
   }, [postagens.length]);
-
-  const handlePageChange = (
-    event: React.ChangeEvent<unknown>,
-    value: number
-  ) => {
-    setCurrentPage(value);
-    window.scrollTo(0, 0);
-  };
-
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentItems = postagens.slice(startIndex, endIndex);
-
+  // const handlePageChange = (
+  //   event: React.ChangeEvent<unknown>,
+  //   value: number
+  // ) => {
+  //   setCurrentPage(value);
+  //   window.scrollTo(0, 0);
+  // };
+  // const startIndex = (currentPage - 1) * itemsPerPage;
+  // const endIndex = startIndex + itemsPerPage;
+  // const currentItems = postagens.slice(startIndex, endIndex);
   return (
-    <Box display="flex" flexDirection={"column"} alignItems="start">
-      {currentItems.map((post) => (
+    <Box p={2} display="flex" flexDirection={"column"} alignItems="start">
+      {/* {currentItems.map((post) => ( */}
+      {postagens.map((post) => (
         <Box>
           <Card className="card-post" variant="outlined">
             <CardContent>
@@ -106,8 +96,8 @@ function ListaPostagens() {
                           className="video"
                           videoId={url.split("=")[1]}
                           opts={{
-                            height: "390",
-                            width: "640",
+                            height: "auto",
+                            width: "auto",
                             playerVars: { autoplay: 0 },
                           }}
                         />
@@ -132,9 +122,8 @@ function ListaPostagens() {
                     case url.includes("instagram.com"):
                       return (
                         <iframe
-                          src={`https://www.instagram.com/p/${
-                            url.split("/")[4]
-                          }/embed`}
+                          src={`https://www.instagram.com/p/${url.split("/")[4]
+                            }/embed`}
                           className="video"
                           width="flex"
                           height="flex"
@@ -146,9 +135,8 @@ function ListaPostagens() {
                     case url.includes("tiktok.com"):
                       return (
                         <iframe
-                          src={`https://www.tiktok.com/embed/v2/${
-                            url.split("/")[5]
-                          }?lang=en-US`}
+                          src={`https://www.tiktok.com/embed/v2/${url.split("/")[5]
+                            }?lang=en-US`}
                           className="video"
                           width="640"
                           height="750"
@@ -193,12 +181,12 @@ function ListaPostagens() {
           </Card>
         </Box>
       ))}
-      <Pagination
+      {/* <Pagination
         className="pagination"
         count={Math.ceil(postagens.length / itemsPerPage)}
         page={currentPage}
         onChange={handlePageChange}
-      />
+      /> */}
     </Box>
   );
 }
