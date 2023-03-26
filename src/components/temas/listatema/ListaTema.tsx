@@ -65,25 +65,25 @@ function ListaTema() {
             </Typography>
           </CardContent>
           <CardActions>
-            <Box display="flex" justifyContent="center" mb={1.5} >
+            <Box className="BoxButton">
 
-              <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
-                <Box mx={1}>
-                  <Button variant="contained" className="marginLeft" size='small' color="primary" >
+              <Link to={`/formularioTema/${tema.id}`} className="text-link">
+                <Box >
+                  <Button variant="contained" className="buttonTema"size='small' color="primary" >
                     atualizar
                   </Button>
                 </Box>
               </Link>
-              <Link className='texr-link'  to={`/deletarTema/${tema.id}`}>
-                <Box mx={1}>
-                  <Button variant="contained" size='small' color="secondary">
+              <Link className='text-link'  to={`/deletarTema/${tema.id}`}>
+                <Box >
+                  <Button className="buttonTema" variant="contained" size='small' color="secondary">
                     deletar
                   </Button>
                 </Box>
               </Link>
-              <Link className='texr-link'  to={`/listaPorTema/${tema.id}`}>
-                <Box mx={1}>
-                  <Button variant="contained" size='small' color="default">
+              <Link className='text-link'  to={`/listaPorTema/${tema.id}`}>
+                <Box >
+                  <Button className="buttonTema" variant="contained" size='small' color="default">
                     Ver Postagens
                   </Button>
                 </Box>

@@ -18,6 +18,7 @@
     position: relative;
     background-color: rgba(255, 255, 255, 0.685) !important;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     left: 50%;
     display: flex;
@@ -31,4 +32,13 @@
 
  .text-link{
     text-decoration: none;
+ }
+ .BoxButton{
+   display: flex;
+   justify-content: center;
+   margin-left: 4vw;
+ }
+ .buttonTema{
+   margin-left: 8px !important;
+   margin-bottom:15px !important;
  }

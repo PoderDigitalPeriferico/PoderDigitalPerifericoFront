@@ -29,8 +29,9 @@
   }
   
   .foto-post {
-    width: 100% !important; /* Images fill the entire width of their container */
-    height: auto !important; /* Maintain aspect ratio */
+    width: 70% !important; /* Images fill the entire width of their container */
+    height: auto !important;
+     /* Maintain aspect ratio */
   }
   
   .card-post {
@@ -49,7 +50,8 @@
   }
   
   .post-text {
-    word-break: break-all !important; /* Break long words */
+    word-break: break-all !important;
+    text-align: center;
   }
   
   .pagination {
