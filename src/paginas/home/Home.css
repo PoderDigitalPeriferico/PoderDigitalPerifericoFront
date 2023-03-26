@@ -2,9 +2,6 @@
     text-align: center;
 }
 
-.imagem{
-    size: 100vw;
-}
 
 
  .botao{
@@ -18,7 +15,7 @@
  .fundo{
     background-repeat: no-repeat;
     background-size: 100vw;
-    background-color: rgb(255, 212, 171) !important;
+    background-color: #ffd5ad !important;
  }
 .new-post{
     position: fixed;  
@@ -26,4 +23,81 @@
     right: 10em !important; 
     
 
+}
+
+
+body,html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+.fundo{
+    width: 100vw;
+padding-top: 10vw;
+    height: 100vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+    background-image: url('https://img.freepik.com/fotos-gratis/bela-vista-de-uma-pequena-cidade-nas-montanhas-durante-o-por-do-sol-no-brasil_181624-39388.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    animation: change 20s infinite ease-in-out;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #fffefe00;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:rgb(230, 174, 122);
+    height: 8;
+    width: 8px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+
+@keyframes change{
+    0%
+    {
+        background-image: url("https://veja.abril.com.br/wp-content/uploads/2022/04/GettyImages-163394488.jpg?quality=70&strip=info&w=1280&h=720&crop=1");
+    }
+    30%
+    {
+        background-image: url('https://img.vozdascomunidades.com.br/wp-content/uploads/2022/03/08085504/favela-do-alemao-scaled.jpg');
+    }
+    60%
+    {
+        background-image: url('https://images.adsttc.com/media/images/6334/5c21/7120/023f/fabd/8f0e/medium_jpg/projeto-instala-banheiros-com-biodigestor-na-cidade-de-deus_1.jpg?1664375860');
+    }
+    80%
+    {
+        background-image: url('https://portal.connectedsmartcities.com.br/wp-content/uploads/2020/04/CUFA-APRESENTA-PROPOSTAS-PARA-PREVENIR-CORONAV%C3%8DRUS-NAS-FAVELAS.jpg');
+    }
+    100%
+    {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIpqTMIKylwGIwo9v-wYZerjw8-5cqMlHG6A&usqp=CAU");
+    }
+    120%
+    {
+        background-image: url('https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/paraisopolis(2).jpg');
+    }
 }

@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Postagem from "../../../models/Postagem";
-import { busca } from "../../../services/Services";
+import { busca, buscaId } from "../../../services/Services";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { Avatar } from "@mui/material";
 import "./ListaPostagem.css";
@@ -58,6 +58,7 @@ function ListaPostagens() {
       },
     });
   }
+
   useEffect(() => {
     getPosts();
   }, [postagens.length]);
@@ -78,11 +79,13 @@ function ListaPostagens() {
         <Box>
           <Card className="card-post" variant="outlined">
             <CardContent>
-              <Avatar
+              <Link className='texr-link'  to={`/perfilUsuarios/${post.usuario?.id}`}>
+                <Avatar
                 className="avatar"
                 alt="foto usuario"
                 src={post.usuario?.foto}
-              />
+                />
+              </Link>
               <Typography>
                 {(() => {
                   const url = post.titulo;
@@ -156,7 +159,7 @@ function ListaPostagens() {
                 })()}
               </Typography>
 
-              <Typography variant="h5" component="h4">
+              <Typography className="post-text" variant="h5" component="h4">
                 {post.texto}
               </Typography>
               <Typography variant="body2" component="p">
@@ -174,7 +177,8 @@ function ListaPostagens() {
               </Box>
 
               <Typography className="post-owner" variant="body2" component="p">
-                <strong>Postado por:</strong> {post.usuario?.nome}
+                <strong>Postado por:</strong>
+                <Link className='texr-link'  to={`/perfilUsuarios/${post.usuario?.id}`}> {post.usuario?.nome} </Link>
               </Typography>
             </CardContent>
           </Card>

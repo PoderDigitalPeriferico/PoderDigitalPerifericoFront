@@ -16,11 +16,18 @@ function Home() {
     let navigate = useNavigate();
     const token = useSelector<TokenState, TokenState['tokens']>(
         (state) => state.tokens);
+        
+        
+        const tempo_de_delay = 10
 
+        setTimeout(() => (
+            document.body.style.backgroundImage = "url('')"
+        ), tempo_de_delay)
 
 
     return (
         <>
+        <div className='fundo-geral'>
         <div className="new-post">  <ModalPostagem /></div>
             <Grid className='fundo' container direction="row" justifyContent="center" alignItems="center" >
                 <Grid item xs={1}>
@@ -39,8 +46,8 @@ function Home() {
                     </Grid>
                 </Box>
             </Grid>
-
-
+        
+            </div>
         </>
     );
 }

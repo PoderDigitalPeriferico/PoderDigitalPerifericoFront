@@ -62,10 +62,9 @@
 }
 
 .user-name{
-    position: relative;
-    left: 50%;
-    TOP: 50% !important;
-    transform: translate(-8%, 160%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }  
 
