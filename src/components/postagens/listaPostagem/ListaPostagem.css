@@ -35,9 +35,12 @@
   
   .card-post {
     margin-top: 2rem !important;
-    width: 90vw !important; /* Card post takes up 90% of viewport width */
+    width: 60vw !important; /* Card post takes up 90% of viewport width */
     border-radius: 8px !important;
     margin: 0 auto; /* Center card post horizontally */
+    margin-bottom: 5vw;
+    margin-left: -8vw;
+    padding: 10px;
     padding-bottom: 5vw !important; /* Add padding at the bottom of the card post */
   }
   
