@@ -157,7 +157,7 @@ function ListaPostagens() {
                 })()}
               </Typography>
 
-              <Typography variant="h5" component="h4">
+              <Typography className="post-text" variant="h5" component="h4">
                 {post.texto}
               </Typography>
               <Typography variant="body2" component="p">
@@ -175,7 +175,8 @@ function ListaPostagens() {
               </Box>
 
               <Typography className="post-owner" variant="body2" component="p">
-                <strong>Postado por:</strong> {post.usuario?.nome}
+                <strong>Postado por:</strong>
+                <Link className='texr-link'  to={`/perfilUsuarios/${post.usuario?.id}`}> {post.usuario?.nome} </Link>
               </Typography>
             </CardContent>
           </Card>
