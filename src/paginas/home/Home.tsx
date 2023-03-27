@@ -27,12 +27,13 @@ function Home() {
 
     return (
         <>
+
         <div className='fundo-geral'>
-        <div className="new-post">  <ModalPostagem /></div>
             <Grid className='fundo' container direction="row" justifyContent="center" alignItems="center" >
                 <Grid item xs={1}>
                 <Box className='new-post' >
 
+        <div className="new-post">  <ModalPostagem /></div>
                 </Box>
 
                 </Grid>
