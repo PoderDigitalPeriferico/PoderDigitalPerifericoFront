@@ -144,7 +144,7 @@ function CadastroPost() {
     }
 
     function back() {
-        navigate('/home')
+        navigate('/postagens')
     }
 
     return (
