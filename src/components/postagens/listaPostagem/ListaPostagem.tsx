@@ -117,7 +117,7 @@ function ListaPostagens() {
                             }/embed`}
                             className="video EmbeddedMedia"
                             width="390"
-                            height = "640"
+                            height="640"
                             frameBorder={"0"}
                             scrolling="no"
                             title="Instagram video"
@@ -158,7 +158,6 @@ function ListaPostagens() {
                   <strong>Postado em:</strong>{" "}
                   {new Intl.DateTimeFormat("pt-BR", {
                     dateStyle: "medium",
-                    timeStyle: "short",
                   }).format(new Date(post.data))}
                 </Typography>
 
