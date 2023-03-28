@@ -28,8 +28,8 @@ function Home() {
     return (
         <>
 
-        <div className='fundo-geral'>
-            <Grid className='fundo' container direction="row" justifyContent="center" alignItems="center" >
+        <div className='fundo-home'>
+            <Grid className='fundo-home' container direction="row" justifyContent="center" alignItems="center" >
                 <Grid item xs={1}>
                 <Box className='new-post' >
 

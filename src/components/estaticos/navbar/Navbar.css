@@ -5,7 +5,7 @@
     font-weight: bold;
 }
 .navbar{
-    background-color: rgb(230, 174, 122) !important;
+    background-color: #4c0702 !important;
 }
 .logo{
     width: 40px;
@@ -17,7 +17,20 @@
 .css-1uwgr7b-MuiTypography-root{
     padding: 10px;
     color: black;
+    border-radius: 10px;
+    color: #000 !important;
+    font-weight: bold !important;
+    background-color: lightpink;
 }
+
+.css-1uwgr7b-MuiTypography-root:hover{
+    padding: 10px;
+    border-radius: 10px;
+    color: #000 !important;
+    font-weight: bold !important;
+    background-color: darksalmon;
+}
+
 .MuiButton-textPrimary{
     color: #fff;
 }

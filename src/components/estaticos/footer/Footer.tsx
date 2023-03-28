@@ -14,24 +14,20 @@ function Footer() {
         var footerComponent;
 
         if(token !==''){
-            footerComponent = <div className="footer"> <Grid container direction="row" justifyContent="center" alignItems="center">
-        <Grid alignItems="center" item xs={12}>
+            footerComponent = <div className="footer"> 
+            <Grid  container direction="row" justifyContent="center" alignItems="center">
+        <Grid className='footer' alignItems="center" item xs={12}>
             <Box style={{ backgroundColor: "rgb(230, 174, 122)", height: "" }}>
                 <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                    <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Siga-nos nas redes sociais </Typography>
-                </Box>
-                <Box display="flex" alignItems="center" justifyContent="center">
-    
-                    <a href="https://linktr.ee/pdperiferico" target="_blank">
-                        
-                        <LinkIcon style={{ fontSize: 30, color: "white" }} />
-                        
+                    <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Siga-nos nas redes sociais:
+                    <a className='linkTree' href="https://linktr.ee/pdperiferico" target="_blank">
+                        (LinkTree)                      
                     </a>
+                      </Typography>
                     
-    
                 </Box>
             </Box>
-            <Box style={{ backgroundColor: "rgb(230, 174, 122)", height: "40px" }}>
+            <Box style={{ backgroundColor: "#4c0702", height: "30px" }}>
                 <Box paddingTop={1}>
                     <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2023 </Typography>
                 </Box>

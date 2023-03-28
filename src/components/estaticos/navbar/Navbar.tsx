@@ -120,6 +120,7 @@ function Navbar() {
                 />
               </div>
               <Typography
+              className='Project'
                 variant="h6"
                 noWrap
                 sx={{

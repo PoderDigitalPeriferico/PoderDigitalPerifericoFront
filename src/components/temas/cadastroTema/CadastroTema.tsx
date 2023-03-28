@@ -1,6 +1,6 @@
-import React, {useState, useEffect, ChangeEvent} from 'react'
+import React, { useState, useEffect, ChangeEvent } from 'react'
 import { Container, Typography, TextField, Button } from "@material-ui/core"
-import {useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import './CadastroTema.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
@@ -11,10 +11,10 @@ import { toast } from 'react-toastify';
 
 function CadastroTema() {
     let navigate = useNavigate();
-    const { id } = useParams<{id: string}>();
+    const { id } = useParams<{ id: string }>();
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
-      );
+    );
     const [tema, setTema] = useState<Tema>({
         id: 0,
         tema: ''
@@ -22,7 +22,7 @@ function CadastroTema() {
 
     useEffect(() => {
         if (token == "") {
-            toast.error('Você precisa estar logado',{
+            toast.error('Você precisa estar logado', {
                 position: 'top-right',
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -31,14 +31,14 @@ function CadastroTema() {
                 theme: "colored",
                 progress: undefined,
             });
-            
+
             navigate("/login")
-    
+
         }
     }, [token])
 
-    useEffect(() =>{
-        if(id !== undefined){
+    useEffect(() => {
+        if (id !== undefined) {
             findById(id)
         }
     }, [id])
@@ -46,76 +46,77 @@ function CadastroTema() {
     async function findById(id: string) {
         buscaId(`/temas/${id}`, setTema, {
             headers: {
-              'Authorization': token
+                'Authorization': token
             }
-          })
-        }
+        })
+    }
 
-        function updatedTema(e: ChangeEvent<HTMLInputElement>) {
+    function updatedTema(e: ChangeEvent<HTMLInputElement>) {
 
-            setTema({
-                ...tema,
-                [e.target.name]: e.target.value,
-            })
-    
-        }
-        
-        async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-            e.preventDefault()
-            
-    
-            if (id !== undefined) {
+        setTema({
+            ...tema,
+            [e.target.name]: e.target.value,
+        })
+
+    }
+
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault()
+
+
+        if (id !== undefined) {
             await put(`/temas`, tema, setTema, {
-                    headers: {
-                        'Authorization': token
-                    }
-                })
-                toast.success('Tema atualizado com sucesso',{
-                    position: 'top-right',
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    draggable: false,
-                    theme: "colored",
-                    progress: undefined,
-                });
-            } else {
-               await post(`/temas`, tema, setTema, {
-                    headers: {
-                        'Authorization': token
-                    }
-                })
-                toast.success('Tema cadastrado com sucesso',{
-                    position: 'top-right',
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    draggable: false,
-                    theme: "colored",
-                    progress: undefined,
-                });
-            }
-            back()
-    
+                headers: {
+                    'Authorization': token
+                }
+            })
+            toast.success('Tema atualizado com sucesso', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+        } else {
+            await post(`/temas`, tema, setTema, {
+                headers: {
+                    'Authorization': token
+                }
+            })
+            toast.success('Tema cadastrado com sucesso', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }
-    
-        function back() {
-            navigate('/temas')
-        }
+        back()
 
-    
+    }
+
+    function back() {
+        navigate('/temas')
+    }
+
     return (
-
-        <Container  id='container' maxWidth="sm" className="topo">
-            
-            <form onSubmit={onSubmit}>
-                <Typography className='titulo' variant="h3" component="h1" align="center" >Cadastre sua Comunidade</Typography>
-                <TextField value={tema.tema} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="temas" label="Qbrada" variant="outlined" name="tema" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" color="primary">
-                    Cadastrar
-                </Button>
-            </form>
-        </Container>
+        <div className="fundo">
+            <Container id='container' maxWidth="sm" className="topo">
+                <div className="form-cad">
+                    <form onSubmit={onSubmit}>
+                        <Typography className='titulo' variant="h3" component="h1" align="center" >Cadastre sua Comunidade</Typography>
+                        <TextField value={tema.tema} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="temas" label="Qbrada" variant="outlined" name="tema" margin="normal" fullWidth />
+                        <Button type="submit" variant="contained" color="primary">
+                            Cadastrar
+                        </Button>
+                    </form>
+                </div>
+            </Container>
+        </div>
     )
 }
 
