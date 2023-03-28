@@ -1,6 +1,5 @@
 .fundo-listaTemas{
     background-image: url('https://ik.imagekit.io/wwd7wv4ro/PDP_full_branco.png?updatedAt=1679053313611');
-
     background-repeat: no-repeat;
     background-size: 100vw;
     background-position-x: center;
@@ -9,11 +8,13 @@
  }
 
 .fundo-fundo{
-    background-color: black;
+    background-color: #8B2412;
+    
 }
 
 
  .cards{
+   
     background-color: rgba(255, 255, 255, 0.685) !important;
     position: relative;
     background-color: rgba(255, 255, 255, 0.685) !important;

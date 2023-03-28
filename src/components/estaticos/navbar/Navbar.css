@@ -20,7 +20,10 @@
     border-radius: 10px;
     color: #000 !important;
     font-weight: bold !important;
-    background-color: lightpink;
+    background-color: #8B2412;
+}
+.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper{
+    background-color: #00000070 !important;
 }
 
 .css-1uwgr7b-MuiTypography-root:hover{
@@ -28,7 +31,7 @@
     border-radius: 10px;
     color: #000 !important;
     font-weight: bold !important;
-    background-color: darksalmon;
+    background-color: #4c0702 ;
 }
 
 .MuiButton-textPrimary{
@@ -59,5 +62,5 @@
 }
 
 .css-1uwgr7b-MuiTypography-root{
-    color: #000 !important;
+    color: #ffffff !important;
 }
