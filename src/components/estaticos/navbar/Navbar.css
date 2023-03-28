@@ -1,20 +1,21 @@
-
-.textLink{
+.textLink {
     text-decoration: none !important;
     color: #fff !important;
     font-weight: bold;
 }
-.navbar{
+
+.navbar {
     background-color: #4c0702 !important;
 }
-.logo{
+
+.logo {
     width: 40px;
-    margin-left: -20px; 
+    margin-left: -20px;
     padding-left: 20px;
 
 }
 
-.css-1uwgr7b-MuiTypography-root{
+.css-1uwgr7b-MuiTypography-root {
     padding: 10px;
     color: black;
     border-radius: 10px;
@@ -23,31 +24,33 @@
     background-color: #8B2412;
 }
 
-.css-1uwgr7b-MuiTypography-root:hover{
+.css-1uwgr7b-MuiTypography-root:hover {
     padding: 10px;
     border-radius: 10px;
     color: #000 !important;
     font-weight: bold !important;
-    background-color: #4c0702 ;
+    background-color: #4c0702;
 }
 
-.MuiButton-textPrimary{
+.MuiButton-textPrimary {
     color: #fff;
 }
 
-.navbar{
+.navbar {
     position: fixed !important;
     background-size: cover;
     z-index: 20;
 }
+
 .MuiButton-textPrimary {
     color: #fff !important;
 }
 
-.NavbarStyles.navbar{
+.NavbarStyles.navbar {
     position: "static"
 }
-.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper{
+
+.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper {
     z-index: 22;
     padding: 14px;
     margin: 10px;
@@ -55,10 +58,11 @@
     display: flex !important;
     flex-direction: column !important;
 }
-.titulo-sx{
+
+.titulo-sx {
     color: #fff !important;
 }
-
-.css-1uwgr7b-MuiTypography-root{
+ /* adição desse comentario para ver se o git entende a alteração */
+.css-1uwgr7b-MuiTypography-root {
     color: #ffffff !important;
 }
