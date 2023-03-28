@@ -8,6 +8,7 @@ import { buscaId, deleteId } from '../../../services/Services';
 import Tema from '../../../models/Tema';
 import { toast } from 'react-toastify';
 import YouTube from 'react-youtube';
+import "./ListaPorTema.css"
 
 function ListaPorTema() {
 
