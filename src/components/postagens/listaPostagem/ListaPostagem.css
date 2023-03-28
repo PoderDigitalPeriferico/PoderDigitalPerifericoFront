@@ -1,35 +1,15 @@
+.text-link{
+  text-decoration: none !important; 
+}
+
 .card{
   width: 75vw !important;
-  margin-left: 50%px;
+  margin-left: 50%px!important;
 }
 
 .img-post{
   width: 75%;
   /* height: 500; */
-}
-.video .EmbeddedMedia {
-  bottom: 0;
-  left: 0;
-  position: fixed!important;
-  right: 75vw!important;
-  height: 100vh!important;
-  top: 50%!important;
-}
-
-.video .html5-main-video{
-  width: 240px!important;
-  height: 100px!important;
-  left: 0px!important;
-  top: 15px!important;
-
-
-}
-.video{
-  width: 50vw;
-  height: 60vh;
-}
-.text-link{
-  text-decoration: none !important; 
 }
 
 .css-1pqm26d-MuiAvatar-img{
@@ -41,17 +21,16 @@ display: flex;
 flex-direction: column;
 }
 
-.foto-post{ 
-  width: 50vw;
-  height: 65vh;
-}
 
-.card-post{
+/* Para ajustar img e video vai no pontos abaixo*/
+.card-post{ 
   margin-top: 8vw !important;
-  width: 65vw;
-  border-radius: 8px;
+  width: 60vw!important;
+  height: 40vw!important;
+  border-radius: 8px!important;
   margin-left: -8vw !important;
-  padding-bottom: 5vw;
+  padding-bottom: 10vw!important;
+  
 }
 
 .avatar-post{
@@ -70,4 +49,40 @@ margin-bottom: 20px;
 .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
   color: #fff;
   background-color: rgb(228, 154, 58)!important;
+}
+
+
+
+
+
+
+/* #### YOUTUBE # INSTAGRAM # FACEBOOK # MP4 # ######E NO FINAL FOTOS ############################################################################################### */
+
+/* Youbute */
+.videoyoutube {
+  height: "390"!important;
+  width: "640"!important;
+}
+/* Instagram */
+.instagram {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #ccc;
+}
+
+/* facebbook */
+.fb-video{
+  width: "640";
+}
+
+/* Video em MP4 */
+
+.videomp4{
+  width: 50vw;
+  height: 60vh;
+}
+
+.img-post{ 
+  width: 50vw;
+  height: 65vh;
 }

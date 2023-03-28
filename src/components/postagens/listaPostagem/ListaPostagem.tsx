@@ -83,7 +83,7 @@ function ListaPostagens() {
                       case url.includes("youtube.com"):
                         return (
                           <YouTube
-                            className="video html5-main-video"
+                            className="videoyoutube"
                             videoId={url.split("=")[1]}
                             opts={{
                               height: "390",
@@ -94,7 +94,7 @@ function ListaPostagens() {
                         );
                       case url.includes(".mp4"):
                         return (
-                          <video className="video" controls>
+                          <video className="videomp4" controls>
                             <source src={url} />
                           </video>
                         );
@@ -115,9 +115,9 @@ function ListaPostagens() {
                             src={`https://www.instagram.com/p/${
                               url.split("/")[4]
                             }/embed`}
-                            className="video EmbeddedMedia"
-                            width="390"
-                            height="640"
+                            className="instagram"
+                            width="400"
+                            height="630"
                             frameBorder={"0"}
                             scrolling="no"
                             title="Instagram video"
@@ -140,7 +140,7 @@ function ListaPostagens() {
                       default:
                         return (
                           <img
-                            className="foto-post"
+                            className="img-post"
                             src={url}
                             width="390"
                             height="640"
