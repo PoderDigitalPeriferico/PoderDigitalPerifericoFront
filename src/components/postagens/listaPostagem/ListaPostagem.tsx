@@ -8,7 +8,6 @@ import {
   Card,
   CardActions,
   CardContent,
-  Pagination,
   Typography,
   Avatar,
   Grid,
@@ -185,14 +184,8 @@ function ListaPostagens() {
             </Card>
           </Box>
         ))}
-      {/* <Pagination
-        className="pagination"
-        count={Math.ceil(postagens.length / itemsPerPage)}
-        page={currentPage}
-        onChange={handlePageChange}
-      /> */}
-    </Box>
-  );
+  </Box>
+);
 }
 
 export default ListaPostagens;

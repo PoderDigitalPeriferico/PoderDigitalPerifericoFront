@@ -51,8 +51,21 @@ margin-bottom: 20px;
   background-color: rgb(228, 154, 58)!important;
 }
 
-
-
+.MuiCard-root{
+  background-color: #1f0d04ef !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+  
+  /* #704214 #46220f */
+  .MuiCardMedia-root {
+    flex: 50;
+  }
+  .MeuCardMedia-custom {
+    max-width: 100%;
+    height: auto;
+  }
 
 
 
