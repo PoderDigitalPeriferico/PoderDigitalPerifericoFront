@@ -22,9 +22,6 @@
     font-weight: bold !important;
     background-color: #8B2412;
 }
-.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper{
-    background-color: #00000070 !important;
-}
 
 .css-1uwgr7b-MuiTypography-root:hover{
     padding: 10px;
@@ -54,6 +51,7 @@
     z-index: 22;
     padding: 14px;
     margin: 10px;
+    background-color: #00000070 !important;
     display: flex !important;
     flex-direction: column !important;
 }
