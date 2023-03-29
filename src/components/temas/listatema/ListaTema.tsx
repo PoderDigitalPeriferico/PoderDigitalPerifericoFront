@@ -21,6 +21,7 @@ function ListaTema() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
+  const userId = useSelector<TokenState, TokenState["id"]>((state) => state.id);
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -64,14 +65,16 @@ function ListaTema() {
                 <Typography variant="h5" component="h2">
                   {tema.tema}
                 </Typography>
-                <Typography variant="body2" component="p">
-                  Criado por: {tema.usuario?.senha}
-                </Typography>
               </CardContent>
-              <CardActions>
+              
+              {+userId === 1 ?(
+                <CardActions>
                 <Box className="BoxButton">
-                  <Link to={`/formularioTema/${tema.id}`} className="text-link">
-                    <Box>
+                  <Link
+                    to={`/formularioTema/${tema.id}`}
+                    className="text-link"
+                  >
+                    <Box mx={1}>
                       <Button
                         variant="contained"
                         className="buttonTema"
@@ -94,20 +97,32 @@ function ListaTema() {
                       </Button>
                     </Box>
                   </Link>
-                  <Link className="text-link" to={`/listaPorTema/${tema.id}`}>
-                    <Box>
-                      <Button
-                        className="buttonTema"
-                        variant="contained"
-                        size="small"
-                        color="default"
-                      >
-                        Ver Postagens
-                      </Button>
-                    </Box>
-                  </Link>
                 </Box>
+                <Link className="text-link" to={`/listaPorTema/${tema.id}`}>
+              <Box>
+                <Button
+                  className="buttonTema"
+                  variant="contained"
+                  size="small"
+                  color="default"
+                >
+                  Ver Postagens
+                </Button>
+              </Box>
+            </Link>
               </CardActions>
+              ) : <> <Link className="text-link" to={`/listaPorTema/${tema.id}`}>
+              <Box>
+                <Button
+                  className="buttonTema"
+                  variant="contained"
+                  size="small"
+                  color="default"
+                >
+                  Ver Postagens
+                </Button>
+              </Box>
+            </Link></>}
             </Card>
           </Box>
         ))}
