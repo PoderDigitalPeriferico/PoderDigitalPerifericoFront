@@ -1,4 +1,5 @@
 import Postagem from './Postagem';
+import Tema from "./Tema";
 
 
 interface Usuario {
@@ -6,7 +7,8 @@ interface Usuario {
   nome: string;
   usuario: string;
   senha: string;
-  foto: string
-  postagens?: Postagem[] //linha adicionada para que o usuário possa ter um
+  foto: string;
+  postagens?: Postagem[]; //linha adicionada para que o usuário possa ter um
+  tema?: Tema[]; // 
   }
   export default Usuario

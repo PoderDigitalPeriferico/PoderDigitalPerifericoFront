@@ -7,6 +7,7 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import Tema from '../../../models/Tema';
 import { buscaId, post, put } from '../../../services/Services';
 import { toast } from 'react-toastify';
+import Usuario from '../../../models/Usuario';
 
 
 function CadastroTema() {
@@ -15,6 +16,19 @@ function CadastroTema() {
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
     );
+    const userId = useSelector < TokenState , TokenState [ 'id' ] > (
+    ( state ) => state.id
+    );
+
+    const [usuario, setUsuario] = useState<Usuario>({
+        id: +userId,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: '',
+      })
+
+
     const [tema, setTema] = useState<Tema>({
         id: 0,
         tema: ''
@@ -55,6 +69,7 @@ function CadastroTema() {
 
         setTema({
             ...tema,
+            usuario: usuario,
             [e.target.name]: e.target.value,
         })
 
