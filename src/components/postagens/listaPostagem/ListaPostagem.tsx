@@ -57,7 +57,7 @@ function ListaPostagens() {
   }, [token]);
 
   return (
-    <Box display="flex" flexDirection={"column"} alignItems="start">
+    <Box display="flex" flexDirection={"column"} alignItems="center">
       {postagens
         .slice()
         .sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime())
