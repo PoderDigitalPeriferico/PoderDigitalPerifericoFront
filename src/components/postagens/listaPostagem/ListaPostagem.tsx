@@ -184,8 +184,8 @@ function ListaPostagens() {
             </Card>
           </Box>
         ))}
-  </Box>
-);
+    </Box>
+  );
 }
 
 export default ListaPostagens;
