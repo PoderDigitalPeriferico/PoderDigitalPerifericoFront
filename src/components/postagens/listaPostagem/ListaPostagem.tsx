@@ -20,6 +20,7 @@ import { busca, buscaId } from "../../../services/Services";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import ModalPostagem from "../modalPostagem/ModalPostagem";
 import "./ListaPostagem.css";
+import Carousel from '../../carousel/Carousel';
 
 function ListaPostagens() {
   let navigate = useNavigate();
@@ -57,7 +58,9 @@ function ListaPostagens() {
   }, [token]);
 
   return (
+    
     <Box display="flex" flexDirection={"column"} alignItems="start">
+      <Carousel />
       {postagens
         .slice()
         .sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime())
@@ -74,7 +77,9 @@ function ListaPostagens() {
                     alt="foto usuario"
                     src={post.usuario?.foto}
                   />
+                  
                 </Link>
+                
                 <Typography>
                   {(() => {
                     const url = post.titulo;
@@ -149,7 +154,7 @@ function ListaPostagens() {
                     }
                   })()}
                 </Typography>
-
+                
                 <Typography className="post-text" variant="h5" component="h4">
                   {post.texto}
                 </Typography>
@@ -184,8 +189,8 @@ function ListaPostagens() {
             </Card>
           </Box>
         ))}
-    </Box>
-  );
+  </Box>
+);
 }
 
 export default ListaPostagens;
