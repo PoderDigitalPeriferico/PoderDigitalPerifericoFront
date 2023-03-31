@@ -83,7 +83,7 @@ function SobreOProjeto() {
             <div className="desenvolvedores">
                 <div className="integrantes">
                     <div className="card-container">
-                        <img className="round" src="https://ik.imagekit.io/8j6bttpzpq/adao.jpg?updatedAt=1679610027008" alt="user" />
+                        <img className="round" src="https://ik.imagekit.io/8j6bttpzpq/Ad%C3%A3o.png?updatedAt=1680119559078" alt="user" />
                         <h3>Adão Torres</h3>
                         <h6>São Paulo</h6>
                         <p>Desenvolvedor front-end e back-end</p>
@@ -98,7 +98,7 @@ function SobreOProjeto() {
                     </div>
 
                     <div className="card-container">
-                        <img className="round" src="https://ik.imagekit.io/8j6bttpzpq/caiqueBack.jpg?updatedAt=1679605343559" alt="user" />
+                        <img className="round" src="https://ik.imagekit.io/8j6bttpzpq/Caique_circular.png?updatedAt=1680119559144" alt="user" />
                         <h3>Caique Motta</h3>
                         <h6>São Paulo</h6>
                         <p>Desenvolvedor front-end e back-end</p>
@@ -114,7 +114,7 @@ function SobreOProjeto() {
                     </div>
 
                     <div className="card-container">
-                        <img className="round" src="https://ik.imagekit.io/8j6bttpzpq/120676803.jfif?updatedAt=1679692032579" alt="user" />
+                        <img className="round" src="https://ik.imagekit.io/8j6bttpzpq/fotor_2023-3-29_19_1_27.png?updatedAt=1680127509592" alt="user" />
                         <h3>Fernando Azevedo</h3>
                         <h6>São Paulo</h6>
                         <p>Desenvolvedor front-end e back-end</p>
@@ -131,7 +131,7 @@ function SobreOProjeto() {
 
                 <div className="integrantes">
                     <div className="card-container">
-                        <img className="round" src="https://ik.imagekit.io/8j6bttpzpq/matheus.jpg?updatedAt=1679610027722" alt="user" />
+                        <img className="round" src="https://ik.imagekit.io/8j6bttpzpq/fotor_2023-3-29_16_41_0.png?updatedAt=1680119558606" alt="user" />
                         <h3>Matheus Oliveira</h3>
                         <h6>São Paulo</h6>
                         <p>Desenvolvedor front-end e back-end</p>
@@ -147,7 +147,7 @@ function SobreOProjeto() {
 
 
                     <div className="card-container">
-                        <img className="round" src="https://ik.imagekit.io/8j6bttpzpq/rafael.jpg?updatedAt=1679610024408" alt="user" />
+                        <img className="round" src="https://ik.imagekit.io/8j6bttpzpq/fotor_2023-3-29_16_40_22.png?updatedAt=1680119558876" alt="user" />
                         <h3>Rafael Souza</h3>
                         <h6>São Paulo</h6>
                         <p>Desenvolvedor front-end e back-end</p>
@@ -162,7 +162,7 @@ function SobreOProjeto() {
                     </div>
 
                     <div className="card-container">
-                        <img className="round" src="https://ik.imagekit.io/8j6bttpzpq/vinicius.jpg?updatedAt=1679610025929" alt="user" />
+                        <img className="round" src="https://ik.imagekit.io/8j6bttpzpq/fotor_2023-3-29_16_37_51.png?updatedAt=1680119559913" alt="user" />
                         <h3>Vinícius Fernando</h3>
                         <h6>São Paulo</h6>
                         <p>Desenvolvedor front-end e back-end</p>

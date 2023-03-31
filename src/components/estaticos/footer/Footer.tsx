@@ -19,9 +19,9 @@ function Footer() {
         <Grid className='footer' alignItems="center" item xs={12}>
             <Box style={{ backgroundColor: "rgb(230, 174, 122)", height: "" }}>
                 <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                    <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Siga-nos nas redes sociais:
-                    <a className='linkTree' href="https://linktr.ee/pdperiferico" target="_blank">
-                        (LinkTree)                      
+                    <Typography variant="h5" align="center" gutterBottom className="contato">Siga-nos em nossas redes sociais!
+                    <a href="https://linktr.ee/pdperiferico" target="_blank">
+                        <img className='linkTree' src="https://ik.imagekit.io/8j6bttpzpq/Linktree_logo_branco.png?updatedAt=1680230532498" alt="Link para o Linktree" />                     
                     </a>
                       </Typography>
                     
