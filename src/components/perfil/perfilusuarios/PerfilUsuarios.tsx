@@ -77,7 +77,7 @@ function PerfilUsuarios() {
     
           <hr></hr>
     
-          <h4 className='all-posts'>Todas as suas postagens</h4>
+          <h4 className='all-posts'>Postagens</h4>
           <Box display="flex" flexDirection={'column'} alignItems='center'>
     
             {usuario.postagens?.map((post) => (
@@ -147,12 +147,12 @@ function PerfilUsuarios() {
                     default:
                       return (
                         <img
-                          className="foto-post"
-                          src={url}
-                          width="390"
-                          height="640"
-                          alt="Imagem da postagem"
-                        />
+                            className="foto-post"
+                            src={url}
+                            width="50%"
+                            height="auto"
+                            alt="Imagem da postagem"
+                          />
                       );
                   }
                 })()}

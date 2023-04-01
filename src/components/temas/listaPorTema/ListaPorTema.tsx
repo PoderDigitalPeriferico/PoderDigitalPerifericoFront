@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Card, CardActions, CardContent, Button, Typography} from '@material-ui/core';
-import {Box} from '@mui/material';
-import {useNavigate, useParams } from 'react-router-dom';
+import { Card, CardActions, CardContent, Button, Typography, Avatar} from '@material-ui/core';
+import {Box, Container} from '@mui/material';
+import {Link, useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { buscaId, deleteId } from '../../../services/Services';
@@ -51,17 +51,29 @@ function ListaPorTema() {
         }
 
   return (
-    <>
-    <Box m={2}>
+    <Container className="fundoListaPorTema">
+
+    <Box>
       <Card variant="outlined">
         <CardContent>
-          <Box justifyContent="center">
+          <Box >
             
             <Typography color="textSecondary">
               {tema?.tema}
             </Typography>
             {tema?.postagens?.map((post) => (
               <>
+              <Link
+                  className="texr-link"
+                  to={`/perfilUsuarios/${post.usuario?.id}`}
+                >
+                  <Avatar
+                    className="avatar"
+                    alt="foto usuario"
+                    src={post.usuario?.foto}
+                  />
+                  
+                </Link>
                  <Typography>
                 {(() => {
                   const url = post.titulo;
@@ -137,13 +149,33 @@ function ListaPorTema() {
                 <Typography variant="body2" component="p">
                   {post.texto}
                 </Typography>
+                <Typography variant="body2" component="p">
+                  <strong>Postado em:</strong>{" "}
+                  {new Intl.DateTimeFormat("pt-BR", {
+                    dateStyle: "medium",
+                  }).format(new Date(post.data))}
+                </Typography>
+                <Typography
+                  className="post-owner"
+                  variant="body2"
+                  component="p"
+                >
+                  <strong>Postado por:</strong>
+                  <Link
+                    className="texr-link"
+                    to={`/perfilUsuarios/${post.usuario?.id}`}
+                  >
+                    {" "}
+                    {post.usuario?.nome}{" "}
+                  </Link>
+                </Typography>
               </>
             ))}
           </Box>
         </CardContent>
       </Card>
     </Box>
-  </>
+    </Container>
   )
 }
 

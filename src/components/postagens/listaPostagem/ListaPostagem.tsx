@@ -60,7 +60,6 @@ function ListaPostagens() {
   return (
     
     <Box display="flex" flexDirection={"column"} alignItems="start">
-      
       <Carousel />
       {postagens
         .slice()
@@ -70,7 +69,7 @@ function ListaPostagens() {
             <Card className="card-post" variant="outlined">
               <CardContent>
                 <Link
-                  className="texr-link"
+                  className="text-link"
                   to={`/perfilUsuarios/${post.usuario?.id}`}
                 >
                   <Avatar
@@ -145,10 +144,10 @@ function ListaPostagens() {
                       default:
                         return (
                           <img
-                            className="img-post"
+                            className="foto-post"
                             src={url}
-                            width="390"
-                            height="640"
+                            width="50%"
+                            height="auto"
                             alt="Imagem da postagem"
                           />
                         );
