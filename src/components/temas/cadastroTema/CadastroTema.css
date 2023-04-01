@@ -1,3 +1,11 @@
+.MuiOutlinedInput-root {
+    border-radius: 20px!important;
+  }
+  
+  .MuiOutlinedInput-inputMarginDense {
+    border-radius: 20px!important;
+  }
+  
 .topo{
     padding-top: 10%;
     margin-top: 0;

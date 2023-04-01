@@ -27,6 +27,27 @@
 .App-link {
   color: #61dafb;
 }
+/*                Ajustar a cor dos botoes de todo projeto               */
+ .MuiButton-containedPrimary {
+  background-color: rgba(173, 121, 78, 0.753) !important;
+  size:"small"!important;
+  border-radius: 5px!important;
+ }
+
+  .MuiButton-containedSecondary {
+  background-color: rgba(114, 42, 13, 0.753) !important;
+  size:"small"!important;
+  border-radius: 5px!important;
+  }
+/* #################################################################### */
+
+.MuiOutlinedInput-root {
+  border-radius: 20px!important;
+}
+
+.MuiOutlinedInput-inputMarginDense {
+  border-radius: 20px!important;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -35,4 +56,7 @@
   to {
     transform: rotate(360deg);
   }
+
+  
 }
+

@@ -125,7 +125,7 @@ function PutUsuario() {
             <Grid item justifyContent="center" alignItems="center" xs={12}>
               <Box paddingX={20} className="fundo-transparent">
                 <form onSubmit={onSubmit}>
-                  {/* <TextField margin='normal' variant='outlined' value={usuario.id} fullWidth/> */}
+                  {/* <TextField margin='normal' variant='filled' value={usuario.id} fullWidth/> */}
                   <Typography
                     className="titulo-put-usuario"
                     variant="h4"
@@ -140,7 +140,7 @@ function PutUsuario() {
                     }
                     id="nome"
                     label="Nome de usuario"
-                    variant="outlined"
+                    variant="filled"
                     name="nome"
                     margin="normal"
                     fullWidth
@@ -152,7 +152,7 @@ function PutUsuario() {
                     id="senha"
                     label="senha"
                     type="password"
-                    variant="outlined"
+                    variant="filled"
                     name="senha"
                     margin="normal"
                     fullWidth
@@ -162,7 +162,7 @@ function PutUsuario() {
                     id="nome"
                     type="password"
                     name="nome"
-                    variant="outlined"
+                    variant="filled"
                     fullWidth
                   />
                   <TextField
@@ -172,7 +172,7 @@ function PutUsuario() {
                     }
                     id="foto"
                     label="foto"
-                    variant="outlined"
+                    variant="filled"
                     name="foto"
                     margin="normal"
                     fullWidth

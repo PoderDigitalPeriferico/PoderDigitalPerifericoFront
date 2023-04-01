@@ -7,7 +7,9 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 // aqui dentro pode ser usado qualquer tag HTML, incluindo conteudo do MUI, sempre separando por virgulas, pois é um array comum
 const items = [
   <img src="https://github.com/tjfaccipieri.png"  role="presentation" />,
-  <img src="https://github.com/fernandodelgadoazevedo.png"  role="presentation" />,
+  <img src="https://github.com/ChrisPCruz99.png"  role="presentation" />,
+  <img src="https://github.com/tjfaccipieri.png"  role="presentation" />,
+  <img src="https://github.com/ChrisPCruz99.png"  role="presentation" />,
   <img src="https://github.com/ChrisPCruz99.png"  role="presentation" />,
 ];
 
@@ -23,7 +25,7 @@ function Carousel() {
   return (
     // o retorno é apenas a tag do AliceCarousel, com suas opções, que estão todas disponiveis no link da documentação do npmjs
     <AliceCarousel mouseTracking infinite autoPlay items={items} animationType="fadeout" 
-    animationDuration={800} autoPlayInterval={3000} />
+    animationDuration={2000} autoPlayInterval={3000} swipeDelta={10}/> 
   )
 }
 

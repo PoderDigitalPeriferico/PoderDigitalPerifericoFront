@@ -87,6 +87,9 @@ function Login() {
     }
   }, [respUserLogin.token]);
 
+  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const validMail = emailRegex.test(userLogin.usuario);
+
   return (
     <Grid container className="responsive">
       <Grid
@@ -120,16 +123,22 @@ function Login() {
               />
               <form className="form-login" onSubmit={onSubmit}>
                 <TextField
-                  value={userLogin.usuario}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    updateModel(e)
+                  error={!validMail && userLogin.usuario.length > 0}
+                  helperText={
+                    !validMail && "Por favor, insira um e-mail válido"
                   }
+                  value={userLogin.usuario}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    updateModel(event)
+                  }
+                  label="E-mail"
                   id="usuario"
-                  label="usuário"
-                  variant="filled"
                   name="usuario"
-                  margin="normal"
+                  variant="outlined"
                   fullWidth
+                  margin="normal"
+                  size="small"
+
                 />
 
                 <TextField
@@ -138,12 +147,21 @@ function Login() {
                     updateModel(e)
                   }
                   id="senha"
-                  label="senha"
-                  variant="filled"
+                  size="small"
+                  label="Senha"
+                  variant="outlined"
                   name="senha"
                   margin="normal"
                   type="password"
                   fullWidth
+                  error={
+                    userLogin.senha.length <= 7 && userLogin.senha.length >= 1
+                  }
+                  helperText={
+                    userLogin.senha.length <= 7 && userLogin.senha.length >= 1
+                      ? "A senha precisa ter no mínimo 8 caracteres"
+                      : ""
+                  }
                 />
                 <Box marginTop={2} textAlign="center">
                   <Button
@@ -152,7 +170,7 @@ function Login() {
                     color="primary"
                     disabled={isLoading}
                   >
-                    {isLoading ? "aguarde" : "entrar"}
+                    {isLoading ? "Aguarde" : "Entrar"}
                   </Button>
                 </Box>
               </form>

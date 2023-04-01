@@ -60,6 +60,7 @@ function ListaPostagens() {
   return (
     
     <Box display="flex" flexDirection={"column"} alignItems="start">
+      
       <Carousel />
       {postagens
         .slice()
