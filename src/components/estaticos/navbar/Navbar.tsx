@@ -103,6 +103,10 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  function handleBothClicks() {
+    goLogout();
+    handleCloseUserMenu();
+  }
   var navbarComponent;
 
   if (token !== "") {
@@ -249,7 +253,7 @@ function Navbar() {
                       </Link>
                     </MenuItem>
                   ))}
-                  <MenuItem onClick={goLogout}>
+                  <MenuItem onClick={handleBothClicks}>
                     <Typography className="botao-sair" textAlign="center">
                       sair
                     </Typography>

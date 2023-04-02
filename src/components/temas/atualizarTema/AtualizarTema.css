@@ -1,0 +1,97 @@
+.MuiOutlinedInput-root {
+    border-radius: 20px!important;
+  }
+  
+  .MuiOutlinedInput-inputMarginDense {
+    border-radius: 20px!important;
+  }
+  
+.topo{
+    padding-top: 10%;
+    margin-top: 0;
+}
+
+.titulo{
+    font-weight: bold !important;
+    text-shadow: 6px 3px 3px #52250c7c;
+    color: #251901d8 !important;
+}
+
+.caixa-cadastro{
+    background-image: url('https://img.freepik.com/fotos-premium/favela-da-rocinha-no-rio-de-janeiro-brasil_63139-1977.jpg?w=740') !important;
+    background-repeat: no-repeat;
+    background-size: 100vw;
+}
+.form-cad{
+    background-color: #635f59e0;
+    border-radius: 10px;
+    padding: 20px;
+    
+}
+.fundo{
+    width: 100vw;
+padding-top: 5vw;
+    height: 100vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+    background-image: url('https://img.freepik.com/fotos-gratis/bela-vista-de-uma-pequena-cidade-nas-montanhas-durante-o-por-do-sol-no-brasil_181624-39388.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    animation: change 40s infinite ease-in-out;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #fffefe00;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:rgb(230, 174, 122);
+    height: 8;
+    width: 8px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+
+@keyframes change{
+    0%
+    {
+        background-image: url("https://ik.imagekit.io/wwd7wv4ro/imagens_fundo_pdp/200240-quais-sao-os-artistas-de-rua-brasileiros-mais-conhecidos-pelo-mundo.jpg?updatedAt=1680023663706");
+    }
+    30%
+    {
+        background-image: url('https://ik.imagekit.io/wwd7wv4ro/imagens_fundo_pdp/wallpaperflare.com_wallpaper.jpg?updatedAt=1680023664445');
+    }
+    60%
+    {
+        background-image: url('https://ik.imagekit.io/wwd7wv4ro/imagens_fundo_pdp/wallpaperflare.com_wallpaper__2_.jpg?updatedAt=1680023664506');
+    }
+    80%
+    {
+        background-image: url('https://ik.imagekit.io/wwd7wv4ro/imagens_fundo_pdp/wallpaperflare.com_wallpaper__1_.jpg?updatedAt=1680023664699');
+    }
+    100%
+    {
+        background-image: url("https://ik.imagekit.io/wwd7wv4ro/imagens_fundo_pdp/wallpaperflare.com_wallpaper__3_.jpg?updatedAt=1680023664837");
+    }
+    120%
+    {
+        background-image: url('https://ik.imagekit.io/wwd7wv4ro/imagens_fundo_pdp/graffiti-de-um-grafitti-em-uma-parede-de-tijolo.jpg?updatedAt=1680023668018');
+    }
+}

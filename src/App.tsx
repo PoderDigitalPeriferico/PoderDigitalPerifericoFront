@@ -22,6 +22,7 @@ import Perfil from './components/perfil/Perfil';
 import PutUsuario from "./components/putUsuario/PutUsuario";
 import ListaPorTema from "./components/temas/listaPorTema/ListaPorTema";
 import PerfilUsuarios from "./components/perfil/perfilusuarios/PerfilUsuarios";
+import AtualizarTema from "./components/temas/atualizarTema/AtualizarTema";
 
 
 function App() {
@@ -57,7 +58,7 @@ function App() {
 
           <Route path="/formularioTema" element={<CadastroTema />} />
 
-          <Route path="/formularioTema/:id" element={<CadastroTema />} />
+          <Route path="/formularioTema/:id" element={<AtualizarTema />} />
 
           <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
 
@@ -66,7 +67,6 @@ function App() {
           <Route path="/listaPorTema/:id" element={<ListaPorTema />} />
 
           <Route path="/perfilUsuarios/:id" element={<PerfilUsuarios />} />
-
 
         </Routes>
       </div>

@@ -59,8 +59,8 @@ function ListaPostagens() {
 
   return (
     
-    <Box display="flex" flexDirection={"column"} alignItems="start">
-      <Carousel/>
+    <Box display="flex" flexDirection={"column"} alignItems="center">
+      {/* <Carousel/> */}
       {postagens
         .slice()
         .sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime())
@@ -178,7 +178,7 @@ function ListaPostagens() {
                 >
                   <strong>Postado por:</strong>
                   <Link
-                    className="texr-link"
+                    className="text-link"
                     to={`/perfilUsuarios/${post.usuario?.id}`}
                   >
                     {" "}
