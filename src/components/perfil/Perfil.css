@@ -92,23 +92,29 @@ hr{
 
 .post-text{
     word-break: break-all;
+    display: flex;
+    justify-content: center;
 }
 
 .card-perfil{
     width: 60vw;
+    padding: 2vw;
+    margin: 1vw
 }
 
 .all-posts{
-margin-left: 42%;
+display: flex;
+justify-content: center;
 }
 
 .post-date{
-    margin-left: -43vw !important;
-    margin-top: 5vw !important;
+    display: flex;
+    justify-content: center;
 }
 
 .post-location{
-    margin-left: -40vw !important;
+    display: flex;
+    justify-content: center;
 }
 
 

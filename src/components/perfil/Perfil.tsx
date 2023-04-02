@@ -156,8 +156,8 @@ function Perfil() {
                           <img
                             className="foto-post"
                             src={url}
-                            width="390"
-                            height="640"
+                            width="50%"
+                            height="auto"
                             alt="Imagem da postagem"
                           />
                         );
@@ -181,8 +181,8 @@ function Perfil() {
 
 
               </CardContent>
-              <CardActions>
-                <Box display="flex" justifyContent="center" mb={1.5}>
+              
+                <Box display="flex" justifyContent="center">
 
                   <Link to={`/AtualizarPostagem/${post.id}`} className="text-link" >
                     <Box mx={1}>
@@ -199,7 +199,7 @@ function Perfil() {
                     </Box>
                   </Link>
                 </Box>
-              </CardActions>
+          
 
             </Card>
           </Box>
