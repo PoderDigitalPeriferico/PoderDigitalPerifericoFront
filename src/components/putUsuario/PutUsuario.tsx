@@ -139,9 +139,38 @@ function PutUsuario() {
                       updatedUsuario(e)
                     }
                     id="nome"
-                    label="Nome de usuario"
-                    variant="filled"
+                    label="Nome de Usuário"
+                    variant="outlined"
                     name="nome"
+                    margin="normal"
+                    fullWidth
+                    size="small"
+                    inputProps={{
+                      pattern: "[a-zA-ZÀ-ú ]{3,}",
+                      title: "Por favor, insira apenas letras",
+                    }}
+                    error={
+                      usuario.nome.length > 0 &&
+                      !usuario.nome.match("[a-zA-ZÀ-ú ]{3,}")
+                    }
+                    helperText={
+                      usuario.nome.length > 0 &&
+                      !usuario.nome.match("[a-zA-ZÀ-ú ]{3,}")
+                        ? "Inserir apenas letras"
+                        : null
+                    }
+                  />
+
+                  <TextField
+                    value={usuario.foto}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      updatedUsuario(e)
+                    }
+                    id="foto"
+                    label="foto"
+                    variant="outlined"
+                    size="small"
+                    name="foto"
                     margin="normal"
                     fullWidth
                   />
@@ -152,31 +181,24 @@ function PutUsuario() {
                     id="senha"
                     label="senha"
                     type="password"
-                    variant="filled"
                     name="senha"
                     margin="normal"
-                    fullWidth
+                    variant="outlined"
+                    size="small"
+                    helperText={"A senha precisa ter no mínimo 8 caracteres"}
+                    // fullWidth
                   />
                   <TextField
                     label="Confirmar senha"
                     id="nome"
                     type="password"
                     name="nome"
-                    variant="filled"
-                    fullWidth
+                    variant="outlined"
+                    size="small"
+                    helperText={"A senha precisa ter no mínimo 8 caracteres"}
+                    // fullWidth
                   />
-                  <TextField
-                    value={usuario.foto}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      updatedUsuario(e)
-                    }
-                    id="foto"
-                    label="foto"
-                    variant="filled"
-                    name="foto"
-                    margin="normal"
-                    fullWidth
-                  />
+
                   <Button type="submit" variant="contained" color="primary">
                     Atualizar perfil
                   </Button>

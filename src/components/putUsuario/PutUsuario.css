@@ -1,7 +1,7 @@
 
     
   .fundo-transparent{
-    background-color:#635f59a6;
+    background-color:#635f59e8;
     border-radius: 10px;
     padding: 20px;
   }
@@ -11,8 +11,9 @@
   color: #fff !important;
   }
   .MuiInputBase-input{
-    color: #000 !important;
-    background-color: #fff !important;
+    color: #4b2400 !important;
+    background-color: #ffff !important;
+    border-radius: 20px!important;
   }
   
 .titulo-put-usuario{

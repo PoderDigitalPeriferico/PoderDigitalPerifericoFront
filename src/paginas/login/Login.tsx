@@ -138,9 +138,7 @@ function Login() {
                   fullWidth
                   margin="normal"
                   size="small"
-
                 />
-
                 <TextField
                   value={userLogin.senha}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -155,10 +153,10 @@ function Login() {
                   type="password"
                   fullWidth
                   error={
-                    userLogin.senha.length <= 7 && userLogin.senha.length >= 1
+                    userLogin.senha.length < 8 && userLogin.senha.length >= 1
                   }
                   helperText={
-                    userLogin.senha.length <= 7 && userLogin.senha.length >= 1
+                    userLogin.senha.length < 8 && userLogin.senha.length >= 1
                       ? "A senha precisa ter no mínimo 8 caracteres"
                       : ""
                   }
@@ -168,7 +166,7 @@ function Login() {
                     type="submit"
                     variant="contained"
                     color="primary"
-                    disabled={isLoading}
+                    disabled={isLoading || userLogin.senha.length < 8}
                   >
                     {isLoading ? "Aguarde" : "Entrar"}
                   </Button>

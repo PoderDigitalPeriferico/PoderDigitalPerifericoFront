@@ -3,6 +3,8 @@
     background-repeat: no-repeat;
     background-size: 100vw;
     background-position-x: center;
+    background-position-y: center;
+    background-attachment: fixed;
     width: 100%;
     padding: 20px 20px;
  }

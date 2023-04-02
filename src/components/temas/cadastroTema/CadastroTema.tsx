@@ -16,6 +16,7 @@ function CadastroTema() {
     (state) => state.tokens
   );
   const userId = useSelector<TokenState, TokenState["id"]>((state) => state.id);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [usuario, setUsuario] = useState<Usuario>({
     id: +userId,
@@ -132,9 +133,21 @@ function CadastroTema() {
               margin="normal"
               size="small"
               fullWidth
+              error={tema.tema.length < 5 && tema.tema.length > 0}
+              helperText={
+                tema.tema.length < 5 && tema.tema.length > 0
+                  ? " Precisa ter no mínimo 5 caracteres"
+                  : ""
+              }
             />
-            <Button type="submit" variant="contained" color="primary">
-              Cadastrar
+
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              disabled={isLoading || tema.tema.length < 5}
+            >
+              {isLoading ? "Aguarde" : "Salvar"}
             </Button>
           </form>
         </div>

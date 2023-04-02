@@ -60,8 +60,8 @@ function ListaPostagens() {
   return (
     
     <Box display="flex" flexDirection={"column"} alignItems="start">
+      <Carousel/>
       
-      <Carousel />
       {postagens
         .slice()
         .sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime())

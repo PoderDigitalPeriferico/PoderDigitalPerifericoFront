@@ -13,8 +13,8 @@
 
 .titulo{
     font-weight: bold !important;
-    text-shadow: 6px 3px 3px #3f51b5;
-    color: #000 !important;
+    text-shadow: 6px 3px 3px #52250c7c;
+    color: #251901d8 !important;
 }
 
 .caixa-cadastro{
@@ -23,7 +23,7 @@
     background-size: 100vw;
 }
 .form-cad{
-    background-color: #635f59a6;
+    background-color: #635f59e0;
     border-radius: 10px;
     padding: 20px;
     

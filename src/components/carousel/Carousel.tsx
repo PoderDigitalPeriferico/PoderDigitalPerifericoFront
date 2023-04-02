@@ -6,11 +6,11 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 // variavel que ira receber as informações para cada uma das repetições do carousel.
 // aqui dentro pode ser usado qualquer tag HTML, incluindo conteudo do MUI, sempre separando por virgulas, pois é um array comum
 const items = [
-  <img src="https://github.com/tjfaccipieri.png"  role="presentation" />,
-  <img src="https://github.com/ChrisPCruz99.png"  role="presentation" />,
-  <img src="https://github.com/tjfaccipieri.png"  role="presentation" />,
-  <img src="https://github.com/ChrisPCruz99.png"  role="presentation" />,
-  <img src="https://github.com/ChrisPCruz99.png"  role="presentation" />,
+  <img src="https://github.com/tjfaccipieri.png" width={100} height={100} role="presentation"/>,
+  <img src="https://github.com/ChrisPCruz99.png" width={100} height={100} role="presentation"/>,
+  <img src="https://github.com/tjfaccipieri.png" width={100} height={100} role="presentation"/>,
+  <img src="https://github.com/ChrisPCruz99.png" width={100} height={100} role="presentation"/>,
+  <img src="https://github.com/ChrisPCruz99.png" width={100} height={100} role="presentation"/>,
 ];
 
 // caso necessário controlar quantos itens aparecem por vez no carousel, pode ser feito de modo responsivo
@@ -30,4 +30,4 @@ function Carousel() {
 }
 
 
- export default Carousel
+export default Carousel

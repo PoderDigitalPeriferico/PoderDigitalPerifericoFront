@@ -130,8 +130,18 @@ function CadastroUsuario() {
                     fullWidth
                     size="small"
                     margin="normal"
-                    helperText={"Nome Completo"}
+                    inputProps={{
+                      pattern: "[A-Za-zÀ-ú ]+",
+                      title: "Por favor, insira apenas letras",
+                    }}
+                    error={!!user.nome.match("[^A-Za-zÀ-ú ]")}
+                    helperText={
+                      user.nome.match("[^A-Za-zÀ-ú ]")
+                        ? "Por favor, insira apenas letras"
+                        : "Nome Completo"
+                    }
                   />
+
                   <TextField
                     error={!validMail && user.usuario.length > 0}
                     helperText={
@@ -174,11 +184,10 @@ function CadastroUsuario() {
                     id="senha"
                     name="senha"
                     variant="outlined"
-                    
                     margin="normal"
                     size="small"
                   />
-                  <>    </>
+                  <> </>
                   <TextField
                     value={confirmarSenha}
                     onChange={(event: ChangeEvent<HTMLInputElement>) =>
@@ -190,7 +199,6 @@ function CadastroUsuario() {
                     name="confirmarsenha"
                     variant="outlined"
                     size="small"
-                    
                     error={
                       confirmarSenha.length <= 7 && confirmarSenha.length >= 1
                     }
@@ -211,13 +219,10 @@ function CadastroUsuario() {
                       type="submit"
                       variant="contained"
                       color="primary"
-                      disabled={isLoading}
+                      disabled={isLoading || confirmarSenha.length < 8}
                     >
                       {isLoading ? "Aguarde" : "Cadastrar"}
                     </Button>
-                    {/* <Button type="submit" variant="contained" color="primary">
-                      Cadastrar
-                    </Button> */}
                   </Grid>
                 </form>
               </div>
