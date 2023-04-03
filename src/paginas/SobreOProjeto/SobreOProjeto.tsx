@@ -45,9 +45,9 @@ function SobreOProjeto() {
                 <img src="https://ik.imagekit.io/vinikills/IMAGENS_SOBRE_O_PROJETO/pipa_dir_1.png?updatedAt=1679061415321" alt="figura da pipa da direita 1" id='pipa_dir_1' />
                 <img src="https://ik.imagekit.io/vinikills/IMAGENS_SOBRE_O_PROJETO/pipa_dir_2.png?updatedAt=1679061414288" alt="figura da pipa da direita 2" id='pipa_dir_2' />
                 <img src="https://ik.imagekit.io/vinikills/IMAGENS_SOBRE_O_PROJETO/pipa_esq_1.png?updatedAt=1679061415136" alt="figura da pipa da esquerda 1" id='pipa_esq_1' />
-                <img src="https://ik.imagekit.io/vinikills/IMAGENS_SOBRE_O_PROJETO/pipa_esq_2.png?updatedAt=1679061414585" alt="figura da pipa da esquerda 2" id='pipa_esq_2'/>
-                <img src="https://ik.imagekit.io/vinikills/IMAGENS_SOBRE_O_PROJETO/pipa_esq_3.png?updatedAt=1679061415084" alt="figura da pipa da esquerda 3" id='pipa_esq_3'/>
-                <img src="https://ik.imagekit.io/vinikills/IMAGENS_SOBRE_O_PROJETO/pipa_esq_4.png?updatedAt=1679061414770" alt="figura da pipa da esquerda 4" id='pipa_esq_4'/>
+                <img src="https://ik.imagekit.io/vinikills/IMAGENS_SOBRE_O_PROJETO/pipa_esq_2.png?updatedAt=1679061414585" alt="figura da pipa da esquerda 2" id='pipa_esq_2' />
+                <img src="https://ik.imagekit.io/vinikills/IMAGENS_SOBRE_O_PROJETO/pipa_esq_3.png?updatedAt=1679061415084" alt="figura da pipa da esquerda 3" id='pipa_esq_3' />
+                <img src="https://ik.imagekit.io/vinikills/IMAGENS_SOBRE_O_PROJETO/pipa_esq_4.png?updatedAt=1679061414770" alt="figura da pipa da esquerda 4" id='pipa_esq_4' />
                 <h2 id="text">Poder <br /> Digital <br /> Periférico</h2>
                 <img src="https://ik.imagekit.io/vinikills/IMAGENS_SOBRE_O_PROJETO/favela_poste_dir.png?updatedAt=1679061412180" alt="figura do poste" id="favela_poste_dir" />
                 <img src="https://ik.imagekit.io/vinikills/IMAGENS_SOBRE_O_PROJETO/favela_casa_dir.png?updatedAt=1679061412171" alt="figura da casa a direita" id="favela_casa_dir" />
@@ -58,24 +58,31 @@ function SobreOProjeto() {
             <Grid container item md={12} className="sec">
                 <h2>Poder Digital Periférico</h2>
                 <div>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error a incidunt. Quisquam voluptatibus eius sit
-                        fugit saepe vero. Molestias omnis eligendi officiis totam aperiam, commodi sunt odio accusantium doloremque!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error a incidunt. Quisquam voluptatibus eius sit
-                        fugit saepe vero. Molestias omnis eligendi officiis totam aperiam, commodi sunt odio accusantium doloremque!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error a incidunt. Quisquam voluptatibus eius sit
-                        fugit saepe vero. Molestias omnis eligendi officiis totam aperiam, commodi sunt odio accusantium doloremque!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error a incidunt. Quisquam voluptatibus eius sit
-                        fugit saepe vero. Molestias omnis eligendi officiis totam aperiam, commodi sunt odio accusantium doloremque!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error a incidunt. Quisquam voluptatibus eius sit
-                        fugit saepe vero. Molestias omnis eligendi officiis totam aperiam, commodi sunt odio accusantium doloremque!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error a incidunt. Quisquam voluptatibus eius sit
-                        fugit saepe vero. Molestias omnis eligendi officiis totam aperiam, commodi sunt odio accusantium doloremque!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error a incidunt. Quisquam voluptatibus eius sit
-                        fugit saepe vero. Molestias omnis eligendi officiis totam aperiam, commodi sunt odio accusantium doloremque!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique error a incidunt. Quisquam voluptatibus eius sit
-                        fugit saepe vero. Molestias omnis eligendi officiis totam aperiam, commodi sunt odio accusantium doloremque!
+                    <p className='infoprojeto'>
+                        Nosso projeto tem como objetivo a redução das desigualdades, buscando dar visibilidade a artistas periféricos e projetos sociais.
+                        Acreditamos que a arte e a cultura são ferramentas poderosas para unir as pessoas e promover mudanças sociais significativas.
+                        Nossa principal atividade é dar visibilidade a esses artistas e projetos sociais, através de uma plataforma própria,
+                        permitindo que eles possam ser conhecidos e reconhecidos por um público mais amplo. Dessa forma, esperamos criar uma
+                        rede de apoio e solidariedade entre esses artistas e projetos sociais, fortalecendo a comunidade como um todo. </p>
+
+                    <p className='infoprojeto'>
+                        Nosso público-alvo são entidades doadoras e os próprios artistas periféricos, que muitas vezes têm dificuldade em acessar
+                        recursos e divulgar seus trabalhos. Através da nossa plataforma, esperamos conectar esses dois públicos e promover ações
+                        concretas para diminuir as desigualdades.
                     </p>
+
+                    <p className='infoprojeto'>
+                        Como resultado, esperamos construir uma rede cheia de harmonia e muitas correntes de ajuda, onde artistas periféricos e projetos
+                        sociais possam ser valorizados e apoiados. Também buscamos estabelecer parcerias com coletivos e projetos sociais já estruturados,
+                        para fortalecer nossa rede e ampliar nosso impacto.
+                    </p>
+
+                    <p className='infoprojeto'>
+                        O diferencial do nosso projeto é sermos donos da própria plataforma, o que nos permite dar mais atenção ao nosso público e
+                        oferecer soluções mais personalizadas e eficazes. Além disso, acreditamos que a cultura e a arte têm o poder de mudar o mundo,
+                        e queremos ser parte dessa transformação, contribuindo para um mundo mais justo e igualitário.
+                    </p>
+
                 </div>
                 <h2>Desenvolvedores</h2>
             </Grid>
