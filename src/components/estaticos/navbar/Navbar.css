@@ -22,8 +22,31 @@
     font-weight: bold !important;
     background-color: #8B2412;
 }
+
+.css-1oy63y8{
+    padding: 10px;
+    color: black;
+    border-radius: 10px;
+    color: #000 !important;
+    font-weight: bold !important;
+    background-color: #8B2412;
+}
+.css-1oy63y8{
+padding: 10px;
+border-radius: 10px;
+color: #000 !important;
+font-weight: bold !important;
+background-color: #4c0702 ;
+}
+
+
 .css-r8u8y9{
-    background-color: #00000070 !important;
+    background-color: #0000004f !important;
+    z-index: 22;
+    padding: 14px;
+    margin: 10px;
+    display: flex !important;
+    flex-direction: column !important;
 }
 .css-1km1ehz{
     padding: 10px;

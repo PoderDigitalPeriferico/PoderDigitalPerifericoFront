@@ -147,7 +147,6 @@ function CadastroUsuario() {
                         : "Nome Completo"
                     }
                   />
-                    <input type="file" />
                     
                   <TextField
                     error={!validMail && user.usuario.length > 0}
