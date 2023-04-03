@@ -164,13 +164,12 @@ function PerfilUsuarios() {
                     <Typography className='post-text' variant="h5" component="h4">
                       {post.texto}
                     </Typography>
-                    <Typography className='post-date' variant="body2" component="p">
-                      <strong>Postado em:</strong>{" "}
-                      {new Intl.DateTimeFormat(undefined, {
-                        dateStyle: "short",
-                        timeStyle: "short",
-                      }).format(new Date(post.data))}
-                    </Typography>
+                    <Typography variant="body2" component="p">
+                  <strong>Postado em:</strong>{" "}
+                  {new Intl.DateTimeFormat("pt-BR", {
+                    dateStyle: "medium",
+                  }).format(new Date(post.data))}
+                </Typography>
     
                     <Typography className='post-location' variant="body2" component="p">
                       <strong> Comunidade:</strong> {post.tema?.tema}
