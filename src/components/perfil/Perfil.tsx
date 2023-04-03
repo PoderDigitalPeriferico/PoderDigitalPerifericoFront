@@ -85,7 +85,7 @@ function Perfil() {
       <hr></hr>
 
       <h4 className='all-posts'>Todas as suas postagens</h4>
-      <Box display="flex" flexDirection={'column'} alignItems='center'>
+      <Box display="flex" flexDirection={'column'} alignItems='center' className="fundoPerfil">
 
         {usuario.postagens?.map((post) => (
           <Box >
@@ -96,21 +96,23 @@ function Perfil() {
                   {(() => {
                     const url = post.titulo;
                     switch (true) {
+                      case url === (""):
+                        return <div />;
                       case url.includes("youtube.com"):
                         return (
                           <YouTube
-                            className="video"
+                            className="videoyoutube"
                             videoId={url.split("=")[1]}
                             opts={{
-                              height: "390",
-                              width: "640",
+                              height: "400vh",
+                              width: "80%",
                               playerVars: { autoplay: 0 },
                             }}
                           />
                         );
                       case url.includes(".mp4"):
                         return (
-                          <video className="video" controls>
+                          <video className="videomp4" controls>
                             <source src={url} />
                           </video>
                         );
@@ -128,11 +130,12 @@ function Perfil() {
                       case url.includes("instagram.com"):
                         return (
                           <iframe
-                            src={`https://www.instagram.com/p/${url.split("/")[4]
-                              }/embed`}
-                            className="video"
-                            width="390"
-                            height="640"
+                            src={`https://www.instagram.com/p/${
+                              url.split("/")[4]
+                            }/embed`}
+                            className="instagram"
+                            width="400"
+                            height="630"
                             frameBorder={"0"}
                             scrolling="no"
                             title="Instagram video"
@@ -141,8 +144,9 @@ function Perfil() {
                       case url.includes("tiktok.com"):
                         return (
                           <iframe
-                            src={`https://www.tiktok.com/embed/v2/${url.split("/")[5]
-                              }?lang=en-US`}
+                            src={`https://www.tiktok.com/embed/v2/${
+                              url.split("/")[5]
+                            }?lang=en-US`}
                             className="video"
                             width="640"
                             height="750"

@@ -4,8 +4,19 @@
 
 .btnModal{
     color: #fff !important;
-    background-color: #3f51b5 !important;
+    background-color: #46220f !important;
     width: 56px !important;
     height: 56px !important;
     border-radius: 50% !important;
+}
+.css-1fo2sjy-MuiButtonBase-root-MuiFab-root {
+    border-radius: 50% !important;
+    width: 4vw;
+    height: auto;
+    position: relative !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(80%, -220%);
+    z-index: 13 !important;
+    background-color: #46220f!important;
 }

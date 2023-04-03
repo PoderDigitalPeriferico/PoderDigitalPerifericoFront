@@ -28,7 +28,7 @@
 }
 
 .css-1fo2sjy-MuiButtonBase-root-MuiFab-root:hover{
-  background-color: #5a92d3 !important;
+  background-color: #5a92d3 ;
 }
 
 .css-1l3umsk{
@@ -40,11 +40,11 @@
     left: 50% !important;
     transform: translate(80%, -290%);
     z-index: 13 !important;
-    background-color: #1565c0  !important;
+    background-color: #1565c0  ;
   }
   .css-1l3umsk:hover{
   
-    background-color: #5a92d3 !important;
+    background-color: #5a92d3 ;
 
 }
 
@@ -59,7 +59,7 @@
     left: 50% !important;
     transform: translate(80%, -220%);
     z-index: 13 !important;
-    background-color: #1565c0  !important;
+    background-color: #1565c0  ;
 }
   
 
@@ -105,6 +105,9 @@ hr{
 .all-posts{
 display: flex;
 justify-content: center;
+background-color: #8B2412;
+color: white;
+
 }
 
 .post-date{
@@ -164,6 +167,10 @@ justify-content: center;
     bottom: 0;
     animation: morph 10s linear infinite alternate, spin 26s linear infinite reverse;
     transform-origin: 20% 20%; 
+}
+
+.fundoPerfil{
+  background-color: #8B2412;
 }
 
 @-webkit-keyframes Gradient {

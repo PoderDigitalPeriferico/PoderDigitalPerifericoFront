@@ -21,8 +21,6 @@
     position: fixed;  
     bottom: 0.5em !important;
     right: 10em !important; 
-    
-
 }
 
 
@@ -69,6 +67,15 @@ padding-top: 5vw;
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
-
+  .postagens{
+    margin-left: -5%;
+  }
+  @media screen and (max-width: 768px){
+    .new-post{
+      position: fixed;  
+    bottom: -5em !important;
+    right: 6em !important;
+    }
+  }
 
 

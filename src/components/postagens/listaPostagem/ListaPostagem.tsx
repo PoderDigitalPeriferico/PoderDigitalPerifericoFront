@@ -20,7 +20,8 @@ import { busca, buscaId } from "../../../services/Services";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import ModalPostagem from "../modalPostagem/ModalPostagem";
 import "./ListaPostagem.css";
-import Carousel from '../../carousel/Carousel';
+import Carousel from "../../carousel/Carousel";
+import { isNull } from "util";
 
 function ListaPostagens() {
   let navigate = useNavigate();
@@ -58,7 +59,6 @@ function ListaPostagens() {
   }, [token]);
 
   return (
-    
     <Box display="flex" flexDirection={"column"} alignItems="center">
       {/* <Carousel/> */}
       {postagens
@@ -66,7 +66,7 @@ function ListaPostagens() {
         .sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime())
         .map((post) => (
           <Box key={post.id}>
-            <Card className="card-post" variant="outlined">
+            <Card className="card-perfil" variant="outlined">
               <CardContent>
                 <Link
                   className="text-link"
@@ -77,110 +77,108 @@ function ListaPostagens() {
                     alt="foto usuario"
                     src={post.usuario?.foto}
                   />
-                  
                 </Link>
-                
                 <Typography>
-                  {(() => {
-                    const url = post.titulo;
-                    switch (true) {
-                      case url.includes("youtube.com"):
-                        return (
-                          <YouTube
-                            className="videoyoutube"
-                            videoId={url.split("=")[1]}
-                            opts={{
-                              height: "390",
-                              width: "640",
-                              playerVars: { autoplay: 0 },
-                            }}
-                          />
-                        );
-                      case url.includes(".mp4"):
-                        return (
-                          <video className="videomp4" controls>
-                            <source src={url} />
-                          </video>
-                        );
-                      case url.includes("https://m.facebook.com/"):
-                        return (
-                          <div
-                            className="fb-video"
-                            data-href={url}
-                            data-width="640"
-                            data-show-text="true"
-                          >
-                            <div className="fb-xfbml-parse-ignore"></div>
-                          </div>
-                        );
-                      case url.includes("instagram.com"):
-                        return (
-                          <iframe
-                            src={`https://www.instagram.com/p/${
-                              url.split("/")[4]
-                            }/embed`}
-                            className="instagram"
-                            width="400"
-                            height="630"
-                            frameBorder={"0"}
-                            scrolling="no"
-                            title="Instagram video"
-                          ></iframe>
-                        );
-                      case url.includes("tiktok.com"):
-                        return (
-                          <iframe
-                            src={`https://www.tiktok.com/embed/v2/${
-                              url.split("/")[5]
-                            }?lang=en-US`}
-                            className="video"
-                            width="640"
-                            height="750"
-                            frameBorder={"0"}
-                            scrolling="no"
-                            title="TikTok video"
-                          ></iframe>
-                        );
-                      default:
-                        return (
-                          <img
-                            className="foto-post"
-                            src={url}
-                            width="50%"
-                            height="auto"
-                            alt="Imagem da postagem"
-                          />
-                        );
-                    }
-                  })()}
-                </Typography>
-                
+  {(() => {
+    const url = post.titulo;
+    switch (true) {
+      case url === (""):
+        return <div />;
+      case url.includes("youtube.com"):
+        return (
+          <YouTube
+          className="videoyoutube"
+          videoId={url.split("=")[1]}
+          opts={{
+            height: "400vh",
+            width: "80%",
+            playerVars: { autoplay: 0 },
+            }}
+          />
+        );
+      case url.includes(".mp4"):
+        return (
+          <video className="videomp4" controls>
+            <source src={url} />
+          </video>
+        );
+      case url.includes("https://m.facebook.com/"):
+        return (
+          <div
+            className="fb-video"
+            data-href={url}
+            data-width="640"
+            data-show-text="true"
+          >
+            <div className="fb-xfbml-parse-ignore"></div>
+          </div>
+        );
+      case url.includes("instagram.com"):
+        return (
+          <iframe
+            src={`https://www.instagram.com/p/${
+              url.split("/")[4]
+            }/embed`}
+            className="instagram"
+            width="400"
+            height="630"
+            frameBorder={"0"}
+            scrolling="no"
+            title="Instagram video"
+          ></iframe>
+        );
+      case url.includes("tiktok.com"):
+        return (
+          <iframe
+            src={`https://www.tiktok.com/embed/v2/${
+              url.split("/")[5]
+            }?lang=en-US`}
+            className="video"
+            width="640"
+            height="750"
+            frameBorder={"0"}
+            scrolling="no"
+            title="TikTok video"
+          ></iframe>
+        );
+      default:
+        return (
+          <img
+            className="foto-post"
+            src={url}
+            width="50%"
+            height="auto"
+            alt="Imagem da postagem"
+          />
+        );
+    }
+  })()}
+</Typography>
                 <Typography className="post-text" variant="h5" component="h4">
                   {post.texto}
                 </Typography>
-                <Typography variant="body2" component="p">
+                <Typography className="post-date" variant="body2" component="p">
                   <strong>Postado em:</strong>{" "}
-                  {new Intl.DateTimeFormat("pt-BR", {
-                    dateStyle: "medium",
+                  {new Intl.DateTimeFormat(undefined, {
+                    dateStyle: "short",
+                    timeStyle: "short",
                   }).format(new Date(post.data))}
                 </Typography>
 
-                <Box className="post-owner">
-                  <Typography variant="body2" component="p">
-                    <strong> Comunidade:</strong> {post.tema?.tema}
-                  </Typography>
-                </Box>
-
+                <Typography
+                  className="post-location"
+                  variant="body2"
+                  component="p"
+                >
+                  <strong> Comunidade:</strong> {post.tema?.tema}
+                </Typography>
                 <Typography
                   className="post-owner"
                   variant="body2"
                   component="p"
                 >
                   <strong>Postado por:</strong>
-                  <Link
-                    className="text-link"
-                    to={`/perfilUsuarios/${post.usuario?.id}`}
-                  >
+                  <Link to={`/perfilUsuarios/${post.usuario?.id}`}>
                     {" "}
                     {post.usuario?.nome}{" "}
                   </Link>
@@ -189,8 +187,8 @@ function ListaPostagens() {
             </Card>
           </Box>
         ))}
-  </Box>
-);
+    </Box>
+  );
 }
 
 export default ListaPostagens;
