@@ -22,7 +22,7 @@ import Usuario from "../../../models/Usuario";
 import Avatar from "@mui/material/Avatar";
 import YouTube from "react-youtube";
 
-function CadastroPost() {
+function CadastroPost({onCloseModal}: any) {
   let navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const [temas, setTemas] = useState<Tema[]>([]);
@@ -147,12 +147,12 @@ const userFoto = useSelector<TokenState, TokenState["foto"]>(
         progress: undefined,
       });
     }
-    back();
+    onCloseModal();
   }
 
-  function back() {
-    navigate("/postagens");
-  }
+  // function back() {
+  //   navigate("/postagens");
+  // }
 
   return (
     <Container maxWidth="sm" className="topo">

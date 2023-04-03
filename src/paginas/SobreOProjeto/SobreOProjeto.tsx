@@ -57,7 +57,7 @@ function SobreOProjeto() {
 
             <Grid container item md={12} className="sec">
                 <h2>Poder Digital Periférico</h2>
-                <div>
+                <div className='textoprojeto'>
                     <p className='infoprojeto'>
                         Nosso projeto tem como objetivo a redução das desigualdades, buscando dar visibilidade a artistas periféricos e projetos sociais.
                         Acreditamos que a arte e a cultura são ferramentas poderosas para unir as pessoas e promover mudanças sociais significativas.

@@ -90,6 +90,12 @@ function CadastroUsuario() {
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const validMail = emailRegex.test(user.usuario);
 
+
+
+
+
+
+
   return (
     <Grid container>
       <Grid
@@ -141,7 +147,7 @@ function CadastroUsuario() {
                         : "Nome Completo"
                     }
                   />
-
+                    
                   <TextField
                     error={!validMail && user.usuario.length > 0}
                     helperText={
@@ -159,7 +165,7 @@ function CadastroUsuario() {
                     size="small"
                     margin="normal"
                   />
-                  <TextField
+                  <TextField className='helperText'
                     value={user.foto}
                     onChange={(event: ChangeEvent<HTMLInputElement>) =>
                       updateModel(event)
@@ -204,7 +210,7 @@ function CadastroUsuario() {
                     }
                     helperText={
                       confirmarSenha.length <= 7 && confirmarSenha.length >= 1
-                        ? "A senha precisa ter no mínimo 8 caracteres"
+                        ? "Senha com 8 Dígitos"
                         : ""
                     }
                     margin="normal"

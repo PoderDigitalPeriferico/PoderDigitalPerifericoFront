@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Typography, Grid, Button } from '@material-ui/core';
 import { Box, Fab } from '@mui/material';
 import TabPostagem from '../../components/postagens/tabPostagem/TabPostagem';
@@ -24,6 +24,16 @@ function Home() {
             document.body.style.backgroundImage = "url('')"
         ), tempo_de_delay)
 
+        const [open, setOpen] = React.useState(false);
+
+        const handleOpen = () => {
+            setOpen(true);
+          };
+        
+          const handleClose = () => {
+            setOpen(false);
+          };
+
 
     return (
         <>
@@ -33,7 +43,7 @@ function Home() {
                 <Grid item xs={1}>
                 <Box className='new-post' >
 
-        <div className="new-post">  <ModalPostagem /></div>
+        <div className="new-post">  <ModalPostagem onOpen={handleOpen} onClose={handleClose} onChangeState={open} /></div>
                 </Box>
 
                 </Grid>
@@ -42,7 +52,7 @@ function Home() {
                     
                     <Grid xs={12} className='postagens'>
                         <Box>
-                            <ListaPostagens />
+                            <ListaPostagens onChangeState={open}  />
                         </Box>
                     </Grid>
                 </Box>
