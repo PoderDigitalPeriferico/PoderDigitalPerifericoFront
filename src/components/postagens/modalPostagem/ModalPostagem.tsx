@@ -33,27 +33,27 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-function ModalPostagem() {
+function ModalPostagem(props: any) {
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(props.open);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
+  // const handleOpen = () => {
+  //   setOpen(true);
+  // };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
       <Box display="flex" justifyContent="flex-end" className="cursor">
-        <CloseIcon onClick={handleClose} />
+        <CloseIcon onClick={props.onClose} />
 
       </Box>
 
-      <CadastroPost />
+      <CadastroPost onCloseModal={props.onClose} />
 
     </div>
   );
@@ -61,13 +61,13 @@ function ModalPostagem() {
   return (
     <div>
       <Fab className="btnModal"
-        onClick={handleOpen} color="primary" aria-label="add">
+        onClick={props.onOpen} color="primary" aria-label="add">
         <AddIcon />
       </Fab>
       
       <Modal
-        open={open}
-        onClose={handleClose}
+        open={props.onChangeState}
+        onClose={props.onClose}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >

@@ -23,7 +23,7 @@ import "./ListaPostagem.css";
 import Carousel from "../../carousel/Carousel";
 import { isNull } from "util";
 
-function ListaPostagens() {
+function ListaPostagens(props: any) {
   let navigate = useNavigate();
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
@@ -56,7 +56,7 @@ function ListaPostagens() {
       });
     }
     getPosts();
-  }, [token]);
+  }, [token, props.onChangeState]);
 
   return (
     <Box display="flex" flexDirection={"column"} alignItems="center">

@@ -125,7 +125,11 @@ button.primary.ghost {
     color: #02899C;
 }
 
+<<<<<<< HEAD
 p.textoprojeto{font-size:1.2em !important
+=======
+p.texto{font-size:1.2em !important
+>>>>>>> 4507e44eabac28cef0bd7bd39c89505688d28b96
 
 }
 
@@ -133,4 +137,14 @@ p.textoprojeto{font-size:1.2em !important
     text-align: justify;
     max-width: 80%;
     margin: 15px auto;
+}
+
+@media(max-width: 1000px) {
+    .parallax {
+        display: none !important;
+    }
+
+    .sec {
+        padding: 100px 20px
+    }
 }

@@ -211,7 +211,7 @@ function CadastroUsuario() {
                     }
                     helperText={
                       confirmarSenha.length <= 7 && confirmarSenha.length >= 1
-                        ? "A senha precisa ter no mínimo 8 caracteres"
+                        ? "Senha com 8 Dígitos"
                         : ""
                     }
                     margin="normal"
