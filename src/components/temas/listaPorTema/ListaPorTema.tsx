@@ -75,88 +75,90 @@ function ListaPorTema() {
                     />
                   </Link>
                   <Typography>
-                    {(() => {
-                      const url = post.titulo;
-                      switch (true) {
-                        case url.includes("youtube.com"):
-                          return (
-                            <YouTube
-                              className="video"
-                              videoId={url.split("=")[1]}
-                              opts={{
-                                height: "390",
-                                width: "640",
-                                playerVars: { autoplay: 0 },
-                              }}
-                            />
-                          );
-                        case url.includes(".mp4"):
-                          return (
-                            <video className="video" controls>
-                              <source src={url} />
-                            </video>
-                          );
-                        case url.includes("https://m.facebook.com/"):
-                          return (
-                            <div
-                              className="fb-video"
-                              data-href={url}
-                              data-width="640"
-                              data-show-text="true"
-                            >
-                              <div className="fb-xfbml-parse-ignore"></div>
-                            </div>
-                          );
-                        case url.includes("instagram.com"):
-                          return (
-                            <iframe
-                              src={`https://www.instagram.com/p/${
-                                url.split("/")[4]
-                              }/embed`}
-                              className="video"
-                              width="390"
-                              height="640"
-                              frameBorder={"0"}
-                              scrolling="no"
-                              title="Instagram video"
-                            ></iframe>
-                          );
-                        case url.includes("tiktok.com"):
-                          return (
-                            <iframe
-                              src={`https://www.tiktok.com/embed/v2/${
-                                url.split("/")[5]
-                              }?lang=en-US`}
-                              className="video"
-                              width="640"
-                              height="750"
-                              frameBorder={"0"}
-                              scrolling="no"
-                              title="TikTok video"
-                            ></iframe>
-                          );
-                        default:
-                          return (
-                            <img
-                              className="foto-post"
-                              src={url}
-                              width="390"
-                              height="640"
-                              alt="Imagem da postagem"
-                            />
-                          );
-                      }
-                    })()}
+                  {(() => {
+    const url = post.titulo;
+    switch (true) {
+      case url === (""):
+        return <div />;
+      case url.includes("youtube.com"):
+        return (
+          <YouTube
+          className="videoyoutube"
+          videoId={url.split("=")[1]}
+          opts={{
+            height: "350vh",
+            width: "80%",
+            playerVars: { autoplay: 0 },
+            }}
+          />
+        );
+      case url.includes(".mp4"):
+        return (
+          <video className="videomp4" controls>
+            <source src={url} />
+          </video>
+        );
+      case url.includes("https://m.facebook.com/"):
+        return (
+          <div
+            className="fb-video"
+            data-href={url}
+            data-width="640"
+            data-show-text="true"
+          >
+            <div className="fb-xfbml-parse-ignore"></div>
+          </div>
+        );
+      case url.includes("instagram.com"):
+        return (
+          <iframe
+            src={`https://www.instagram.com/p/${
+              url.split("/")[4]
+            }/embed`}
+            className="instagram"
+            width="400"
+            height="630"
+            frameBorder={"0"}
+            scrolling="no"
+            title="Instagram video"
+          ></iframe>
+        );
+      case url.includes("tiktok.com"):
+        return (
+          <iframe
+            src={`https://www.tiktok.com/embed/v2/${
+              url.split("/")[5]
+            }?lang=en-US`}
+            className="video"
+            width="640"
+            height="750"
+            frameBorder={"0"}
+            scrolling="no"
+            title="TikTok video"
+          ></iframe>
+        );
+      default:
+        return (
+          <img
+            className="foto-post"
+            src={url}
+            width="50%"
+            height="auto"
+            alt="Imagem da postagem"
+          />
+        );
+    }
+  })()}
                   </Typography>
                   <Typography variant="body2" component="p">
                     {post.texto}
                   </Typography>
                   <Typography variant="body2" component="p">
-                    <strong>Postado em:</strong>{" "}
-                    {new Intl.DateTimeFormat("pt-BR", {
-                      dateStyle: "medium",
-                    }).format(new Date(post.data))}
-                  </Typography>
+                  <strong>Postado em:</strong>{" "}
+                  {new Intl.DateTimeFormat("pt-BR", {
+                    dateStyle: "medium",
+                  }).format(new Date(post.data))}
+                </Typography>
                   <Typography
                     className="post-owner"
                     variant="body2"

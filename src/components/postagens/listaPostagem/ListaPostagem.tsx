@@ -157,11 +157,10 @@ function ListaPostagens(props: any) {
                 <Typography className="post-text" variant="h5" component="h4">
                   {post.texto}
                 </Typography>
-                <Typography className="post-date" variant="body2" component="p">
+                <Typography variant="body2" component="p">
                   <strong>Postado em:</strong>{" "}
-                  {new Intl.DateTimeFormat(undefined, {
-                    dateStyle: "short",
-                    timeStyle: "short",
+                  {new Intl.DateTimeFormat("pt-BR", {
+                    dateStyle: "medium",
                   }).format(new Date(post.data))}
                 </Typography>
 

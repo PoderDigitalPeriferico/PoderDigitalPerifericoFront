@@ -35,12 +35,12 @@
     padding: 100px;
     top: 147px;
     height: 650px;
-    height: 750px;
 }
 
 .sec h2 {
     font-size: 3em;
     color: #fff;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -76,6 +76,7 @@ strong{
 
 .integrantes h3 {
 	margin: 10px 0;
+    
 }
 
 .integrantes h6 {
@@ -123,24 +124,4 @@ button.primary {
 button.primary.ghost {
     background-color: transparent;
     color: #02899C;
-}
-
-p.textoprojeto{font-size:1.2em !important
-
-}
-
-.infoprojeto{
-    text-align: justify;
-    max-width: 80%;
-    margin: 15px auto;
-}
-
-@media(max-width: 1000px) {
-    .parallax {
-        display: none !important;
-    }
-
-    .sec {
-        padding: 100px 20px
-    }
 }
