@@ -22,6 +22,26 @@
     font-weight: bold !important;
     background-color: #8B2412;
 }
+.css-r8u8y9{
+    background-color: #00000070 !important;
+}
+.css-1km1ehz{
+    padding: 10px;
+    color: black;
+    border-radius: 10px;
+    color: #000 !important;
+    font-weight: bold !important;
+    background-color: #8B2412;
+}
+
+.css-1km1ehz:hover{
+    padding: 10px;
+    border-radius: 10px;
+    color: #000 !important;
+    font-weight: bold !important;
+    background-color: #4c0702 ;
+}
+
 .css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper{
     background-color: #00000070 !important;
 }

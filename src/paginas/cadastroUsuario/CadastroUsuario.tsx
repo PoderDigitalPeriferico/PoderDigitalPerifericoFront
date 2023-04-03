@@ -90,6 +90,12 @@ function CadastroUsuario() {
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const validMail = emailRegex.test(user.usuario);
 
+
+
+
+
+
+
   return (
     <Grid container>
       <Grid
@@ -141,7 +147,8 @@ function CadastroUsuario() {
                         : "Nome Completo"
                     }
                   />
-
+                    <input type="file" />
+                    
                   <TextField
                     error={!validMail && user.usuario.length > 0}
                     helperText={
@@ -159,7 +166,7 @@ function CadastroUsuario() {
                     size="small"
                     margin="normal"
                   />
-                  <TextField
+                  <TextField className='helperText'
                     value={user.foto}
                     onChange={(event: ChangeEvent<HTMLInputElement>) =>
                       updateModel(event)

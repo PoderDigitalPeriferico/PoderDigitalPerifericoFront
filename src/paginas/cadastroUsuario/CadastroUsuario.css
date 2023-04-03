@@ -31,6 +31,9 @@ color: #fff !important;
   margin-left: -5vh;
   color: white!important;
 }
+.helperText{
+  font-size: 0.1em !important;
+}
 
 .MuiFormHelperText-root {
   color: rgb(249, 143, 5)!important;
