@@ -185,7 +185,7 @@ function PutUsuario() {
                     margin="normal"
                     variant="outlined"
                     size="small"
-                    helperText={"A senha precisa ter no mínimo 8 caracteres"}
+                    helperText={"Senha com 8 Dígitos"}
                     // fullWidth
                   />
                   <TextField
@@ -195,7 +195,7 @@ function PutUsuario() {
                     name="nome"
                     variant="outlined"
                     size="small"
-                    helperText={"A senha precisa ter no mínimo 8 caracteres"}
+                    helperText={"Senha com 8 Dígitos"}
                     // fullWidth
                   />
 
