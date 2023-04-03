@@ -93,7 +93,7 @@ function CadastroTema() {
           Authorization: token,
         },
       });
-      toast.success("Tema cadastrado com sucesso", {
+      toast.success("Comunidade cadastrado com sucesso", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,

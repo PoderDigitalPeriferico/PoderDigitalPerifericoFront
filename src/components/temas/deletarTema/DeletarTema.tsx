@@ -56,7 +56,7 @@ function DeletarTema() {
                 'Authorization': token
               }
             });
-            toast.success('Tema deletado com sucesso',{
+            toast.success('Comunidade deletado com sucesso',{
               position: 'top-right',
               autoClose: 2000,
               hideProgressBar: false,

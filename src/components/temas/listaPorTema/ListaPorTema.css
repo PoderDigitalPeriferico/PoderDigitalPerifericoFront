@@ -96,7 +96,7 @@
 
   .fundoListaPorTema{
     width: 100vw !important;
-padding-top: 5vw !important;
+    padding-top: 5vw !important;
     height: 100vh !important;
     overflow: scroll !important;
     overflow-x: hidden !important;
@@ -105,5 +105,7 @@ padding-top: 5vw !important;
     background-size: cover !important;
     text-align: center !important;
     justify-content: center !important;
+    margin: 0;
+    padding: 20%;
   }
   
