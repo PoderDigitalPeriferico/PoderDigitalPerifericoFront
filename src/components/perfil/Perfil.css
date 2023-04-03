@@ -32,11 +32,7 @@
 }
 
 
-.css-1l3umsk:hover{
-  
-  background-color: #c4632f;
 
-}
 
 
 .css-1l3umsk{
@@ -48,13 +44,15 @@
     left: 50% !important;
     transform: translate(80%, -290%);
     z-index: 13 !important;
-    background-color: #46220f  ;
+    background-color: #46220f !important ;
   }
+  
+  
   .css-1l3umsk:hover{
   
-    background-color: #5a92d3 ;
-
-}
+    background-color: #c4632f !important;
+  
+  }
 
 
 
