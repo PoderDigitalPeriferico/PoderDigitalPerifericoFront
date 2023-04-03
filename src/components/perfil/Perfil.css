@@ -28,8 +28,16 @@
 }
 
 .css-1fo2sjy-MuiButtonBase-root-MuiFab-root:hover{
-  background-color: #5a92d3 ;
+  background-color: #c4632f;
 }
+
+
+.css-1l3umsk:hover{
+  
+  background-color: #c4632f;
+
+}
+
 
 .css-1l3umsk{
     border-radius: 50% !important;
@@ -40,7 +48,7 @@
     left: 50% !important;
     transform: translate(80%, -290%);
     z-index: 13 !important;
-    background-color: #1565c0  ;
+    background-color: #46220f  ;
   }
   .css-1l3umsk:hover{
   
