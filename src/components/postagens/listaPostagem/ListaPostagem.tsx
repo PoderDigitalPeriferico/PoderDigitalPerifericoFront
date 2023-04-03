@@ -90,7 +90,7 @@ function ListaPostagens() {
           className="videoyoutube"
           videoId={url.split("=")[1]}
           opts={{
-            height: "400vh",
+            height: "350vh",
             width: "80%",
             playerVars: { autoplay: 0 },
             }}

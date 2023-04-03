@@ -107,6 +107,8 @@ display: flex;
 justify-content: center;
 background-color: #8B2412;
 color: white;
+padding: 2vw;
+margin: 0;
 
 }
 
@@ -119,12 +121,9 @@ color: white;
     display: flex;
     justify-content: center;
 }
-
-
-
-
-
-
+.fundoPerfil{
+  background-color: #8B2412;
+}
 .header {
     background: -moz-linear-gradient(45deg, #02e1ba 0%, #26c9f2 29%, #d911f2 66%, #ffa079 100%);
     background: -webkit-linear-gradient(45deg, #02e1ba 0%,#26c9f2 29%,#d911f2 66%,#ffa079 100%);
@@ -169,9 +168,6 @@ color: white;
     transform-origin: 20% 20%; 
 }
 
-.fundoPerfil{
-  background-color: #8B2412;
-}
 
 @-webkit-keyframes Gradient {
 	0% {

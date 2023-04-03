@@ -115,3 +115,8 @@
   width: 50vw;
   height: 65vh;
 }
+@media screen and (max-width: 768px){
+  .videoyoutube{
+    height: 80vh !important;
+  }
+}

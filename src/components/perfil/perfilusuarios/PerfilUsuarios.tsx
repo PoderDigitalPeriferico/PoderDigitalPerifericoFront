@@ -77,8 +77,8 @@ function PerfilUsuarios() {
     
           <hr></hr>
     
-          <h4 className='all-posts'>Postagens</h4>
-          <Box display="flex" flexDirection={'column'} alignItems='center'>
+          <h4 className='all-posts'>Todas as suas postagens</h4>
+          <Box display="flex" flexDirection={'column'} alignItems='center' className="fundoPerfil">
     
             {usuario.postagens?.map((post) => (
               <Box >

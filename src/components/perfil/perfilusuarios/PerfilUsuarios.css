@@ -8,4 +8,11 @@
 .all-posts{
     display: flex;
     justify-content: center;
+    background-color: #8B2412;
+    color: white;
+    padding: 2vw;
+    margin: 0;
+}
+.fundo-perfil{
+    background-color: #8B2412;
 }
