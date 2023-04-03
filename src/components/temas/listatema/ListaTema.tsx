@@ -67,7 +67,7 @@ function ListaTema() {
                 </Typography>
               </CardContent>
               
-              {+userId === 1 ?(
+              {+userId === 77 ?(
                 <CardActions>
                 <Box className="BoxButton">
                   <Link
