@@ -27,10 +27,6 @@
     text-decoration: none;
 }
 
-.css-1fo2sjy-MuiButtonBase-root-MuiFab-root:hover{
-  background-color: #c4632f;
-}
-
 
 
 
@@ -47,19 +43,12 @@
     background-color: #46220f !important ;
   }
   
-  
-  .css-1l3umsk:hover{
-  
-    background-color: #c4632f !important;
-  
-  }
-
 
 
 .css-1fo2sjy-MuiButtonBase-root-MuiFab-root{
     border-radius: 50% !important;
-    width: 4vw ;
-    height: auto ;
+    width: 5vw !important;
+    height: 10vh !important;
     position: relative !important;
     top: 50% !important;
     left: 50% !important;

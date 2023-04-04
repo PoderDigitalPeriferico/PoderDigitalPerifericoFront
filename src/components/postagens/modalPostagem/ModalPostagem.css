@@ -22,8 +22,9 @@
 }
 .css-1fo2sjy-MuiButtonBase-root-MuiFab-root:hover{
     border-radius: 50% !important;
-    width: 4vw;
-    height: auto;
+    width: 5vw;
+    height: 9vh;
+
     position: relative !important;
     top: 50% !important;
     left: 50% !important;

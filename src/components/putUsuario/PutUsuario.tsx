@@ -124,7 +124,7 @@ function PutUsuario() {
           >
             <Grid item justifyContent="center" alignItems="center" xs={12}>
               <Box paddingX={20} className="fundo-transparent">
-                <form onSubmit={onSubmit}>
+                <form className='form-putUsuario' onSubmit={onSubmit}>
                   {/* <TextField margin='normal' variant='filled' value={usuario.id} fullWidth/> */}
                   <Typography
                     className="titulo-put-usuario"
@@ -174,6 +174,7 @@ function PutUsuario() {
                     margin="normal"
                     fullWidth
                   />
+                  <div className="senhas-put">
                   <TextField
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
                       updatedUsuario(e)
@@ -198,10 +199,12 @@ function PutUsuario() {
                     helperText={"Senha com 8 Dígitos"}
                     // fullWidth
                   />
-
+                  </div>
+                    <div className="button-put">
                   <Button type="submit" variant="contained" color="primary">
                     Atualizar perfil
                   </Button>
+                  </div>
                 </form>
               </Box>
             </Grid>

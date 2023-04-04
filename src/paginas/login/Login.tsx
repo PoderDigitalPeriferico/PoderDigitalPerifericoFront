@@ -162,6 +162,7 @@ function Login() {
                   }
                 />
                 <Box marginTop={2} textAlign="center">
+                <div className="button-logar">
                   <Button
                     type="submit"
                     variant="contained"
@@ -169,13 +170,16 @@ function Login() {
                     disabled={isLoading || userLogin.senha.length < 8}
                   >
                     {isLoading ? "Aguarde" : "Entrar"}
+                  
                   </Button>
+                  </div>
                 </Box>
               </form>
 
               <Box display="flex" justifyContent="center" marginTop={2}>
                 <Box marginRight={1}></Box>
                 <Link className="text-decorator-none" to="/cadastrar">
+                 <div className="link-cadastre">
                   <Typography
                     variant="subtitle1"
                     gutterBottom
@@ -184,6 +188,7 @@ function Login() {
                   >
                     Cadastre-se
                   </Typography>
+                  </div>
                 </Link>
               </Box>
             </Box>

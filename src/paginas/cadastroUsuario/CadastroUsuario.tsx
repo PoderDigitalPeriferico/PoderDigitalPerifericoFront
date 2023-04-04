@@ -117,8 +117,8 @@ function CadastroUsuario() {
         <Grid container justifyContent="center" alignItems="center">
           <Grid justifyContent="flex-end" alignItems="center" xs={6}>
             <Box paddingX={20} className="fundo-transparent">
-              <div>
-                <form onSubmit={onSubmit}>
+              <div className='component-cadastro'>
+                <form className='form-cadastro' onSubmit={onSubmit}>
                   <img
                     className="logo-cadastro"
                     src="https://ik.imagekit.io/wwd7wv4ro/PDP_full_branco.png?updatedAt=1679053313611"
@@ -180,6 +180,7 @@ function CadastroUsuario() {
                     error={user.foto.length < 15 && user.foto.length > 1}
                     helperText={"Inserir o link imagem *.png, *.jpg"}
                   />
+                  <div className="senha-confirma">
                   <TextField
                     value={user.senha}
                     onChange={(event: ChangeEvent<HTMLInputElement>) =>
@@ -215,12 +216,18 @@ function CadastroUsuario() {
                     }
                     margin="normal"
                   />
+                  </div>
                   <Grid container justifyContent="space-around">
+                    {/* <div className="buttons-cadastro"> */}
+                      <div className="button-cancelar">
+
                     <Link className="text-link" to="/login">
                       <Button variant="contained" color="secondary">
                         Cancelar
                       </Button>
                     </Link>
+                    </div>
+                    <div className="button-cadastrar">
                     <Button
                       type="submit"
                       variant="contained"
@@ -229,6 +236,8 @@ function CadastroUsuario() {
                     >
                       {isLoading ? "Aguarde" : "Cadastrar"}
                     </Button>
+                    {/* </div> */}
+                    </div>
                   </Grid>
                 </form>
               </div>

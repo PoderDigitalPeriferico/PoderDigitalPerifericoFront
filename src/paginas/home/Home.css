@@ -46,6 +46,43 @@ padding-top: 5vw;
 }
 
 
+@media only screen and (max-width: 768px){
+  MuiCard-root {
+    background-color: rgba(230, 230, 230, 0.904) !important;
+    display: flex;
+    flex-direction: column;
+    width: 85vw !important;
+    justify-content: space-between;
+    margin-left: 16vw !important;
+}
+.foto-post{
+  width: 77vw;
+}
+.css-1fo2sjy-MuiButtonBase-root-MuiFab-root{
+  width: 20px;
+  height: 20px;
+}
+.videomp4 {
+  width: 80vw !important;
+  height: 30vh !important;
+  margin-left: -2vw;
+}
+.MuiCard-root{
+  width: 80vw !important;
+  padding: 4vw !important;
+  margin: 6vw !important;
+  margin-left: 20vw !important;
+}
+.videoyoutube {
+  height: "390" !important;
+  width: "640" !important;
+  width: 100vw;
+  margin-left: -12vw;
+  margin-bottom: -44vh;
+}
+
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;

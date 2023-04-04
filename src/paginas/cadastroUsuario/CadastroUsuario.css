@@ -47,6 +47,12 @@ color: #fff !important;
   letter-spacing: 0.03333em;
 }
 
+.senha-confirma{
+  margin-left: 2.5vw;
+  margin-bottom: 15px;
+  width: 60vw !important;
+}
+
 .MuiFormControl-root {
   border: 0;
   border-radius: 20px!important;
@@ -58,4 +64,66 @@ color: #fff !important;
   flex-direction: column;
   vertical-align: top;
 }
+@media screen and (max-width: 900px){
+  .css-l44j74 {
+    width: 60vw;
+    margin: -21vw;
+    padding-right: 6vw !important;
+    margin-top: 70px;
+    margin-bottom: 0px;
+    padding-top: 68px !important;
+    padding-left: 6vw!important;
+}
+.logo-cadastro{
+  margin-left: 14vw;
+  width: 15em;
+  margin-bottom: 0px;
+}
 
+}
+
+
+@media screen and (max-width: 768px){
+  .css-l44j74 {
+    width: 60vw;
+    padding-left: 30vw !important;
+    margin: -21vw;
+    padding-right: 0 !important;
+    margin-top: 20vh;
+    margin-bottom: 50vh;
+    padding-top: 68px !important;
+}
+/* .buttons-cadastro{
+  margin: 15px;
+  display: flex;
+} */
+.button-cancelar{
+  margin-left: -30px;}
+
+.button-cadastrar{
+  margin-right: -30px;
+}
+.senha-confirma{
+  margin-left: 8vw;
+  margin-bottom: 15px;
+}
+.logo-cadastro{
+  margin-left: 2rem;
+  width: 15em;
+  margin-bottom: 0px;
+}
+
+form.form-cadastro{
+  margin-right: 10%;
+  margin-left: -40%
+}
+  .MuiGrid-justify-content-xs-center{
+    justify-content: none !important;
+  }
+
+  .MuiFormControl-root{
+    width: 60vw;
+    margin-right: 90% !important;
+    
+  }
+}

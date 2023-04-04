@@ -23,16 +23,7 @@
   margin-left: -5vh!important;
 }
 /* Ajustar tamanho e margem do logo */
-@media only screen and (max-width: 768px) {
-  .logo-login {
-    margin-top: -15vh!important;
-    margin-right: -10vw!important;
-    width: 50vw!important;
-    margin-top: -2vh!important;
-    margin-bottom: 1vh!important;
-    margin-left: 1vw!important;
-  }
-}
+
 
 /* Estilo base para o componente de login */
 .componentLogin {
@@ -62,7 +53,15 @@
   border-radius: 2!important;
   box-shadow: 10px 10px 10px rgba(31, 29, 25, 0.568)!important;
   }
+  .logo-login {
+    margin-top: -15vh!important;
+    margin-right: -6vw!important;
+    width: 40vw!important;
+    margin-top: -5vh!important;
+    margin-bottom: 3vh!important;
+    margin-left: -11vw!important;
 }
+
 
 .buttonLogin {
   background-color: rgb(58, 37, 12) !important;
@@ -75,15 +74,25 @@
   margin-top: auto!important;
   
 }
-@media only screen and (max-width: 768px) {
+
+
+
   /* Estilos para dispositivos móveis com largura máxima de 600px */
   .form-login {
-    /* Centralizar o formulário */
     display: flex!important;
     flex-direction: column!important;
     align-items: center!important;
     justify-content: center!important;
-  }
+    width: 70vw;
+    margin-left: 7vw;
+}
+.link-cadastre{
+  margin-left: -33vw;
+}
+.button-logar{
+  margin-left: -65vw;}
+
+
   /* Reduzir a largura dos campos de entrada */
   .form-login input {
   width: 100% !important;

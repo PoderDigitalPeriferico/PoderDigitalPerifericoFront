@@ -1,37 +1,57 @@
+.fundo-transparent {
+  background-color: #635f59e8;
+  border-radius: 10px;
+  padding: 20px;
+}
 
-    
-  .fundo-transparent{
-    background-color:#635f59e8;
-    border-radius: 10px;
-    padding: 20px;
-  }
-  
-  .text-link{
+.text-link {
   text-decoration: none !important;
   color: #fff !important;
-  }
-  .MuiInputBase-input{
-    color: #4b2400 !important;
-    background-color: #ffff !important;
-    border-radius: 20px!important;
-  }
-  
-.titulo-put-usuario{
-    font-weight: bolder !important;
-    letter-spacing: 1 !important;
 }
-  .cointainer{
-    float: inline-start;
-    width: 60vw !important;
-    position: relative;
-    left: 20vw;
-  }
-  
-  .MuiInputBase-input{
-    padding: 16px 10px 16px !important;
+.MuiInputBase-input {
+  color: #4b2400 !important;
+  background-color: #ffff !important;
+  border-radius: 20px !important;
+}
+
+.titulo-put-usuario {
+  font-weight: bolder !important;
+  letter-spacing: 1 !important;
+}
+.cointainer {
+  float: inline-start;
+  width: 60vw !important;
+  position: relative;
+  left: 20vw;
+}
+
+.MuiInputBase-input {
+  padding: 16px 10px 16px !important;
+}
+
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  font-weight: 550 !important;
+  color: #000000af !important;
+}
+
+.form-putUsuario {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.senhas-put {
+  display: contents;
+}
+
+@media only screen and(max-width: 768px) {
+  .form-putUsuario {
+    display: contents;
+    margin: unset;
   }
 
-  .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root{
-    font-weight: 550 !important;
-    color: #000000af !important;
+  .fundo-transparent {
+    margin: 88px;
   }
+}
