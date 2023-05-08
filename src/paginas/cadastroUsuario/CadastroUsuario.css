@@ -13,8 +13,19 @@
   background-color:#635f59e8;
   border-radius: 10px;
   padding: 20px;
+  box-shadow: 10px 10px 10px #25190191!important;
+}
+.component-cadastro{
+  animation: cadastro 2s;
+
 }
 
+@keyframes cadastro {
+  from{
+    opacity: 0;
+  }
+  
+}
 .text-link{
 text-decoration: none !important;
 color: #fff !important;

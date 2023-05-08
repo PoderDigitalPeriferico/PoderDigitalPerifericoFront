@@ -1,58 +1,68 @@
-.fundo-listaTemas{
-    background-image: url('https://ik.imagekit.io/wwd7wv4ro/PDP_full_branco.png?updatedAt=1679053313611');
-    background-repeat: no-repeat;
-    background-size: 100vw;
-    background-position-x: center;
-    background-position-y: center;
-    background-attachment: fixed;
-    width: 100%;
-    padding: 20px 20px;
- }
 
-.fundo-fundo{
-    background-color: #8B2412;
-    
+
+
+.fundo-listaTemas {
+  background-image: url(https://ik.imagekit.io/wwd7wv4ro/PDP_full_branco.png?updatedAt=1679053313611);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-attachment: fixed;
+  width: 100%;
+  /* padding: 20px 20px; */
+  display: flex;
+  height: 100Vh;
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  background-position-x: center;
 }
 
 
- .cards{
-   
+.fundo-fundo {
+  width: 100%;
+  background-color: #8b2412;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cards {
     background-color: rgba(255, 255, 255, 0.685) !important;
     position: relative;
     background-color: rgba(255, 255, 255, 0.685) !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    left: 50%;
+    justify-content: space-around;
     display: flex;
-    top: 50%;
-    width: 50vw;
-    margin-top: 50px;
-    transform: translate(-50%, 10px);
+    width: 25vw;
+    margin: 50px;
     margin-bottom: 0;
-   
- }
-
- .text-link{
-    text-decoration: none;
- }
- .BoxButton{
-   display: flex;
-   justify-content: center;
-
- }
- .buttonTema{
-   margin-left: 8px !important;
-   margin-bottom:15px !important;
- }
- @media screen and (max-width: 750px) {
-   .BoxButton{
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-   }
-
-.buttonTema{
-  margin-bottom:8px !important;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    align-items: flex-start;
 }
+
+.text-link {
+  text-decoration: none;
+}
+.BoxButton {
+  display: flex;
+  justify-content: center;
+}
+.buttonTema {
+  margin-left: 8px !important;
+  margin-bottom: 15px !important;
+}
+@media screen and (max-width: 750px) {
+  .BoxButton {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .buttonTema {
+    margin-bottom: 8px !important;
+  }
 }

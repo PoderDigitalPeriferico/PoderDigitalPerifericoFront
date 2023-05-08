@@ -37,6 +37,13 @@
   margin-right: auto!important;
   border-radius: 5%!important;
   box-shadow: 10px 10px 10px #25190191!important;
+  animation: login 1.5s ; 
+}
+
+@keyframes login {
+  from{
+      opacity: 0;
+  }
 }
 
 /* Media query para ajustar o estilo do componente de login em telas menores */
