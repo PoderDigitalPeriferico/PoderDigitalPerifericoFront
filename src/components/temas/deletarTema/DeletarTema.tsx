@@ -8,6 +8,7 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import { buscaId, deleteId } from '../../../services/Services';
 import Tema from '../../../models/Tema';
 import { toast } from 'react-toastify';
+import YouTube from 'react-youtube';
 
 
 function DeletarTema() {
@@ -73,26 +74,91 @@ function DeletarTema() {
           
   return (
     <>
-      <Box m={2}>
+     <Box display="flex" flexDirection={"column"} alignItems="center">
         <Card variant="outlined">
           <CardContent>
             <Box justifyContent="center">
-              <Typography color="textSecondary" gutterBottom>
-                Deseja deletar o Tema:
-              </Typography>
+              
               <Typography color="textSecondary">
                 {tema?.tema}
               </Typography>
               {tema?.postagens?.map((post) => (
                 <>
                   <Typography variant="h5" component="h2">
-                    {post.titulo.includes(".mp4") ? (
-                      <video className="video" controls>
-                        <source src={post.titulo} />
-                      </video>
-                    ) : (
-                      <img src={post.titulo} alt="Imagem da postagem" />
-                    )}
+                  {(() => {
+    const url = post.titulo;
+    switch (true) {
+      case url === (""):
+        return <div />;
+      case url.includes("youtube.com"):
+        return (
+          <YouTube
+          className="videoyoutube"
+          videoId={url.split("=")[1]}
+          opts={{
+            height: "350vh",
+            width: "80%",
+            playerVars: { autoplay: 0 },
+            }}
+          />
+        );
+      case url.includes(".mp4"):
+        return (
+          <video className="videomp4" controls>
+            <source src={url} />
+          </video>
+        );
+      case url.includes("https://m.facebook.com/"):
+        return (
+          <div
+            className="fb-video"
+            data-href={url}
+            data-width="640"
+            data-show-text="true"
+          >
+            <div className="fb-xfbml-parse-ignore"></div>
+          </div>
+        );
+      case url.includes("instagram.com"):
+        return (
+          <iframe
+            src={`https://www.instagram.com/p/${
+              url.split("/")[4]
+            }/embed`}
+            className="instagram"
+            width="400"
+            height="630"
+            frameBorder={"0"}
+            scrolling="no"
+            title="Instagram video"
+          ></iframe>
+        );
+      case url.includes("tiktok.com"):
+        return (
+          <iframe
+            src={`https://www.tiktok.com/embed/v2/${
+              url.split("/")[5]
+            }?lang=en-US`}
+            className="video"
+            width="640"
+            height="750"
+            frameBorder={"0"}
+            scrolling="no"
+            title="TikTok video"
+          ></iframe>
+        );
+      default:
+        return (
+          <img
+            className="foto-post"
+            src={url}
+            width="50%"
+            height="auto"
+            alt="Imagem da postagem"
+          />
+        );
+    }
+  })()}
                   </Typography>
                   <Typography variant="body2" component="p">
                     {post.texto}
@@ -103,6 +169,9 @@ function DeletarTema() {
           </CardContent>
           <CardActions>
             <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
+            <Typography color="textSecondary" gutterBottom>
+                Deseja deletar o Tema:
+              </Typography>
               <Box mx={2}>
                 <Button onClick={sim} variant="contained" className="marginLeft" size='large' color="primary">
                   Sim

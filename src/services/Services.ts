@@ -1,6 +1,6 @@
 import axios from "axios";
 export const api = axios.create({
-  baseURL: 'https://pdp-poder-digital-periferico.onrender.com'
+  baseURL: 'https://pdp-poder-digital-periferico-31sl.onrender.com'
 })
 
 export const login = async (url: any, dados: any, setDados: any) => {
